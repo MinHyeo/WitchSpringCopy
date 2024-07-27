@@ -4,12 +4,15 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
+    #region Manager
+
     static GameManager GM_Instance; 
     public static GameManager Instance { get { Init(); return GM_Instance; } }
 
     InputManager M_Input = new InputManager();
     public static InputManager Input { get { return Instance.M_Input; } }
 
+    #endregion
 
 
     void Start()

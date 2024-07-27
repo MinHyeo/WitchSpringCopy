@@ -7,6 +7,7 @@ public class Define
     public enum CameraMode
     {
         QuaterView,
+        BattleView,
     }
 
     public enum MouseEvent

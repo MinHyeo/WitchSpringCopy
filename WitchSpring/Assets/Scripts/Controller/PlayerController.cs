@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
     [SerializeField] float P_Speed;
@@ -68,7 +68,7 @@ public class Player : MonoBehaviour
 
     void Start()
     {
-        P_Speed = 10.0f;
+        P_Speed = 5.0f;
         GameManager.Input.MouseAction -= ClickToMove;
         GameManager.Input.MouseAction += ClickToMove;
         P_Animator = GetComponent<Animator>();
@@ -99,15 +99,13 @@ public class Player : MonoBehaviour
         }
         
         Ray Mouse_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //Check Mouse Ray
-        Debug.DrawRay(Camera.main.transform.position, Mouse_Ray.direction * 100.0f, Color.white, 1.0f);
+        //Debug.DrawRay(Camera.main.transform.position, Mouse_Ray.direction * 100.0f, Color.white, 1.0f);
 
         RaycastHit Hit;
         if (Physics.Raycast(Mouse_Ray, out Hit, 100.0f, LayerMask.GetMask("Terrain")))
         {
             //Get mouse position (Destination position)
             M_Pos = Hit.point;
-            //Debug.Log($"Destination Pos : {Hit.point.x} {Hit.point.y} {Hit.point.z}");
             P_State = PlayerStates.Walk;
         }
     }
