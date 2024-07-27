@@ -7,8 +7,8 @@ public class Player : MonoBehaviour
     [Header("Player Info")]
     [SerializeField] float P_Speed;
     [SerializeField] float wait_run_ration;
-    [SerializeField] PlayerStates P_State = PlayerStates.Idle;
     [SerializeField] Vector3 M_Pos;
+    [SerializeField] PlayerStates P_State = PlayerStates.Idle;
 
     [Header("Player Components")]
     [SerializeField] Animator P_Animator;
@@ -30,7 +30,7 @@ public class Player : MonoBehaviour
 
     void StateWalk()
     {
-        Vector3 dir = M_Pos - new Vector3(transform.position.x, 0.0f, transform.position.z) ;
+        Vector3 dir = M_Pos - transform.position;
         if (dir.magnitude < 0.00001f)
         {
             //Change State
@@ -41,11 +41,11 @@ public class Player : MonoBehaviour
             float moveDist = Mathf.Clamp(P_Speed * Time.deltaTime, 0, dir.magnitude);
             transform.position += dir.normalized * moveDist;
 
-            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 10 * Time.deltaTime);
+            transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
             transform.LookAt(M_Pos);
         }
 
-        //Set Walk Animathon
+        //Set Walk Animation
         P_Animator.SetFloat("Speed", P_Speed);
     }
 
@@ -103,10 +103,10 @@ public class Player : MonoBehaviour
         Debug.DrawRay(Camera.main.transform.position, Mouse_Ray.direction * 100.0f, Color.white, 1.0f);
 
         RaycastHit Hit;
-        if (Physics.Raycast(Camera.main.transform.position, Mouse_Ray.direction, out Hit, 100.0f, LayerMask.GetMask("Terrain")))
+        if (Physics.Raycast(Mouse_Ray, out Hit, 100.0f, LayerMask.GetMask("Terrain")))
         {
             //Get mouse position (Destination position)
-            M_Pos = new Vector3(Hit.point.x, 0.0f, Hit.point.z);
+            M_Pos = Hit.point;
             //Debug.Log($"Destination Pos : {Hit.point.x} {Hit.point.y} {Hit.point.z}");
             P_State = PlayerStates.Walk;
         }

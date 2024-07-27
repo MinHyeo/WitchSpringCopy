@@ -204,7 +204,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a890e6426b527974e87f8e6f8b5aa54f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.84
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a890e6426b527974e87f8e6f8b5aa54f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -310,7 +310,7 @@ Rigidbody:
     m_Bits: 0
   m_ImplicitCom: 1
   m_ImplicitTensor: 1
-  m_UseGravity: 1
+  m_UseGravity: 0
   m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
@@ -329,8 +329,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   P_Speed: 10
   wait_run_ration: 0
-  P_State: 0
   M_Pos: {x: 0, y: 0, z: 0}
+  P_State: 0
   P_Animator: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
@@ -631,5 +631,5 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 76887244}
-  - {fileID: 1624475714}
   - {fileID: 608592502}
+  - {fileID: 1624475714}
