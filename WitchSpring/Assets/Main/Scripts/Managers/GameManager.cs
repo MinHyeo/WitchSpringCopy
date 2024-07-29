@@ -11,6 +11,9 @@ public class GameManager : MonoBehaviour
     InputManager _input = new InputManager();
     public static InputManager input { get { return instance._input; } }
 
+    ResourceManager _resources;
+    public static ResourceManager Resource { get { return instance._resources; } }
+
     private void Start()
     {
         Init();

@@ -4,6 +4,13 @@ using UnityEngine;
 
 public class Define
 {
+    public enum PlayerState
+    {
+        Idle,
+        Moving,
+        FightEnter,
+        Escape,
+    }
     public enum MouseEvent
     {
         Press,
@@ -13,5 +20,9 @@ public class Define
     public enum CameraMode
     {
         QuarterView,
+        MonsterFocused,
+        PlayerFocused,
+        CentralFocused,
     }
+
 }
