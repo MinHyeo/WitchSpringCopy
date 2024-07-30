@@ -12,6 +12,12 @@ public class GameManager : MonoBehaviour
     InputManager M_Input = new InputManager();
     public static InputManager Input { get { return Instance.M_Input; } }
 
+    SceneManager M_Scene = new SceneManager();
+    public static SceneManager Scene { get { return Instance.M_Scene; } }
+
+    UIManager M_UI = new UIManager();
+    public static UIManager UI { get{ return Instance.M_UI; } }
+
     #endregion
 
 
@@ -20,10 +26,8 @@ public class GameManager : MonoBehaviour
        
     }
 
-    // Update is called once per frame
     void Update()
     {
-        //InputManager call
         M_Input.OnUpdate();
     }
 

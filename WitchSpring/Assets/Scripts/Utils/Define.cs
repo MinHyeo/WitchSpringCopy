@@ -27,5 +27,18 @@ public class Define
     {
         Click,
         Drag,
-    }   
+    }
+
+    public enum Scenes 
+    { 
+        GameScene,
+    }
+
+    public enum UITypes
+    {
+        DefualtUI,
+        InfomationUI,
+        BattleUI,
+        InventoryUI
+    }
 }
