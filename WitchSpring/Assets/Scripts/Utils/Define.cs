@@ -36,8 +36,8 @@ public class Define
 
     public enum UITypes
     {
-        DefualtUI,
-        InfomationUI,
+        FieldUI,
+        EnterUI,
         BattleUI,
         InventoryUI
     }

@@ -6,7 +6,7 @@ public class GameManager : MonoBehaviour
 {
     #region Manager
 
-    static GameManager GM_Instance; 
+    public static GameManager GM_Instance; 
     public static GameManager Instance { get { Init(); return GM_Instance; } }
 
     InputManager M_Input = new InputManager();
@@ -15,8 +15,11 @@ public class GameManager : MonoBehaviour
     SceneManager M_Scene = new SceneManager();
     public static SceneManager Scene { get { return Instance.M_Scene; } }
 
-    UIManager M_UI = new UIManager();
+    /*UIManager M_UI = new UIManager();
     public static UIManager UI { get{ return Instance.M_UI; } }
+
+    ResourceManager M_Resource = new ResourceManager();
+    public static ResourceManager Resource { get { return Instance.M_Resource; } }*/
 
     #endregion
 
