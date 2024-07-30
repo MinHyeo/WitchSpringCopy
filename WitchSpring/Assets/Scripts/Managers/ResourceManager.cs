@@ -6,7 +6,7 @@ using UnityEngine;
 public class ResourceManager
 {
 
-    /*public T Load<T>(string path) where T : Object
+   public T Load<T>(string path) where T : Object
     {
         //pool에 있는지 확인
         if (typeof(T) == typeof(GameObject))
@@ -17,17 +17,16 @@ public class ResourceManager
             {
                 name = name.Substring(index + 1);
             }
-            GameObject gameObject = Managers.Pool.GetOriginal(name);
+            /*GameObject gameObject = Managers.Pool.GetOriginal(name);
             if (gameObject != null)
             {
                 return gameObject as T;
-            }
+            }*/
         }
-
         return Resources.Load<T>(path);
-    }*/
+    }
 
-    /*public GameObject Instantiate(string path, Transform parent = null)
+    public GameObject Instantiate(string path, Transform parent = null)
     {
         
         GameObject original = Load<GameObject>($"Prefabs/{path}");
@@ -41,7 +40,7 @@ public class ResourceManager
         gameObject.name = original.name;
 
         return gameObject;
-    }*/
+    }
 
     public void Destroy(GameObject gO)
     {

@@ -39,6 +39,7 @@ public class Define
         FieldUI,
         EnterUI,
         BattleUI,
-        InventoryUI
+        InventoryUI,
+        MaxUI
     }
 }

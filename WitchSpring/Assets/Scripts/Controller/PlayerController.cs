@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         Walk,
         Attack,
         Dead,
+        Battle
     }
 
     //상태에 따른 행동 메서드
@@ -66,6 +67,12 @@ public class PlayerController : MonoBehaviour
         return;
     }
 
+    void StateBattle() {
+        P_Animator.SetFloat("Speed", 0.0f);
+        P_Animator.SetBool("IsBattle", true);
+        return;
+    }
+
     void Start()
     {
         P_Speed = 5.0f;
@@ -90,11 +97,14 @@ public class PlayerController : MonoBehaviour
             case PlayerStates.Attack:
                 StateAttack();
                 break;
+            case PlayerStates.Battle:
+                StateBattle();
+                break;
         }
     }
 
     void ClickToMove(Define.MouseEvent mouseEvent) {
-        if (P_State == PlayerStates.Dead) {
+        if (P_State == PlayerStates.Dead || P_State == PlayerStates.Battle) {
             return;
         }
         
@@ -108,5 +118,9 @@ public class PlayerController : MonoBehaviour
             M_Pos = Hit.point;
             P_State = PlayerStates.Walk;
         }
+    }
+
+    public void SetPlayerState() { 
+        P_State = PlayerStates.Battle;
     }
 }

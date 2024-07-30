@@ -33,11 +33,11 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: idle
-      takeName: idle
+      name: idle_battle (1)
+      takeName: idle_battle
       internalID: -5252816984213320552
       firstFrame: 0
-      lastFrame: 36
+      lastFrame: 180
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

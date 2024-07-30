@@ -15,11 +15,11 @@ public class GameManager : MonoBehaviour
     SceneManager M_Scene = new SceneManager();
     public static SceneManager Scene { get { return Instance.M_Scene; } }
 
-    /*UIManager M_UI = new UIManager();
+    UIManager M_UI = new UIManager();
     public static UIManager UI { get{ return Instance.M_UI; } }
 
     ResourceManager M_Resource = new ResourceManager();
-    public static ResourceManager Resource { get { return Instance.M_Resource; } }*/
+    public static ResourceManager Resource { get { return Instance.M_Resource; } }
 
     #endregion
 
@@ -46,5 +46,6 @@ public class GameManager : MonoBehaviour
             DontDestroyOnLoad(gmObject);
             GM_Instance = gmObject.GetComponent<GameManager>();
         }
+        GM_Instance.M_UI.Init();
     }
 }
