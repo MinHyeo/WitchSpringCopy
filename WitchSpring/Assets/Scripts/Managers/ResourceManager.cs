@@ -39,7 +39,7 @@ public class ResourceManager
         GameObject gameObject = Object.Instantiate(original, parent);
         gameObject.name = original.name;
 
-        return gameObject;
+        return original;
     }
 
     public void Destroy(GameObject gO)

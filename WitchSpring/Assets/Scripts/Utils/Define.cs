@@ -1,9 +1,18 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class Define
 {
+    public enum PlayerStates
+    {
+        Idle,
+        Walk,
+        Attack,
+        Dead,
+        Battle
+    }
     public enum CameraMode
     {
         QuaterView,
@@ -29,17 +38,17 @@ public class Define
         Drag,
     }
 
-    public enum Scenes 
-    { 
+    public enum Scenes
+    {
         GameScene,
     }
 
     public enum UITypes
     {
-        FieldUI,
-        EnterUI,
         BattleUI,
-        InventoryUI,
+        EnterUI,
+        FieldUI,
         MaxUI
     }
+
 }

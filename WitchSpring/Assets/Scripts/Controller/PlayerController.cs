@@ -8,18 +8,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] float P_Speed;
     [SerializeField] float wait_run_ration;
     [SerializeField] Vector3 M_Pos;
-    [SerializeField] PlayerStates P_State = PlayerStates.Idle;
+    [SerializeField] Define.PlayerStates P_State = Define.PlayerStates.Idle;
 
     [Header("Player Components")]
     [SerializeField] Animator P_Animator;
-
-    public enum PlayerStates { 
-        Idle,
-        Walk,
-        Attack,
-        Dead,
-        Battle
-    }
 
     //상태에 따른 행동 메서드
     void StateIdle(){
@@ -35,7 +27,7 @@ public class PlayerController : MonoBehaviour
         if (dir.magnitude < 0.00001f)
         {
             //Change State
-            P_State = PlayerStates.Idle;
+            P_State = Define.PlayerStates.Idle;
         }
         else
         {
@@ -85,26 +77,26 @@ public class PlayerController : MonoBehaviour
     {
         //Status Pattern
         switch (P_State) {
-            case PlayerStates.Idle:
+            case Define.PlayerStates.Idle:
                 StateIdle();
                 break;
-            case PlayerStates.Walk:
+            case Define.PlayerStates.Walk:
                 StateWalk();
                 break;
-            case PlayerStates.Dead:
+            case Define.PlayerStates.Dead:
                 StateDead();
                 break;
-            case PlayerStates.Attack:
+            case Define.PlayerStates.Attack:
                 StateAttack();
                 break;
-            case PlayerStates.Battle:
+            case Define.PlayerStates.Battle:
                 StateBattle();
                 break;
         }
     }
 
     void ClickToMove(Define.MouseEvent mouseEvent) {
-        if (P_State == PlayerStates.Dead || P_State == PlayerStates.Battle) {
+        if (P_State == Define.PlayerStates.Dead || P_State == Define.PlayerStates.Battle) {
             return;
         }
         
@@ -116,11 +108,11 @@ public class PlayerController : MonoBehaviour
         {
             //Get mouse position (Destination position)
             M_Pos = Hit.point;
-            P_State = PlayerStates.Walk;
+            P_State = Define.PlayerStates.Walk;
         }
     }
 
-    public void SetPlayerState() { 
-        P_State = PlayerStates.Battle;
+    public void SetPlayerState(Define.PlayerStates playerState) { 
+        P_State = playerState;
     }
 }

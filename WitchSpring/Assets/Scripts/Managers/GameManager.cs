@@ -21,6 +21,9 @@ public class GameManager : MonoBehaviour
     ResourceManager M_Resource = new ResourceManager();
     public static ResourceManager Resource { get { return Instance.M_Resource; } }
 
+    /*DataManager M_Data = new DataManager();
+    public static DataManager Data { get { return Instance.M_Data; } }*/
+
     #endregion
 
 
@@ -45,7 +48,7 @@ public class GameManager : MonoBehaviour
             }
             DontDestroyOnLoad(gmObject);
             GM_Instance = gmObject.GetComponent<GameManager>();
+            GM_Instance.M_UI.Init();
         }
-        GM_Instance.M_UI.Init();
     }
 }
