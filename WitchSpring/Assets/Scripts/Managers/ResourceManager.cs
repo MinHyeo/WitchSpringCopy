@@ -29,17 +29,17 @@ public class ResourceManager
     public GameObject Instantiate(string path, Transform parent = null)
     {
         
-        GameObject original = Load<GameObject>($"Prefabs/{path}");
+        GameObject original = Load<GameObject>($"Prefabs/{path}"); //Prefab
         if (original == null)
         {
             Debug.Log($"Fail to load Prefab : {path}");
             return null;
         }
 
-        GameObject gameObject = Object.Instantiate(original, parent);
+        GameObject gameObject = Object.Instantiate(original, parent); //GameObject
         gameObject.name = original.name;
 
-        return original;
+        return gameObject;
     }
 
     public void Destroy(GameObject gO)
