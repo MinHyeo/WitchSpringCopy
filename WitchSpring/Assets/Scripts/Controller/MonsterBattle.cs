@@ -6,15 +6,14 @@ public class MonsterBattle : MonoBehaviour
 {
     private void OnTriggerEnter(Collider player)
     {
-        PlayerController test = player.GetComponent<PlayerController>();
-        if(test != null)
+        player.GetComponent<PlayerController>();
+        if(player.gameObject.tag == "Player")
         {
-            test.SetPlayerState(Define.PlayerStates.Battle);
+            GameManager.Situation.SetStiuation(Define.Situations.Contact);
 
+            player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
             player.transform.LookAt(transform.position);
-            //transform.parent.transform.LookAt(player.transform.position); //몬스터의 좌표도 달라지는 버그 발생
-
-            GameManager.UI.ChangeUI("EnterUI");
+            //transform.parent.transform.LookAt(new Vector3(player.transform.position.x, 0.0f, player.transform.position.x)); //몬스터의 좌표도 달라지는 버그 발생
         }
     }
 }

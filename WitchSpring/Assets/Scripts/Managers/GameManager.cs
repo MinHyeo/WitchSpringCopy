@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    #region Manager
+    #region ManagerObject
 
     public static GameManager GM_Instance; 
     public static GameManager Instance { get { Init(); return GM_Instance; } }
@@ -12,20 +12,22 @@ public class GameManager : MonoBehaviour
     InputManager M_Input = new InputManager();
     public static InputManager Input { get { return Instance.M_Input; } }
 
-    SceneManager M_Scene = new SceneManager();
-    public static SceneManager Scene { get { return Instance.M_Scene; } }
-
     ResourceManager M_Resource = new ResourceManager();
     public static ResourceManager Resource { get { return Instance.M_Resource; } }
 
     UIManager M_UI = new UIManager();
     public static UIManager UI { get{ return Instance.M_UI; } }
 
-    /*DataManager M_Data = new DataManager();
-    public static DataManager Data { get { return Instance.M_Data; } }*/
+    DataManager M_Data = new DataManager();
+    public static DataManager Data { get { return Instance.M_Data; } }
+
+    SituationManager M_Situation = new SituationManager();
+    public static SituationManager Situation { get { return Instance.M_Situation; } }
+
+    /*SceneManager M_Scene = new SceneManager();
+    public static SceneManager Scene { get { return Instance.M_Scene; } }*/
 
     #endregion
-
 
     void Start()
     {
@@ -50,6 +52,7 @@ public class GameManager : MonoBehaviour
             GM_Instance = gmObject.GetComponent<GameManager>();
 
             GM_Instance.M_UI.Init();
+            GM_Instance.M_Situation.Init();
         }
     }
 }

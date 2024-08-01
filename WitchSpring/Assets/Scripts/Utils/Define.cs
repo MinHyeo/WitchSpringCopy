@@ -16,7 +16,7 @@ public class Define
     public enum CameraMode
     {
         QuaterView,
-        BattleView,
+        ZoomInView,
     }
 
     public enum MouseEvent
@@ -49,6 +49,13 @@ public class Define
         EnterUI,
         FieldUI,
         MaxUI
+    }
+
+    public enum Situations
+    {
+        Normal,
+        Contact,
+        Battle,
     }
 
 }

@@ -30,13 +30,9 @@ public class UIManager
     //UI Change
     public void ChangeUI(string UIName) {
         if (UIRoot.CurrentUI != null) {
-            Debug.Log($"Hide UI : {UIRoot.CurrentUI.transform.name}");
             UIRoot.CurrentUI.SetActive(false);
         }
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
-        Debug.Log(UIName);
-        Debug.Log($"Set UI : {UIName}");
         UIRoot.CurrentUI.SetActive(true);
-        Debug.Log($"Active UI: {UIName}");
     }
 }

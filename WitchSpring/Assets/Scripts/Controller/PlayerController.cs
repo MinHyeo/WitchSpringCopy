@@ -101,7 +101,6 @@ public class PlayerController : MonoBehaviour
         }
         
         Ray Mouse_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
-        //Debug.DrawRay(Camera.main.transform.position, Mouse_Ray.direction * 100.0f, Color.white, 1.0f);
 
         RaycastHit Hit;
         if (Physics.Raycast(Mouse_Ray, out Hit, 100.0f, LayerMask.GetMask("Terrain")))
