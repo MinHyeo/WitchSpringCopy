@@ -1,52 +1,102 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Serialization;
 using UnityEngine;
 
-public class UIManager : MonoBehaviour
+public class UIManager
 {
-    GameObject go = null;
-    GameObject canvas = null;
-    float _delay = 1.0f;
+    int _order = 10;
 
-    private void Start()
-    {
-        go = Resources.Load<GameObject>("Prefabs/UI/UI_Default");
-        canvas = Instantiate(go);
-    }
-    public void OnFightEnter()
-    {
-        CheckUIDup();
-        go = Resources.Load<GameObject>("Prefabs/UI/UI_Question");
-        canvas = Instantiate(go);
+    Stack<UI_Popup> _popupStack = new Stack<UI_Popup>();
+    UI_Scene _sceneUI;
 
-        Invoke("MonsterInfo", _delay);
-    }
-    public void MonsterInfo()
+    public GameObject Root
     {
-        CheckUIDup();
-        go = Resources.Load<GameObject>("Prefabs/UI/UI_FightEnter");
-        canvas = Instantiate(go);
-    }
-
-    public void StartFIght()
-    {
-        CheckUIDup();
-        go = Resources.Load<GameObject>("Prefabs/UI/UI_Behaviors");
-        canvas = Instantiate(go);
-    }
-
-    public void Escape()
-    {
-        CheckUIDup();
-        go = Resources.Load<GameObject>("Prefabs/UI/UI_FightEnter");
-        canvas = Instantiate(go);
-    }
-
-    void CheckUIDup()
-    {
-        if (GameObject.FindWithTag("UI") != null)
+        get
         {
-            Destroy(GameObject.FindWithTag("UI"));
+            GameObject root = GameObject.Find("@UI_Root");
+            if (root == null)
+                root = new GameObject { name = "@UI_Root" };
+            return root;
         }
+    }
+
+    public void SetCanvas(GameObject go, bool sort = true)
+    {
+        Canvas canvas = Utill.GetOrAddComponent<Canvas>(go);
+
+        canvas.renderMode = RenderMode.ScreenSpaceOverlay;
+        canvas.overrideSorting = true;
+
+        if (sort)
+        {
+            canvas.sortingOrder = _order;
+            _order++;
+        }
+        else
+        {
+            canvas.sortingOrder = 0;
+        }
+    }
+
+/*    public T ShowSceneUI<T>(string name = null) where T : UI_Scene
+    {
+        if (string.IsNullOrEmpty(name))
+            name = typeof(T).Name;
+
+        GameObject go = GameManager.resource.Instantiate($"UI/Scene/{name}");
+        T sceneUI = Utill.GetOrAddComponent<T>(go);
+        _sceneUI = sceneUI;
+
+        go.transform.SetParent(Root.transform);
+
+
+        return sceneUI;
+    }*/
+
+    public T ShowPopupUI<T>(string name = null) where T : UI_Popup
+    {
+        if(string.IsNullOrEmpty(name))
+            name = typeof(T).Name;
+
+        GameObject go = GameManager.resource.Instantiate($"UI/Popup/{name}");
+        T popup = Utill.GetOrAddComponent<T>(go);
+        _popupStack.Push(popup);
+
+        go.transform.SetParent(Root.transform);
+
+
+        return popup;
+    }
+
+    public void ClosePopupUI(UI_Popup popup)
+    {
+        if (_popupStack.Count == 0)
+            return;
+
+        if(_popupStack.Peek() != popup)
+        {
+            Debug.Log("Failed to close popup");
+            return;
+        }
+
+    }
+
+    public void ClosePopupUI()
+    {
+        if (_popupStack.Count == 0)
+            return;
+
+        UI_Popup popup = _popupStack.Pop();
+        GameManager.resource.Destroy(popup.gameObject);
+        popup = null;
+
+        _order--;
+    }
+
+    public void CloseAllPopupUI()
+    {
+        while(_popupStack.Count > 0)
+            ClosePopupUI();
     }
 }

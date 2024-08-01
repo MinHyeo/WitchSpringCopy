@@ -31,6 +31,7 @@ public class PlayerController : MonoBehaviour
     void UpdateMoving()
     {
         Vector3 dir = _desPos - transform.position;
+
         if (dir.magnitude < 0.0001f)
         {
             _state = Define.PlayerState.Idle;
@@ -58,9 +59,10 @@ public class PlayerController : MonoBehaviour
 
     }
 
-    void UpdateEscape()
+ /*   void UpdateEscape()
     {
-        Vector3 dir = ((transform.position - _monsterPos).normalized) * 3;
+        _speed = 6.0f;
+        Vector3 dir = (_monsterPos- transform.position).normalized *10;
         if (dir.magnitude < 0.0001f)
         {
             _state = Define.PlayerState.Idle;
@@ -78,7 +80,7 @@ public class PlayerController : MonoBehaviour
             Animator anim = GetComponent<Animator>();
             anim.SetFloat("speed", _speed);
         }
-    }
+    }*/
 
 
     void Update()
@@ -98,7 +100,7 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case Define.PlayerState.Escape:
-                UpdateEscape();
+                //UpdateEscape();
                 break;
 
         }
@@ -122,11 +124,10 @@ public class PlayerController : MonoBehaviour
     {
         _state = Define.PlayerState.FightEnter;
         _monsterPos = monster;
-        Debug.Log("½Î¿ò ¹ß»ý!");
     }
 
     public void OnEscape()
     {
-        _state = Define.PlayerState.Escape;
+        _state = Define.PlayerState.Moving;
     }
 }

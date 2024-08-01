@@ -12,6 +12,11 @@ public class CollisionManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnFight.Invoke(transform.position);
+
+
+            // 기본 UI 닫고 전투 입장 UI 호출
+            GameManager.UI.ClosePopupUI();
+            GameManager.UI.ShowPopupUI<UI_FightEnter>();
         }
     }
 }

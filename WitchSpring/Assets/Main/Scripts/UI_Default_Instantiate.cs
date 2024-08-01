@@ -2,17 +2,12 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class UI_Behaviors_ATK : MonoBehaviour
+public class UI_Default_Instantiate : MonoBehaviour
 {
     // Start is called before the first frame update
     void Start()
     {
-        
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
+        GameManager.UI.ShowPopupUI<UI_Default>();
         
     }
 }

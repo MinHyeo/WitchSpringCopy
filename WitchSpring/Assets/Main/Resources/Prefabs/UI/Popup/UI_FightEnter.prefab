@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 6132468843939861853}
   - component: {fileID: 1899131484393604652}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -222,7 +222,7 @@ GameObject:
   - component: {fileID: 1196617780791565424}
   - component: {fileID: 345240691113604769}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_MonsterInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -395,13 +395,14 @@ GameObject:
   - component: {fileID: 6823351335174959508}
   - component: {fileID: 1568750255288729656}
   - component: {fileID: 9142970056132117066}
+  - component: {fileID: 7447720201222992137}
   m_Layer: 5
   m_Name: UI_FightEnter
   m_TagString: UI
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1920275370572475049
 RectTransform:
   m_ObjectHideFlags: 0
@@ -490,6 +491,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7447720201222992137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3278302119481721001}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fcd3efeb11c6d30489250ca75f42e190, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4169370812402345198
 GameObject:
   m_ObjectHideFlags: 0
@@ -729,7 +742,7 @@ GameObject:
   - component: {fileID: 1459062735055540958}
   - component: {fileID: 7082253233824919736}
   m_Layer: 5
-  m_Name: Escape
+  m_Name: Button_Escape
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1000,7 +1013,7 @@ GameObject:
   - component: {fileID: 989430462521146650}
   - component: {fileID: 6773963362192072672}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_Fight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1135,7 +1148,7 @@ GameObject:
   - component: {fileID: 4533557380218769245}
   - component: {fileID: 2699877823799294968}
   m_Layer: 5
-  m_Name: Fight
+  m_Name: Button_Fight
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1279,7 +1292,7 @@ GameObject:
   - component: {fileID: 8621852876228664465}
   - component: {fileID: 4945961736893933820}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_MonsterStats
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1414,7 +1427,7 @@ GameObject:
   - component: {fileID: 3303126601238683900}
   - component: {fileID: 1044560740152988212}
   m_Layer: 5
-  m_Name: Text (TMP)
+  m_Name: Text_MonsterName
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
