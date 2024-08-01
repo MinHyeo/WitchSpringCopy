@@ -4,5 +4,10 @@ using UnityEngine;
 
 public class UI_Group : MonoBehaviour
 {
-    public GameObject[] UIList = new GameObject[(int)Define.UITypes.MaxUI];
+    public GameObject CurrentUI = null;
+    public Dictionary<string, GameObject> UIList = new Dictionary<string, GameObject>();
+
+    public void DontDestroy() { 
+        Object.DontDestroyOnLoad(this);
+    }
 }
