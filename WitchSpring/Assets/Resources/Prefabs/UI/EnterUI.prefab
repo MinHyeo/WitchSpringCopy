@@ -30,7 +30,6 @@ RectTransform:
   m_Children:
   - {fileID: 3599080613531929974}
   - {fileID: 4874471782302039253}
-  - {fileID: 3939343593176757336}
   m_Father: {fileID: 7023188512756419622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
@@ -317,11 +316,11 @@ RectTransform:
   m_Children:
   - {fileID: 3275341514017626114}
   - {fileID: 7728502526188909903}
-  m_Father: {fileID: 2828451412057642784}
+  m_Father: {fileID: 7023188512756419622}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 28, y: 255}
+  m_AnchoredPosition: {x: -542, y: 145}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &3006030627292569220
@@ -596,6 +595,7 @@ GameObject:
   - component: {fileID: 1707994967116710995}
   - component: {fileID: 6059870978338404101}
   - component: {fileID: 8011436134582730781}
+  - component: {fileID: 8810078833263440302}
   m_Layer: 5
   m_Name: EnterUI
   m_TagString: UI
@@ -687,6 +687,30 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &8810078833263440302
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385730573105365475}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d96c7368b19e1be4fb2a55a9aabd69b1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  monsterinfoSet:
+    Name: 
+    Explain: 
+    HP: 0
+    Strength: 0
+    Magic: 0
+    Agility: 0
+    Defense: 0
+    MagicResist: 0
+  monsterName: {fileID: 5245266240752247041}
+  monsterExplain: {fileID: 7810735021093218003}
+  monsterStat: {fileID: 8907820847278822224}
 --- !u!1 &4535423456809294965
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,7 +922,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC5B4\uB9B0 \uC548\uAC1C\uB450\uAEBC\uBE44"
+  m_Text: "(\uB300\uCDA9 \uBAAC\uC2A4\uD130 \uC774\uB984)"
 --- !u!1 &6766440584299223674
 GameObject:
   m_ObjectHideFlags: 0
@@ -928,6 +952,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 2828451412057642784}
+  - {fileID: 3939343593176757336}
   - {fileID: 6092347843350746988}
   m_Father: {fileID: 3164352627202640}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -1014,8 +1039,8 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uCCB4\uB825: 90\n\uD798: 13\n\uB9C8\uB825: 0\n\uBBFC\uCCA9: 5\n\uBB3C\uB9AC\uBC29\uC5B4:
-    0\n\uB9C8\uBC95\uBC29\uC5B4: 0"
+  m_Text: "\uCCB4\uB825:  ?\n\uD798: ?\n\uB9C8\uB825: ?\n\uBBFC\uCCA9: ?\n\uBB3C\uB9AC\uBC29\uC5B4:
+    ?\n\uB9C8\uBC95\uBC29\uC5B4: ?"
 --- !u!1 &8283784058961424192
 GameObject:
   m_ObjectHideFlags: 0
@@ -1094,8 +1119,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: "\uC548\uAC1C\uC232\uC5D0 \uC11C\uC2DD\uD558\uB294 \uB300\uD615 \uB450\uAEBC\uBE44.
-    \uC8FD\uC744 \uB54C\uAE4C\uC9C0 \uC131\uC7A5\uD558\uB294 \uD2B9\uC9D5\uC774 \uC788\uB2E4. "
+  m_Text: "(\uB300\uCDA9 \uBAAC\uC2A4\uD130 \uC124\uBA85)"
 --- !u!1 &8561743467155441542
 GameObject:
   m_ObjectHideFlags: 0

@@ -1,0 +1,24 @@
+{
+    "Monsters": [
+        {
+            "Name": "어린 안개두꺼비",
+            "Explain": "안개숲에 서식하는 대형 두꺼비. 죽을 때 까지 성장하는 특징이 있다.",
+            "HP": "90",
+            "Strength" : "13",
+            "Magic" : "0",
+            "Agility" : "5",
+            "Defense" : "0",
+            "MagicResist" : "0" 
+        },
+        {
+            "Name": "Temp",
+            "Explain": "Temp",
+            "HP": "0",
+            "Strength" : "0",
+            "Magic" : "0",
+            "Agility" : "0",
+            "Defense" : "0",
+            "MagicResist" : "0"
+        }
+    ]    
+}

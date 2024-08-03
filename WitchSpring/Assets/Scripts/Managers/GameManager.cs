@@ -52,7 +52,10 @@ public class GameManager : MonoBehaviour
             GM_Instance = gmObject.GetComponent<GameManager>();
 
             GM_Instance.M_UI.Init();
+
             GM_Instance.M_Situation.Init();
+
+            GM_Instance.M_Data.Init();
         }
     }
 }

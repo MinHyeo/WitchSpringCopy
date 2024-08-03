@@ -9,7 +9,7 @@ public class MonsterBattle : MonoBehaviour
         player.GetComponent<PlayerController>();
         if(player.gameObject.tag == "Player")
         {
-            GameManager.Situation.SetStiuation(Define.Situations.Contact);
+            GameManager.Situation.SetStiuation(Define.Situations.Contact, "어린 안개두꺼비");
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
             player.transform.LookAt(transform.position);

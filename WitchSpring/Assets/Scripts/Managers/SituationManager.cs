@@ -10,7 +10,7 @@ public class SituationManager
         currentSituations = Define.Situations.Normal;
     }
 
-    public void SetStiuation (Define.Situations situations){
+    public void SetStiuation (Define.Situations situations, string monsterName = ""){
         currentSituations = situations;
         switch (situations) {
             case Define.Situations.Normal:
@@ -18,6 +18,8 @@ public class SituationManager
                 break;
             case Define.Situations.Contact:
                 GameManager.UI.ChangeUI("EnterUI");
+                GameManager.UI.Init();
+                GameManager.UI.SetData();
                 break;
             case Define.Situations.Battle:
                 GameManager.UI.ChangeUI("BattleUI");

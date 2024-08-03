@@ -17,12 +17,8 @@ public class ResourceManager
             {
                 name = name.Substring(index + 1);
             }
-            /*GameObject gameObject = Managers.Pool.GetOriginal(name);
-            if (gameObject != null)
-            {
-                return gameObject as T;
-            }*/
         }
+
         return Resources.Load<T>(path);
     }
 

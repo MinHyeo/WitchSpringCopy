@@ -35,4 +35,9 @@ public class UIManager
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
         UIRoot.CurrentUI.SetActive(true);
     }
+
+    public void SetData() {
+        EnterUI enterUI = Util.GetOrAddComponent<EnterUI>(UIRoot.CurrentUI);
+        enterUI.Init();
+    }
 }
