@@ -66,8 +66,8 @@ public class CameraController : MonoBehaviour
         Vector3 lookPos = transform.position;
         Vector3 _center = (_player.transform.position + _monster) / 2;
 
-        transform.position = Vector3.Lerp(transform.position, _center + _delta + new Vector3(-8, 0, 5), Time.deltaTime*3);
-        transform.LookAt(Vector3.Lerp(lookPos, _monster, Time.deltaTime*3));
+        transform.position = Vector3.Lerp(transform.position, _center + _delta + new Vector3(-8, 0, 5), Time.deltaTime*1.5f);
+        transform.LookAt(Vector3.Lerp(lookPos, _monster, Time.deltaTime*1.5f));
     }
 
     void UpdatePlayerFocusedView()

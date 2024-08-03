@@ -8,13 +8,14 @@ public class GameManager : MonoBehaviour
     static GameManager s_instance;
     static GameManager instance { get { Init(); return s_instance; } }
 
+    DataManager _data = new DataManager();
     InputManager _input = new InputManager();
-    public static InputManager input { get { return instance._input; } }
-
     ResourceManager _resources = new ResourceManager();
-    public static ResourceManager resource { get { return instance._resources; } }
-
     UIManager _ui = new UIManager();
+
+    public static DataManager Data { get { return instance._data; } }
+    public static ResourceManager resource { get { return instance._resources; } }
+    public static InputManager input { get { return instance._input; } }
     public static UIManager UI { get { return instance._ui; } }
 
 
@@ -39,7 +40,7 @@ public class GameManager : MonoBehaviour
 
             DontDestroyOnLoad(go);
             s_instance = go.GetComponent<GameManager>();
+            s_instance._data.Init();
         }
-
     }
 }

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1567562138387678491}
   - component: {fileID: 6189583514976267340}
   - component: {fileID: 609225773490866848}
+  - component: {fileID: 4854264897375441184}
   m_Layer: 5
   m_Name: UI_Behaviors_MATK
   m_TagString: Untagged
@@ -115,6 +116,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 889f31d3e90e9da41b377edb20985c54, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!95 &4854264897375441184
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 70281523648008596}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7636c7fc50c0fe843982e8ddeb1f65ff, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &213526883284128796
 GameObject:
   m_ObjectHideFlags: 0
