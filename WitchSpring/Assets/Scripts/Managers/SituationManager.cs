@@ -18,7 +18,6 @@ public class SituationManager
                 break;
             case Define.Situations.Contact:
                 GameManager.UI.ChangeUI("EnterUI");
-                GameManager.UI.Init();
                 GameManager.UI.SetData();
                 break;
             case Define.Situations.Battle:

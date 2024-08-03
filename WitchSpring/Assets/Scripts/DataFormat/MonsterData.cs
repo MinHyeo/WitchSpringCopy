@@ -20,12 +20,12 @@ public class MonsterInfo
 [Serializable]
 public class MonsterData : ILoader<string, MonsterInfo>
 {
-    public List<MonsterInfo> monsterinfos = new List<MonsterInfo>();
+    public List<MonsterInfo> Monsters = new List<MonsterInfo>();
 
     public Dictionary<string, MonsterInfo> MakeDic()
     {
         Dictionary<string, MonsterInfo> dict = new Dictionary<string, MonsterInfo>();
-        foreach (MonsterInfo Info in monsterinfos)
+        foreach (MonsterInfo Info in Monsters)
         {
             dict.Add(Info.Name, Info);
         }
