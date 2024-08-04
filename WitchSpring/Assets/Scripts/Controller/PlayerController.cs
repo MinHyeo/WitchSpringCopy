@@ -2,6 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+//This Script is invoked in MosterBattle and GameManager
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
@@ -111,7 +113,9 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetPlayerState(Define.PlayerStates playerState) { 
+    public void SetPlayerState(Define.PlayerStates playerState, Vector3 Dest = default(Vector3)) { 
         P_State = playerState;
+        M_Pos = Dest;
     }
+
 }

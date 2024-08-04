@@ -26,4 +26,13 @@ public class EnterUI : MonoBehaviour
                            $"물리방어력: {monsterinfoSet.Defense}\n" +
                            $"마법방어력: {monsterinfoSet.MagicResist}\n";
     }
+
+    public void BattleButton()
+    {
+        GameManager.Situation.SetStiuation(Define.Situations.Battle);
+    }
+
+    public void EscapeButtion() {
+        GameManager.Situation.SetStiuation(Define.Situations.Normal);
+    }
 }

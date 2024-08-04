@@ -29,9 +29,12 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    GameObject player;
+    public static GameObject Player { get { return Instance.player; } }
+
     void Start()
     {
-       
+        player = GameObject.Find("Player_Test");
     }
 
     void Update()
