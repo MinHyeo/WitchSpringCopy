@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 1039407924309077115}
   - component: {fileID: 8714354740800589669}
   - component: {fileID: 4606638540379826730}
+  - component: {fileID: 4101983825574608732}
+  - component: {fileID: 3235016290314979584}
   m_Layer: 5
   m_Name: UI_Question
   m_TagString: UI
@@ -102,6 +104,39 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!95 &4101983825574608732
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960532242829659491}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 802f523cdbb819f458e51aea420062a3, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &3235016290314979584
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960532242829659491}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d35d436babd81a64c90d4a4eefc81873, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7766088673254754490
 GameObject:
   m_ObjectHideFlags: 0

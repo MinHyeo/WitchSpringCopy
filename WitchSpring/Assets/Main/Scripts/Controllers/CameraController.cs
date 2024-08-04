@@ -60,7 +60,6 @@ public class CameraController : MonoBehaviour
         transform.position = Vector3.Lerp(transform.position, targetPosition, 0.02f);
         Vector3 lookPos = new Vector3(_player.transform.position.x, _player.transform.position.y + playerYDelta, _player.transform.position.z);
 
-        // 목표 회전 계산
         Quaternion targetRotation = Quaternion.LookRotation(lookPos - transform.position);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.08f);
     }
@@ -68,6 +67,7 @@ public class CameraController : MonoBehaviour
 
     void UpdateMonsterFocusedView()
     {
+
         Vector3 _center = (_player.transform.position + _monster) / 2;
 
         Vector3 destPos = _center + testVec;
@@ -121,8 +121,11 @@ public class CameraController : MonoBehaviour
     public void SetFightView(Vector3 monsterPos)
     {
         _isFightEntered = true;
-        _mode = Define.CameraMode.MonsterFocused; 
+        
         _monster = monsterPos;
+        GameManager.UI.ClosePopupUI();
+        GameManager.UI.ShowPopupUI<UI_Question>();
+        Invoke("SetMonsterFocus", 0.5f);
     }
 
     public void SetPlayerView()
@@ -130,9 +133,13 @@ public class CameraController : MonoBehaviour
         _mode = Define.CameraMode.PlayerFocused;
     }
 
-    public void ShowFightEnter()
+    public void SetMonsterFocus()
     {
         GameManager.UI.ClosePopupUI();
+        _mode = Define.CameraMode.MonsterFocused;
+    }
+    public void ShowFightEnter()
+    {
         GameManager.UI.ShowPopupUI<UI_FightEnter>();
     }
 }

@@ -65,7 +65,7 @@ public class UI_FightEnter : UI_Popup
 
     public void OnEscClicked(PointerEventData data)
     {
-        // 피하기 로직 구현
+        // 피하기 로직 구현 !!수정필요!!
         GameObject player = GameObject.Find("Player");
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController._state = Define.PlayerState.Escape;
