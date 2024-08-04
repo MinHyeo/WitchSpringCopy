@@ -10,6 +10,7 @@ public class PlayerController : MonoBehaviour
     float _speed = 6.0f;
     Vector3 _desPos;
     Vector3 _monsterPos;
+    float escapeDistance = 8.0f;
 
     [SerializeField]
     public Define.PlayerState _state = Define.PlayerState.Idle;
@@ -23,7 +24,7 @@ public class PlayerController : MonoBehaviour
 
     void UpdateIdle()
     {
-        //animation
+        // Animation
         Animator anim = GetComponent<Animator>();
         anim.SetFloat("speed", 0);
     }
@@ -36,7 +37,6 @@ public class PlayerController : MonoBehaviour
         {
             _state = Define.PlayerState.Idle;
         }
-
         else
         {
             float moveDist = Mathf.Clamp(_speed * Time.deltaTime, 0, dir.magnitude);
@@ -45,7 +45,7 @@ public class PlayerController : MonoBehaviour
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
             transform.LookAt(_desPos);
 
-            // animation
+            // Animation
             Animator anim = GetComponent<Animator>();
             anim.SetFloat("speed", _speed);
         }
@@ -56,32 +56,32 @@ public class PlayerController : MonoBehaviour
         _speed = 0.0f;
         Animator anim = GetComponent<Animator>();
         anim.SetFloat("speed", _speed);
-
     }
 
- /*   void UpdateEscape()
+    void UpdateEscape()
     {
         _speed = 6.0f;
-        Vector3 dir = (_monsterPos- transform.position).normalized *10;
-        if (dir.magnitude < 0.0001f)
+
+        Vector3 dir = (transform.position - _monsterPos).normalized;
+
+        float distanceToMonster = Vector3.Distance(transform.position, _monsterPos);
+
+        if (distanceToMonster >= escapeDistance)
         {
             _state = Define.PlayerState.Idle;
         }
-
         else
         {
-            float moveDist = Mathf.Clamp(_speed * Time.deltaTime, 0, dir.magnitude);
-            transform.position += dir.normalized * moveDist;
+            float moveDist = _speed * Time.deltaTime;
+            transform.position += dir * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-            transform.LookAt(_desPos);
 
-            // animation
+            // Animation
             Animator anim = GetComponent<Animator>();
             anim.SetFloat("speed", _speed);
         }
-    }*/
-
+    }
 
     void Update()
     {
@@ -100,15 +100,13 @@ public class PlayerController : MonoBehaviour
                 break;
 
             case Define.PlayerState.Escape:
-                //UpdateEscape();
+                UpdateEscape();
                 break;
-
         }
     }
 
     void OnMouseClicked(Define.MouseEvent evt)
     {
-
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
         Debug.DrawRay(Camera.main.transform.position, ray.direction * 100.0f, Color.red, 1.0f);
 
@@ -124,10 +122,5 @@ public class PlayerController : MonoBehaviour
     {
         _state = Define.PlayerState.FightEnter;
         _monsterPos = monster;
-    }
-
-    public void OnEscape()
-    {
-        _state = Define.PlayerState.Moving;
     }
 }

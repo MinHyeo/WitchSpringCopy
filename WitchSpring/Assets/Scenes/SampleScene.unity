@@ -432,7 +432,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 5, y: 5, z: 5}
+  m_LocalScale: {x: 5.6419816, y: 5.6419816, z: 5.6419816}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
@@ -1623,7 +1623,7 @@ Camera:
     width: 1
     height: 1
   near clip plane: 0.01
-  far clip plane: 30
+  far clip plane: 50
   field of view: 37
   orthographic: 0
   orthographic size: 5
@@ -1673,6 +1673,7 @@ MonoBehaviour:
   _delta: {x: 0, y: 6.8, z: -9.1}
   _player: {fileID: 1613536078}
   playerYDelta: 0.9
+  testVec: {x: -7, y: 4, z: -9}
 --- !u!95 &963194230
 Animator:
   serializedVersion: 5

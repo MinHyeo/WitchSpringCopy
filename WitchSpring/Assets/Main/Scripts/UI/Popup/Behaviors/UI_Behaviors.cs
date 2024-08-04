@@ -111,6 +111,13 @@ public class UI_Behaviors : UI_Popup
     public void OnEscClicked(PointerEventData data)
     {
         // 피하기 로직 구현
+        GameObject player = GameObject.Find("Player");
+        PlayerController playerController = player.GetComponent<PlayerController>();
+        playerController._state = Define.PlayerState.Escape;
+
+        GameObject camera = GameObject.Find("Main Camera");
+        CameraController cameraController = camera.GetComponent<CameraController>();
+        cameraController._mode = Define.CameraMode.QuarterView;
 
         // 전투 행동 UI 닫기
         GameManager.UI.ClosePopupUI();

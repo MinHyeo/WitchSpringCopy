@@ -15,8 +15,8 @@ public class CollisionManager : MonoBehaviour
 
 
             // 기본 UI 닫고 전투 입장 UI 호출
-            GameManager.UI.ClosePopupUI();
-            GameManager.UI.ShowPopupUI<UI_FightEnter>();
+            /*GameManager.UI.ClosePopupUI();
+            GameManager.UI.ShowPopupUI<UI_FightEnter>();*/
         }
     }
 }
