@@ -14,7 +14,18 @@ public class Define
         Idle,
         Moving,
         FightEnter,
+        Figjt_ATK,
+        Comeback,
         Escape,
+        
+    }
+    public enum MonsterState
+    {
+        Idle,
+        Attack,
+        Hit,
+        Die,
+
     }
     public enum MouseEvent
     {

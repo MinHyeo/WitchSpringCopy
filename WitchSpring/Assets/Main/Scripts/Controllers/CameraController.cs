@@ -9,7 +9,9 @@ public class CameraController : MonoBehaviour
     public Define.CameraMode _mode = Define.CameraMode.QuarterView;
     [SerializeField]
     Vector3 _delta = new Vector3(0.0f, 5.0f, -8.0f);
-    Vector3 _monster;
+    GameObject _monster;
+    Vector3 _monsterPos;
+
     [SerializeField]
     GameObject _player = null;
     [SerializeField]
@@ -68,13 +70,13 @@ public class CameraController : MonoBehaviour
     void UpdateMonsterFocusedView()
     {
 
-        Vector3 _center = (_player.transform.position + _monster) / 2;
+        Vector3 _center = (_player.transform.position + _monsterPos) / 2;
 
         Vector3 destPos = _center + testVec;
 
         transform.position = Vector3.Lerp(transform.position, destPos, 0.05f);
 
-        Vector3 targetDirection = (_monster - transform.position).normalized;
+        Vector3 targetDirection = (_monsterPos - transform.position).normalized;
 
         Quaternion targetRotation = Quaternion.LookRotation(targetDirection);
         transform.rotation = Quaternion.Slerp(transform.rotation, targetRotation, 0.1f);
@@ -88,7 +90,7 @@ public class CameraController : MonoBehaviour
 
     void UpdatePlayerFocusedView()
     {
-        Vector3 _center = (_player.transform.position + _monster) / 2;
+        Vector3 _center = (_player.transform.position + _monsterPos) / 2;
         Vector3 destPos = _center + testVec;
         transform.position = Vector3.Lerp(transform.position, destPos, 0.05f);
         Vector3 targetDirection = (_player.transform.position - transform.position + new Vector3(0, playerYDelta, 0)).normalized;
@@ -100,7 +102,7 @@ public class CameraController : MonoBehaviour
 
     void UpdateCentralFocusedView()
     {
-        Vector3 _center = (_player.transform.position + _monster) / 2;
+        Vector3 _center = (_player.transform.position + _monsterPos) / 2;
 
         Vector3 destPos = _center + testVec;
         transform.position = Vector3.Lerp(transform.position, destPos, 0.08f);
@@ -118,11 +120,12 @@ public class CameraController : MonoBehaviour
         _delta = delta;
     }
 
-    public void SetFightView(Vector3 monsterPos)
+    public void SetFightView(GameObject monster)
     {
         _isFightEntered = true;
-        
-        _monster = monsterPos;
+
+        _monster = monster;
+        _monsterPos = monster.transform.position;
         GameManager.UI.ClosePopupUI();
         GameManager.UI.ShowPopupUI<UI_Question>();
         Invoke("SetMonsterFocus", 0.5f);

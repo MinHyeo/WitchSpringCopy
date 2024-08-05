@@ -57,6 +57,18 @@ public class UI_Behaviors_ATK : UI_Popup
         GameObject Button_ATK3 = GetButton((int)Buttons.Button_ATK3).gameObject;
         AddUIEvent(Button_ATK3, OnATK3Clicked, Define.UIEvent.Click);
 
+        GameObject Button_ATK4 = GetButton((int)Buttons.Button_ATK4).gameObject;
+        AddUIEvent(Button_ATK4, OnATK4Clicked, Define.UIEvent.Click);
+
+        GameObject Button_ATK5 = GetButton((int)Buttons.Button_ATK5).gameObject;
+        AddUIEvent(Button_ATK5, OnATK5Clicked, Define.UIEvent.Click);
+
+        GameObject Button_ATK6 = GetButton((int)Buttons.Button_ATK6).gameObject;
+        AddUIEvent(Button_ATK6, OnATK6Clicked, Define.UIEvent.Click);
+        GameObject Button_ATK7 = GetButton((int)Buttons.Button_ATK7).gameObject;
+        AddUIEvent(Button_ATK7, OnATK7Clicked, Define.UIEvent.Click);
+
+
         //GameObject go = GetImage((int)Images.ItemIcon).gameObject;
         //AddUIEvent(go, (PointerEventData data) => { go.gameObject.transform.position = data.position; }, Define.UIEvent.Drag);
     }
@@ -69,20 +81,57 @@ public class UI_Behaviors_ATK : UI_Popup
 
     public void OnATK1Clicked(PointerEventData data)
     {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(1);
     }
 
     public void OnATK2Clicked(PointerEventData data)
     {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(2);
 
     }
 
     public void OnATK3Clicked(PointerEventData data)
     {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(3);
 
     }
     public void OnATK4Clicked(PointerEventData data)
     {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(4);
 
+    }
+    public void OnATK5Clicked(PointerEventData data)
+    {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(5);
+    }
+    public void OnATK6Clicked(PointerEventData data)
+    {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(6);
+    }
+    public void OnATK7Clicked(PointerEventData data)
+    {
+        GameManager.UI.ClosePopupUI();
+        GameObject go = GameObject.Find("Player");
+        PlayerController player = go.GetComponent<PlayerController>();
+        player.OnATK(7);
     }
 
     // 이벤트 콜백 함수

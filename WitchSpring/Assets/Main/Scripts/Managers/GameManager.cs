@@ -39,8 +39,11 @@ public class GameManager : MonoBehaviour
             }
 
             DontDestroyOnLoad(go);
+
             s_instance = go.GetComponent<GameManager>();
             s_instance._data.Init();
+
+            s_instance._ui.ShowPopupUI<UI_Default>();
         }
     }
 }
