@@ -18,6 +18,7 @@ public class Stat
     public float defense;
     public float spellDefense;
 }
+[Serializable]
 public class MonsterStat
 {
     public int monsterID;
@@ -45,7 +46,7 @@ public class StatData : ILoader<int, Stat>
         return dict;
     }
 }
-
+[Serializable]
 public class MonsterStatData : ILoader<int, MonsterStat>
 {
     public List<MonsterStat> monsterStats = new List<MonsterStat>();

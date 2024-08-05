@@ -23,6 +23,12 @@ public class UI_MonsterEncounter : MonoBehaviour
         
     }
 
+    public void Button_EnterBattle()
+    {
+        Managers.UI.ClosePopupUI(popup);
+        Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
+    }
+
     public void Button_Avoid()
     {
         Managers.UI.ClosePopupUI(popup);
