@@ -7,8 +7,10 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField]
     float speed = 10.0f;
-
+    UI_Popup popup;
     Vector3 destPos;
+    public bool isPopupActive = false;
+    Vector3 monsterPos;
     void Start()
     {
         Managers.Input.MouseAction -= OnMouseClicked;
@@ -20,10 +22,12 @@ public class PlayerController : MonoBehaviour
         Die,
         Moving,
         Idle,
+        Encounter,
+        Escaping,
         InBattle,
     }
 
-    PlayerState state = PlayerState.Idle;
+    [SerializeField] PlayerState state = PlayerState.Idle;
     void Update()
     {
         switch (state)
@@ -37,6 +41,11 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Idle:
                 UpdateIdle();
                 break;
+            case PlayerState.Escaping:
+                Escape();
+                break;
+
+
         }
     }
 
@@ -49,6 +58,7 @@ public class PlayerController : MonoBehaviour
 
     private void UpdateMoving()
     {
+
         Vector3 dir = destPos - transform.position;
         if (dir.magnitude < 0.0001f)
         {
@@ -58,6 +68,7 @@ public class PlayerController : MonoBehaviour
         {
             float moveDist = Mathf.Clamp(speed * Time.deltaTime, 0, dir.magnitude);
             transform.position += dir.normalized * moveDist;
+
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
         }
 
@@ -76,7 +87,7 @@ public class PlayerController : MonoBehaviour
 
     void OnMouseClicked(Define.MouseEvent evt)
     {
-        if (state == PlayerState.Die)
+        if (state == PlayerState.Die&& state==PlayerState.Escaping)
             return;
 
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
@@ -88,5 +99,19 @@ public class PlayerController : MonoBehaviour
             destPos = hit.point;
             state = PlayerState.Moving;
         }
+    }
+
+    public void MonsterEncounter(Vector3 monsterPos)
+    {
+        destPos = transform.position;
+        this.monsterPos = monsterPos; 
+    }
+    public void Escape()
+    {
+        Vector3 directionToMonster = transform.position - monsterPos;
+        directionToMonster.Normalize();
+
+        destPos = transform.position + directionToMonster * 3.0f;
+        state = PlayerState.Moving;
     }
 }

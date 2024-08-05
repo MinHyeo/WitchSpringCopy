@@ -1,0 +1,16 @@
+{
+  "stats": [
+    {
+      "level": "1",
+      "monsterID": "1",
+      "monsterName": "어린 안개 두꺼비",
+      "monsterInfo": "안개숲에 서식하는 대형 두꺼비. 죽을때까지 성장하는 특징이 있다.",
+      "hp": "90",
+      "strength": "13",
+      "spellPower": "0",
+      "speed": "5",
+      "defense": "0",
+      "spellDefense": "0"
+    }
+  ]
+}

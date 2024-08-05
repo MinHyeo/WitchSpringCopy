@@ -1,14 +1,17 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class BattleTrigger : MonoBehaviour
 {
     private CapsuleCollider col;
-
+    private UI_Popup popup;
+    public GameObject monster;
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
+        monster = transform.parent.gameObject;
     }
 
     void Update()
@@ -21,10 +24,17 @@ public class BattleTrigger : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             Debug.Log("배틀 트리거");
-            UIManager.Instance.MonsterEncounterUI(true);
+            popup = Managers.UI.ShowPopupUI<UI_Popup>("UI_MonsterEncounter");
+            // 임시
+            Managers.Player.EncounterMonster(monster.GetComponent<littleDampFrog>());
+            
+
+            Managers.Player.playerController.MonsterEncounter(monster.transform.position);
         }
             
     }
+
+
 
     private void OnDrawGizmos()
     {

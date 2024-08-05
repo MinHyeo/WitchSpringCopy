@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class littleDampFrog : MonoBehaviour
 {
-    private string name;
-    private float health=90;
-    private float strength=13;
-    private float spellPower=0;
-    private float speed=5;
-    private float defense=0;
-    private float spellDefense=0;
+    private int monsterID=1;
+    public string monsterName;
+    public string monsterInfo;
+    public int hp;
+    public float strength;
+    public float spellPower;
+    public float speed;
+    public float defense;
+    public float spellDefense;
 
     enum monsterState
     {
@@ -20,7 +22,21 @@ public class littleDampFrog : MonoBehaviour
     
     void Start()
     {
-        
+        if(Managers.Data.StatDict.TryGetValue(monsterID, out Stat monsterStat))
+        {
+            hp = monsterStat.hp;
+            strength = monsterStat.strength;
+            spellPower = monsterStat.spellPower;
+            speed = monsterStat.speed;
+            defense = monsterStat.defense;
+            spellDefense = monsterStat.spellDefense;
+            monsterName = monsterStat.monsterName;
+            monsterInfo = monsterStat.monsterInfo;
+        }
+        else
+        {
+           // Debug.LogError($"MonsterStat with ID {monsterID} not found.");
+        }
     }
  
     void Update()
