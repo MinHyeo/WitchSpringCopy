@@ -7,6 +7,7 @@ using UnityEngine;
 [Serializable] //파일로 변환(데이터 형태, 공식임)
 public class MonsterInfo
 {
+    public string MonsterID;
     public string Name;
     public string Explain;
     public int HP;
@@ -27,7 +28,7 @@ public class MonsterData : ILoader<string, MonsterInfo>
         Dictionary<string, MonsterInfo> dict = new Dictionary<string, MonsterInfo>();
         foreach (MonsterInfo Info in Monsters)
         {
-            dict.Add(Info.Name, Info);
+            dict.Add(Info.MonsterID, Info);
         }
         return dict;
     }

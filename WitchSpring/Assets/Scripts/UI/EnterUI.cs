@@ -11,9 +11,9 @@ public class EnterUI : MonoBehaviour
     public Text monsterStat;
 
 
-    public void Init(string monstername = "어린 안개두꺼비")
+    public void Init(string monsterID = null)
     {
-        monsterinfoSet = GameManager.Data.MosterDict[monstername];
+        monsterinfoSet = GameManager.Data.MosterDict[monsterID];
         SetData();
     }
     public void SetData() {

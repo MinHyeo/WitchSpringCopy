@@ -36,8 +36,8 @@ public class UIManager
         UIRoot.CurrentUI.SetActive(true);
     }
 
-    public void SetData() {
+    public void SetData(string MonsterID = null) {
         EnterUI enterUI = Util.GetOrAddComponent<EnterUI>(UIRoot.CurrentUI);
-        enterUI.Init();
+        enterUI.Init(MonsterID);
     }
 }
