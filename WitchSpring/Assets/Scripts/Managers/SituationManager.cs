@@ -12,6 +12,7 @@ public class SituationManager
 
     public void SetStiuation (Define.Situations situations, string monsterName = null){
         currentSituations = situations;
+
         switch (situations) {
             case Define.Situations.Normal:
                 GameManager.UI.ChangeUI("FieldUI");
@@ -27,7 +28,9 @@ public class SituationManager
                 break;
             case Define.Situations.Battle:
                 GameManager.UI.ChangeUI("BattleUI");
+
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
+                
                 break;
         }
     }

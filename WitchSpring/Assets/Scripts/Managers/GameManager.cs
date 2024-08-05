@@ -29,8 +29,13 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
+    #region PlayerAndMonster
     GameObject player;
     public static GameObject Player { get { return Instance.player; } }
+
+    GameObject monster;
+    public GameObject Monster { get { return Instance.monster; } set { monster = value; } }
+    #endregion
 
     void Start()
     {
