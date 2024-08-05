@@ -596,6 +596,7 @@ GameObject:
   - component: {fileID: 6059870978338404101}
   - component: {fileID: 8011436134582730781}
   - component: {fileID: 8810078833263440302}
+  - component: {fileID: 6571795280773886743}
   m_Layer: 5
   m_Name: EnterUI
   m_TagString: UI
@@ -711,6 +712,27 @@ MonoBehaviour:
   monsterName: {fileID: 5245266240752247041}
   monsterExplain: {fileID: 7810735021093218003}
   monsterStat: {fileID: 8907820847278822224}
+--- !u!95 &6571795280773886743
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4385730573105365475}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: db8e0d25e23e7d1419fae5bcbc25935c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4535423456809294965
 GameObject:
   m_ObjectHideFlags: 0
