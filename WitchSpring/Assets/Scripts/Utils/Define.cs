@@ -48,6 +48,9 @@ public class Define
         BattleUI,
         EnterUI,
         FieldUI,
+        FenceUI,
+        //MagicFenceUI,
+
         MaxUI
     }
 

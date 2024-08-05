@@ -7,18 +7,22 @@ public class BattleUI : MonoBehaviour
     public void SoulCystalButton() { 
     
     }
-    public void FenceButton() { 
-    
+    public void FenceButton() {
+        GameManager.UI.ChangeUI("FenceUI");
     }
+
     public void MaficFenceButton() { 
     
     }
+
     public void MagicButton() { 
     
     }
+
     public void InventorylButton() { 
     
     }
+
     public void DollButton() { 
     
     }
