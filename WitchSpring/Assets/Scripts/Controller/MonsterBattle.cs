@@ -11,9 +11,14 @@ public class MonsterBattle : MonoBehaviour
         {
             GameManager.Situation.SetStiuation(Define.Situations.Contact, "어린 안개두꺼비");
 
-            player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
+            player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);
             player.transform.LookAt(transform.position);
-            //transform.parent.transform.LookAt(new Vector3(player.transform.position.x, 0.0f, player.transform.position.x)); //몬스터의 좌표도 달라지는 버그 발생
+
+           /* Vector3 dirToPlayer = player.transform.position - transform.parent.position;
+            dirToPlayer.y = 0; 
+            transform.parent.Rotate(dirToPlayer, Space.Self);*/
+
+            //transform.gameObject.transform.parent.transform.LookAt(new Vector3(player.transform.position.x, 0.0f, player.transform.position.z)); //몬스터의 좌표도 달라지는 버그 발생
         }
     }
 }

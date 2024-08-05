@@ -42,6 +42,7 @@ public class PlayerController : MonoBehaviour
 
         //Set Walk Animation
         P_Animator.SetFloat("Speed", P_Speed);
+        P_Animator.SetBool("IsBattle", false);
     }
 
     void StateDead()
@@ -98,7 +99,8 @@ public class PlayerController : MonoBehaviour
     }
 
     void ClickToMove(Define.MouseEvent mouseEvent) {
-        if (P_State == Define.PlayerStates.Dead || P_State == Define.PlayerStates.Battle) {
+        if (P_State == Define.PlayerStates.Dead || P_State == Define.PlayerStates.Battle
+            || GameManager.Situation.currentSituations == Define.Situations.Contact) {
             return;
         }
         

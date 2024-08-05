@@ -4,22 +4,22 @@ using UnityEngine;
 
 public class SituationManager
 {
-    Define.Situations currentSituations;
+    public Define.Situations currentSituations;
 
     public void Init() {
         currentSituations = Define.Situations.Normal;
     }
 
-    public void SetStiuation (Define.Situations situations, string monsterName = ""){
+    public void SetStiuation (Define.Situations situations, string monsterName = null){
         currentSituations = situations;
         switch (situations) {
             case Define.Situations.Normal:
                 GameManager.UI.ChangeUI("FieldUI");
-                //¾î»öÇÔ
-                GameManager.Player.transform.Rotate(new Vector3(0.0f, 180.0f,0.0f));
-                Vector3 playerDest = GameManager.Player.transform.position;
-                playerDest = new Vector3(playerDest.x, playerDest.y, playerDest.z + 0.5f);
-                GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest);
+
+                GameManager.Player.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
+                
+                Vector3 playerDest = GameManager.Player.transform.TransformPoint(new Vector3(0.0f, 0.0f, 1.0f)); 
+                GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest); 
                 break;
             case Define.Situations.Contact:
                 GameManager.UI.ChangeUI("EnterUI");
@@ -27,6 +27,7 @@ public class SituationManager
                 break;
             case Define.Situations.Battle:
                 GameManager.UI.ChangeUI("BattleUI");
+                GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
                 break;
         }
     }
