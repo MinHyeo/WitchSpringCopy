@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
@@ -43,7 +44,7 @@ public class UI_Base : MonoBehaviour
         return objects[idx] as T;
     }
 
-    protected Text GetText(int idx) { return Get<Text>(idx); }
+    protected TextMeshProUGUI GetText(int idx) { return Get<TextMeshProUGUI>(idx); } // TextMeshPro로 수정완료.
 
     protected Button GetButton(int idx) { return Get<Button>(idx); }
 

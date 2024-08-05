@@ -75,7 +75,8 @@ public class UI_Behaviors : UI_Popup
 
     public void OnSTONEClicked(PointerEventData data)
     {
-        // 전투행동 UI 닫기, 영혼석 UI 열기
+        GameManager.UI.ClosePopupUI();
+        GameManager.UI.ShowPopupUI<UI_Behaviors_STONE>();
     }
 
     public void OnATKClicked(PointerEventData data)

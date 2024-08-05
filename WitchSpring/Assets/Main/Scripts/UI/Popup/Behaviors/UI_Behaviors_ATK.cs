@@ -48,6 +48,15 @@ public class UI_Behaviors_ATK : UI_Popup
         GameObject Button_Close = GetButton((int)Buttons.Button_Close).gameObject;
         AddUIEvent(Button_Close, OnCloseClicked, Define.UIEvent.Click);
 
+        GameObject Button_ATK1 = GetButton((int)Buttons.Button_ATK1).gameObject;
+        AddUIEvent(Button_ATK1, OnATK1Clicked, Define.UIEvent.Click);
+
+        GameObject Button_ATK2 = GetButton((int)Buttons.Button_ATK2).gameObject;
+        AddUIEvent(Button_ATK2, OnATK2Clicked, Define.UIEvent.Click);
+
+        GameObject Button_ATK3 = GetButton((int)Buttons.Button_ATK3).gameObject;
+        AddUIEvent(Button_ATK3, OnATK3Clicked, Define.UIEvent.Click);
+
         //GameObject go = GetImage((int)Images.ItemIcon).gameObject;
         //AddUIEvent(go, (PointerEventData data) => { go.gameObject.transform.position = data.position; }, Define.UIEvent.Drag);
     }
@@ -57,5 +66,24 @@ public class UI_Behaviors_ATK : UI_Popup
         GameManager.UI.ClosePopupUI();
         GameManager.UI.ShowPopupUI<UI_Behaviors>();
     }
+
+    public void OnATK1Clicked(PointerEventData data)
+    {
+    }
+
+    public void OnATK2Clicked(PointerEventData data)
+    {
+
+    }
+
+    public void OnATK3Clicked(PointerEventData data)
+    {
+
+    }
+    public void OnATK4Clicked(PointerEventData data)
+    {
+
+    }
+
     // 이벤트 콜백 함수
 }

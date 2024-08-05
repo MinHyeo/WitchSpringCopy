@@ -2,6 +2,7 @@
     "Monsters":
     [
         {
+            "objectName": "RainbowCapsule",
             "name": "무지개 캡슐",
             "description": "테스트 몬스터 중 하나인 무지개 캡슐. 아름답게 빛난다.",
             "HP": 99,
@@ -12,6 +13,7 @@
             "MDEF": 94
         },
         {
+            "objectName": "littleDampFrog",
             "name": "어린 안개두꺼비",
             "description": "안개숲에 서식하는 대형 두꺼비. 죽을 때까지 성장하는 특징이 있다.",
             "HP": 90,
@@ -20,6 +22,17 @@
             "DEX": 5,
             "DEF": 0,
             "MDEF": 0
+        },
+        {
+            "objectName": "AngryCube",
+            "name": "화난 큐브",
+            "description": "테스트 몬스터 중 하나인 화난 큐브. 사납다.",
+            "HP": 99,
+            "STR": 99,
+            "INT": 99,
+            "DEX": 99,
+            "DEF": 99,
+            "MDEF": 99
         }
     ]
 }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -12,6 +13,9 @@ public class CollisionManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             OnFight.Invoke(transform.position);
+            Transform parentTransform = transform.parent;
+            GameManager.Data.GetCollidedObjectName(parentTransform.gameObject.name);
+
         }
     }
 }
