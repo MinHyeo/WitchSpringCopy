@@ -6,6 +6,6 @@ public class MagicUI : MonoBehaviour
 {
     public void TempCancelButton()
     {
-        GameManager.UI.ChangeUI("BattleUI");
+        GameManager.UI.ChangeUI("BattleUI"); 
     }
 }

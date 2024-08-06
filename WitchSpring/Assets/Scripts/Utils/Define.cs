@@ -51,7 +51,8 @@ public class Define
         FenceUI,
         MagicFenceUI,
         MagicUI,
-
+        //InventoryUI,
+        MessageUI,
         MaxUI
     }
 
