@@ -31,7 +31,10 @@ public class MonsterController : MonoBehaviour
         {
             Debug.Log("Monster Dead");
             monsterAni.SetBool("IsDead", true);
-            
+            return;
         }
+        monsterAni.SetTrigger("Hit");
+        Debug.Log($"Monster Hitted {damage}");
     }
+
 }
