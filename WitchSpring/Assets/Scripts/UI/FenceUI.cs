@@ -10,12 +10,10 @@ public class FenceUI : MonoBehaviour
 
     public void AttackButton(int attackNumber)
     {
-        //GameManager.UI.HideUI();
+        GameManager.Situation.SetStiuation(Define.Situations.StartAttack);
 
         GameManager.Player.GetComponent<Animator>().SetInteger("AttackNumber", attackNumber);
         GameManager.Player.GetComponent<Animator>().SetTrigger("Attack");
-
-        //GameManager.UI.ShowUI();
     }
 
 }

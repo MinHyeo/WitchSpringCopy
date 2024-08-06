@@ -32,7 +32,12 @@ public class SituationManager
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
 
                 GameManager.Instance.Monster.transform.LookAt(GameManager.Player.transform.position);
-
+                break;
+            case Define.Situations.StartAttack:
+                GameManager.UI.HideUI();
+                break;
+            case Define.Situations.EndAttack:
+                GameManager.UI.ShowUI();
                 break;
         }
     }

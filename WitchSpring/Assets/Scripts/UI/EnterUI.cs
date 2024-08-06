@@ -30,6 +30,7 @@ public class EnterUI : MonoBehaviour
     public void BattleButton()
     {
         GameManager.Situation.SetStiuation(Define.Situations.Battle);
+        GameManager.Instance.Monster.GetComponent<MonsterController>().SetStat(monsterinfoSet);
     }
 
     public void EscapeButtion() {

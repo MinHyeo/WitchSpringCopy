@@ -21,7 +21,6 @@ public class Util
 
     public static GameObject FindChild(GameObject gameObject, string name = null, bool recursive = false)
     {
-        //Debug.Log($"Util.GameObject.FindChild()");
         Transform transform = FindChild<Transform>(gameObject, name, recursive);
         if (transform == null)
         {
@@ -31,13 +30,10 @@ public class Util
     }
     public static T FindChild<T>(GameObject gameObject, string name = null, bool recursive = false) where T : UnityEngine.Object
     {
-        //Debug.Log($"Util.T.FindChild()");
-        //최상의 객체(부모)가 없으면
         if (gameObject == null)
         {
             return null;
         }
-        //recursive: 자식의 자식까지 찾는가(재귀 여부)
         if (recursive)
         {
             for (int i = 0; i < gameObject.transform.childCount; i++)
@@ -45,7 +41,6 @@ public class Util
                 Transform transform = gameObject.transform.GetChild(i);
                 if (string.IsNullOrEmpty(name) || transform.name == name)
                 {
-                    //자식 Object의 Component 소유 여부
                     T component = transform.GetComponent<T>();
                     if (component != null)
                     {

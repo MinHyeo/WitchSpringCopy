@@ -7,6 +7,8 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
+    [SerializeField] int hp = 100;
+    [SerializeField] float strength = 10.0f;
     [SerializeField] int attack_count = 0;
     [SerializeField] float p_speed;
     [SerializeField] float wait_run_ration;
@@ -51,7 +53,7 @@ public class PlayerController : MonoBehaviour
         //TODO
 
         //Set Dead Animation
-
+        P_Animator.SetBool("IsDead", true);
         return;
     }
 
@@ -111,4 +113,45 @@ public class PlayerController : MonoBehaviour
         m_pos = Dest;
     }
 
+    public void Attack() {
+        float damage = 0.0f;
+        switch (attack_count)
+        {
+            case 1:
+                damage = strength;
+                break;
+            case 2:
+                damage = strength * 1.2f;
+                break;
+            case 3:
+                damage = strength * 1.25f;
+                break;
+            case 4:
+                damage = strength * 1.3f;
+                break;
+            case 5:
+                damage = strength * 1.35f;
+                break;
+            case 6:
+                damage = strength * 1.4f;
+                break;
+            case 7:
+                damage = strength * 1.45f;
+                break;
+        }
+        GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterHit(damage);
+        attack_count++;
+    }
+
+    public void AttackReset() {
+        attack_count = 0;
+    }
+
+    public void PlayerHit(int damage) {
+        hp -= damage;
+        if (hp < 0){
+            p_state = Define.PlayerStates.Dead;
+        }
+
+    }
 }

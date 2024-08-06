@@ -60,6 +60,8 @@ public class Define
         Normal,
         Contact,
         Battle,
+        StartAttack,
+        EndAttack,
     }
 
 }
