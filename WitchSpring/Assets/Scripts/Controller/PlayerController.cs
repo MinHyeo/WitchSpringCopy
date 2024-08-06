@@ -7,10 +7,11 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
-    [SerializeField] float P_Speed;
+    [SerializeField] int attack_count = 0;
+    [SerializeField] float p_speed;
     [SerializeField] float wait_run_ration;
-    [SerializeField] Vector3 M_Pos;
-    [SerializeField] Define.PlayerStates P_State = Define.PlayerStates.Idle;
+    [SerializeField] Vector3 m_pos;
+    [SerializeField] Define.PlayerStates p_state = Define.PlayerStates.Idle;
 
     [Header("Player Components")]
     [SerializeField] Animator P_Animator;
@@ -25,23 +26,23 @@ public class PlayerController : MonoBehaviour
 
     void StateWalk()
     {
-        Vector3 dir = M_Pos - transform.position;
+        Vector3 dir = m_pos - transform.position;
         if (dir.magnitude < 0.00001f)
         {
             //Change State
-            P_State = Define.PlayerStates.Idle;
+            p_state = Define.PlayerStates.Idle;
         }
         else
         {
-            float moveDist = Mathf.Clamp(P_Speed * Time.deltaTime, 0, dir.magnitude);
+            float moveDist = Mathf.Clamp(p_speed * Time.deltaTime, 0, dir.magnitude);
             transform.position += dir.normalized * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-            transform.LookAt(M_Pos);
+            transform.LookAt(m_pos);
         }
 
         //Set Walk Animation
-        P_Animator.SetFloat("Speed", P_Speed);
+        P_Animator.SetFloat("Speed", p_speed);
         P_Animator.SetBool("IsBattle", false);
     }
 
@@ -63,7 +64,7 @@ public class PlayerController : MonoBehaviour
 
     void Start()
     {
-        P_Speed = 5.0f;
+        p_speed = 5.0f;
         GameManager.Input.MouseAction -= ClickToMove;
         GameManager.Input.MouseAction += ClickToMove;
         P_Animator = GetComponent<Animator>();
@@ -72,7 +73,7 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Status Pattern
-        switch (P_State) {
+        switch (p_state) {
             case Define.PlayerStates.Idle:
                 StateIdle();
                 break;
@@ -89,7 +90,7 @@ public class PlayerController : MonoBehaviour
     }
 
     void ClickToMove(Define.MouseEvent mouseEvent) {
-        if (P_State == Define.PlayerStates.Dead || P_State == Define.PlayerStates.Battle
+        if (p_state == Define.PlayerStates.Dead || p_state == Define.PlayerStates.Battle
             || GameManager.Situation.currentSituations == Define.Situations.Contact) {
             return;
         }
@@ -100,14 +101,14 @@ public class PlayerController : MonoBehaviour
         if (Physics.Raycast(Mouse_Ray, out Hit, 100.0f, LayerMask.GetMask("Terrain")))
         {
             //Get mouse position (Destination position)
-            M_Pos = Hit.point;
-            P_State = Define.PlayerStates.Walk;
+            m_pos = Hit.point;
+            p_state = Define.PlayerStates.Walk;
         }
     }
 
     public void SetPlayerState(Define.PlayerStates playerState, Vector3 Dest = default(Vector3)) { 
-        P_State = playerState;
-        M_Pos = Dest;
+        p_state = playerState;
+        m_pos = Dest;
     }
 
 }

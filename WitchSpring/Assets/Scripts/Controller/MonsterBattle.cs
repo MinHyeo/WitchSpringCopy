@@ -5,22 +5,19 @@ using UnityEngine;
 
 public class MonsterBattle : MonoBehaviour
 {
+    public GameObject monsterRoot;
+
     private void OnTriggerEnter(Collider player)
     {
         player.GetComponent<PlayerController>();
-        if(player.gameObject.tag == "Player")
+        if (player.gameObject.tag == "Player")
         {
             GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);
             player.transform.LookAt(transform.position);
 
-            GameManager.Instance.Monster = transform.parent.gameObject;
-           /* Vector3 dirToPlayer = player.transform.position - transform.parent.position;
-            dirToPlayer.y = 0; 
-            transform.parent.Rotate(dirToPlayer, Space.Self);*/
-
-            //transform.gameObject.transform.parent.transform.LookAt(new Vector3(player.transform.position.x, 0.0f, player.transform.position.z)); //몬스터의 좌표도 달라지는 버그 발생
+            GameManager.Instance.Monster = monsterRoot;
         }
     }
 }
