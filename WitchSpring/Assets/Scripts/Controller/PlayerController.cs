@@ -54,13 +54,6 @@ public class PlayerController : MonoBehaviour
         return;
     }
 
-    void StateAttack() {
-        //TODO
-
-        //Set Dead Animation
-
-        return;
-    }
 
     void StateBattle() {
         P_Animator.SetFloat("Speed", 0.0f);
@@ -88,9 +81,6 @@ public class PlayerController : MonoBehaviour
                 break;
             case Define.PlayerStates.Dead:
                 StateDead();
-                break;
-            case Define.PlayerStates.Attack:
-                StateAttack();
                 break;
             case Define.PlayerStates.Battle:
                 StateBattle();

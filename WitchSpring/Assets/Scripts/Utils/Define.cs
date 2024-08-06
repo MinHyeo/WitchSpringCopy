@@ -9,7 +9,6 @@ public class Define
     {
         Idle,
         Walk,
-        Attack,
         Dead,
         Battle
     }

@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterBattle : MonoBehaviour
@@ -14,6 +15,7 @@ public class MonsterBattle : MonoBehaviour
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);
             player.transform.LookAt(transform.position);
 
+            GameManager.Instance.Monster = transform.parent.gameObject;
            /* Vector3 dirToPlayer = player.transform.position - transform.parent.position;
             dirToPlayer.y = 0; 
             transform.parent.Rotate(dirToPlayer, Space.Self);*/

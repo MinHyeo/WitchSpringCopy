@@ -29,15 +29,27 @@ public class UIManager
 
     //UI Change
     public void ChangeUI(string UIName) {
-        if (UIRoot.CurrentUI != null) {
-            UIRoot.CurrentUI.SetActive(false);
-        }
+        HideUI();
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
-        UIRoot.CurrentUI.SetActive(true);
+        ShowUI();
     }
 
     public void SetData(string MonsterID = null) {
         EnterUI enterUI = Util.GetOrAddComponent<EnterUI>(UIRoot.CurrentUI);
         enterUI.Init(MonsterID);
     }
+
+    public void HideUI() {
+        if (UIRoot.CurrentUI != null)
+        {
+            UIRoot.CurrentUI.SetActive(false);
+        }
+        return;
+    }
+
+    public void ShowUI() {
+        UIRoot.CurrentUI.SetActive(true);
+        return;
+    }
+
 }

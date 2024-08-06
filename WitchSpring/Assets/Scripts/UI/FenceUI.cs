@@ -7,4 +7,15 @@ public class FenceUI : MonoBehaviour
     public void CancelButton() {
         GameManager.UI.ChangeUI("BattleUI");
     }
+
+    public void AttackButton(int attackNumber)
+    {
+        GameManager.UI.HideUI();
+
+        GameManager.Player.GetComponent<Animator>().SetInteger("AttackNumber", attackNumber);
+        GameManager.Player.GetComponent<Animator>().SetTrigger("Attack");
+
+        GameManager.UI.ShowUI();
+    }
+
 }
