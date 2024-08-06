@@ -274,7 +274,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 8896780893752127173}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7442033040771643492}
+        m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
+        m_MethodName: CancelButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3437722963566478855
 GameObject:
   m_ObjectHideFlags: 0
@@ -395,7 +407,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 716866603719047259}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7442033040771643492}
+        m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
+        m_MethodName: MagicSwordButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4498969385824758311
 GameObject:
   m_ObjectHideFlags: 0
@@ -516,7 +540,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6473171072273625395}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7442033040771643492}
+        m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
+        m_MethodName: AbsorbSwordButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &4670916062894844563
 GameObject:
   m_ObjectHideFlags: 0
@@ -637,7 +673,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1797228475032430962}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7442033040771643492}
+        m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
+        m_MethodName: MagicTraceButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6227084531584273762
 GameObject:
   m_ObjectHideFlags: 0
@@ -725,6 +773,7 @@ GameObject:
   - component: {fileID: 2930452840548589206}
   - component: {fileID: 4192715815245825103}
   - component: {fileID: 1964325634744371281}
+  - component: {fileID: 7442033040771643492}
   m_Layer: 5
   m_Name: MagicFenceUI
   m_TagString: Untagged
@@ -820,6 +869,18 @@ MonoBehaviour:
   m_BlockingMask:
     serializedVersion: 2
     m_Bits: 4294967295
+--- !u!114 &7442033040771643492
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7199583973831456352}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06a14a9131e4ee040b5a99f6b3bb292c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &7207502906602445600
 GameObject:
   m_ObjectHideFlags: 0
@@ -931,7 +992,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -150, y: -2}
+  m_AnchoredPosition: {x: -150, y: -210}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &2010798761358703779
@@ -1015,7 +1076,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 5861435404850663070}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7442033040771643492}
+        m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
+        m_MethodName: MagicMaterializeCancleButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &7927828637755076839
 GameObject:
   m_ObjectHideFlags: 0

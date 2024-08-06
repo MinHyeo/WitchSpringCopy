@@ -11,27 +11,28 @@ public class BattleUI : MonoBehaviour
         GameManager.UI.ChangeUI("FenceUI");
     }
 
-    public void MaficFenceButton() { 
+    public void MaficFenceButton() {
+        GameManager.UI.ChangeUI("MagicFenceUI");
     
     }
 
-    public void MagicButton() { 
-    
+    public void MagicButton() {
+        GameManager.UI.ChangeUI("MagicUI");
     }
 
-    public void InventorylButton() { 
-    
+    public void InventoryButton() {
+        GameManager.UI.ChangeUI("InventoryUI");
     }
 
-    public void DollButton() { 
-    
+    public void DollButton() {
+        GameManager.UI.ChangeUI("DollUI");
     }
-    public void ShiledButton() { 
-    
+    public void ShiledButton() {
+        //TODO
+
     }
     public void EscapelButton() {
         GameManager.Situation.SetStiuation(Define.Situations.Normal);
-    
     }
 
 }

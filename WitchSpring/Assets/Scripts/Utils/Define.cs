@@ -49,7 +49,8 @@ public class Define
         EnterUI,
         FieldUI,
         FenceUI,
-        //MagicFenceUI,
+        MagicFenceUI,
+        MagicUI,
 
         MaxUI
     }
