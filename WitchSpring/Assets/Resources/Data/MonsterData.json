@@ -4,7 +4,7 @@
             "MonsterID" : "Test",
             "Name": "Temp",
             "Explain": "Temp",
-            "HP": "0",
+            "HP": "10000",
             "Strength" : "0",
             "Magic" : "0",
             "Agility" : "0",
