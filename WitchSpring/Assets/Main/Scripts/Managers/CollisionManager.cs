@@ -12,9 +12,8 @@ public class CollisionManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            /*gameObject.SetActive(false);
-            CapsuleCollider collider = gameObject.GetComponent<CapsuleCollider>();
-            collider.enabled = false;*/
+            gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
+            
 
             Transform parentTransform = transform.parent;
             GameManager.Data.GetCollidedObjectName(parentTransform.gameObject.name);
@@ -27,11 +26,7 @@ public class CollisionManager : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-
-            /*gameObject.SetActive(true);
-            CapsuleCollider collider = gameObject.GetComponent<CapsuleCollider>();
-            collider.enabled = true;*/
-
+            gameObject.GetComponentInChildren<MeshRenderer>().enabled = true;
         }
     }
 }

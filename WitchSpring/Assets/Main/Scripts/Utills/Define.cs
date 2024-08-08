@@ -15,6 +15,7 @@ public class Define
         Moving,
         FightEnter,
         Figjt_ATK,
+        Hit,
         Comeback,
         Escape,
         
@@ -23,6 +24,7 @@ public class Define
     {
         Idle,
         Attack,
+        Comeback,
         Hit,
         Die,
 

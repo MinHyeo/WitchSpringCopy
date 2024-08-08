@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Xml.Serialization;
+using TreeEditor;
 using UnityEngine;
 using UnityEngine.EventSystems;
 
@@ -22,8 +23,9 @@ public class MonsterController : MonoBehaviour
     int _mdef;
 
     float _speed = 6.0f;
-    float _attackDistance = 2.0f;
+    float _attackDistance = 3.0f;
 
+    [SerializeField]
     public Define.MonsterState _state = Define.MonsterState.Idle;
     // Start is called before the first frame update
     void Start()
@@ -33,6 +35,7 @@ public class MonsterController : MonoBehaviour
         GameManager.Data.GetCollidedObjectName(_monsterObjectName);
         _monsterName = GameManager.Data.GetMonsterName();
         _monsterDescription = GameManager.Data.GetMonsterInfo();
+        _player = GameObject.Find("Player");
 
         _maxHp = int.Parse(GameManager.Data.GetMonsterStats("HP"));
         _str = int.Parse(GameManager.Data.GetMonsterStats("STR"));
@@ -47,8 +50,9 @@ public class MonsterController : MonoBehaviour
 
     void UpdateIdle()
     {
+        _speed = 0.0f;
         Animator anim = GetComponent<Animator>();
-        anim.SetFloat("speed", 0);
+        anim.SetFloat("Speed", _speed);
     }
 
     void UpdataATK()
@@ -73,7 +77,7 @@ public class MonsterController : MonoBehaviour
 
             // Animation
             Animator anim = GetComponent<Animator>();
-            anim.SetFloat("speed", _speed);
+            anim.SetFloat("Speed", _speed);
         }
     }
     void UpdateComeback()
@@ -86,9 +90,9 @@ public class MonsterController : MonoBehaviour
         if (dir.magnitude < 0.1f)
         {
             _speed = 0.0f;
-            transform.LookAt(_monsterPos);
+            transform.LookAt(_player.transform.position);
             GameManager.UI.ShowPopupUI<UI_Behaviors>();
-            _state = Define.PlayerState.FightEnter;
+            _state = Define.MonsterState.Idle;
         }
         else
         {
@@ -99,28 +103,38 @@ public class MonsterController : MonoBehaviour
             transform.LookAt(_originalPos);
 
             Animator anim = GetComponent<Animator>();
-            anim.SetFloat("speed", _speed);
+            anim.SetFloat("Speed", _speed);
         }
     }
     void UpdateHit()
     {
-
+        _hp -= (_def );
+        Animator anim = GetComponent<Animator>();
+        anim.SetTrigger("Hit");
     }
     void UpdateDie()
     {
-
+        Animator anim = GetComponent<Animator>();
+        anim.SetTrigger("Die");
     }
     void Update()
     {
         switch(_state)
         {
             case Define.MonsterState.Idle:
+                UpdateIdle();
                 break;
 
             case Define.MonsterState.Attack:
+                UpdataATK();
+                break;
+
+            case Define.MonsterState.Comeback:
+                UpdateComeback();
                 break;
 
             case Define.MonsterState.Hit:
+                CheckHealth();
                 break;
 
             case Define.MonsterState.Die:
@@ -132,14 +146,12 @@ public class MonsterController : MonoBehaviour
     public void OnIdle()
     {
         _state = Define.MonsterState.Idle;
+        _originalPos = transform.position;
     }
     public void OnAttack()
     {
         _originalPos = transform.position;
-        _player = GameObject.Find("Player");
         _state = Define.MonsterState.Attack;
-
-
     }
     public void OnHit() 
     {
@@ -150,11 +162,31 @@ public class MonsterController : MonoBehaviour
         _state = Define.MonsterState.Die;
     }
 
+    public void OnComeBack()
+    {
+        
+        _state = Define.MonsterState.Comeback;
+    }
+
     public void OnHit(int Damage)
     {
         Animator anim = GetComponent<Animator>();
         anim.SetTrigger("Hit");
         _hp -= Damage;
+    }
+
+    public void CheckHealth()
+    {
+        if(_hp < 0)
+        {
+            _state = Define.MonsterState.Die;
+        }
+    }
+
+    public void Attacking()
+    {
+        PlayerController playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+        playerController.OnHit(1);
     }
 
 

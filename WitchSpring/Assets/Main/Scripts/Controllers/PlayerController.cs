@@ -13,7 +13,7 @@ public class PlayerController : MonoBehaviour
 
     float _speed = 6.0f;
     float _escapeDistance = 8.0f;
-    float _attackDistance = 2.0f;
+    float _attackDistance = 3.5f;
     int _attackNum = 0;
 
     GameObject _monster = null;
@@ -100,7 +100,10 @@ public class PlayerController : MonoBehaviour
         {
             _speed = 0.0f;
             transform.LookAt(_monsterPos);
-            GameManager.UI.ShowPopupUI<UI_Behaviors>();
+            MonsterController monsterController = _monster.GetComponent<MonsterController>();
+            monsterController.OnAttack();
+
+            //GameManager.UI.ShowPopupUI<UI_Behaviors>();
             _state = Define.PlayerState.FightEnter;
         }
         else
@@ -167,6 +170,9 @@ public class PlayerController : MonoBehaviour
                 UpdataATK();
                 break;
 
+            case Define.PlayerState.Hit:
+                break;
+
             case Define.PlayerState.Comeback:
                 UpdateComeback();
                 break;
@@ -218,9 +224,17 @@ public class PlayerController : MonoBehaviour
         _state = Define.PlayerState.Escape;
     }
 
+    public void OnHit(int Damage)
+    {
+        Animator anim = GetComponent<Animator>();
+        anim.SetTrigger("Hit");
+        //_hp -= Damage;
+        Debug.Log("플레이어 피격");
+    }
+
     public void Attacking()
     {
         MonsterController monsterController = _monster.GetComponent<MonsterController>();
-        monsterController.OnHit(1);
+        monsterController.OnHit(1); //데미지
     }
 }
