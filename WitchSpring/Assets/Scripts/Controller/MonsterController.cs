@@ -26,7 +26,9 @@ public class MonsterController : MonoBehaviour
     }
 
     public void MonsterHit(float damage) {
-        HP-= (int)damage;
+        Debug.Log($"Monster Hitted {(int)damage}");
+
+        HP -= (int)damage;
 
         if (damage > 0) {
             monsterAni.SetTrigger("Hit");
@@ -39,7 +41,5 @@ public class MonsterController : MonoBehaviour
             return;
         }
         
-        Debug.Log($"Monster Hitted {damage}");
     }
-
 }

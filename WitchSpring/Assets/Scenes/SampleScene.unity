@@ -440,7 +440,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   hp: 100
   strength: 100
-  attack_count: 0
+  attack_count: 1
   p_speed: 0
   wait_run_ration: 0
   m_pos: {x: 0, y: 0, z: 0}

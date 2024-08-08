@@ -9,7 +9,7 @@ public class PlayerController : MonoBehaviour
     [Header("Player Info")]
     [SerializeField] int hp = 100;
     [SerializeField] float strength = 10.0f;
-    [SerializeField] int attack_count = 0;
+    [SerializeField] int attack_count = 1;
     [SerializeField] float p_speed;
     [SerializeField] float wait_run_ration;
     [SerializeField] Vector3 m_pos;
@@ -115,10 +115,11 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerAttack() {
         float damage = 0.0f;
+
         switch (attack_count)
         {
             case 1:
-                damage = strength;
+                damage = strength * 1.0f;
                 break;
             case 2:
                 damage = strength * 1.2f;
@@ -145,7 +146,7 @@ public class PlayerController : MonoBehaviour
 
     public void PlayerAttackReset() {
         Debug.Log("Reset Attack Count");
-        attack_count = 0;
+        attack_count = 1;
         GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
     }
 
