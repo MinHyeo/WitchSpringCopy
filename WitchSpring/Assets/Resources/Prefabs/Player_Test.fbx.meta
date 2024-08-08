@@ -21,7 +21,7 @@ ModelImporter:
     animationImportErrors: 
     animationImportWarnings: Event PlayerAttack has a time (4.489412) outside the
       clip's valid range (0.000000..2.666667). It will never be firedEvent PlayerAttackReset
-      has a time (2.800000) outside the clip's valid range (0.000000..2.166667).
+      has a time (2.635294) outside the clip's valid range (0.000000..2.166667).
       It will never be firedEvent PlayerAttackReset has a time (4.100000) outside
       the clip's valid range (0.000000..3.500000). It will never be firedEvent PlayerAttackReset
       has a time (4.666667) outside the clip's valid range (0.000000..4.166667).
