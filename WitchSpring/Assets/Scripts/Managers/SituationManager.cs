@@ -38,6 +38,7 @@ public class SituationManager
                 break;
             case Define.Situations.EndAttack:
                 GameManager.UI.ShowUI();
+                GameManager.UI.ChangeUI("BattleUI");
                 break;
         }
     }
