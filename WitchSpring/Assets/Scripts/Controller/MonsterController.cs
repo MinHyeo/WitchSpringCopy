@@ -27,13 +27,18 @@ public class MonsterController : MonoBehaviour
 
     public void MonsterHit(float damage) {
         HP-= (int)damage;
+
+        if (damage > 0) {
+            monsterAni.SetTrigger("Hit");
+        }
+
         if (HP < 0)
         {
             Debug.Log("Monster Dead");
             monsterAni.SetBool("IsDead", true);
             return;
         }
-        monsterAni.SetTrigger("Hit");
+        
         Debug.Log($"Monster Hitted {damage}");
     }
 

@@ -19,8 +19,14 @@ ModelImporter:
     rigImportErrors: 
     rigImportWarnings: 
     animationImportErrors: 
-    animationImportWarnings: Event PlayerAttackReset has a time (3.333333) outside
-      the clip's valid range (0.000000..1.333333). It will never be fired
+    animationImportWarnings: Event PlayerAttackReset has a time (2.800000) outside
+      the clip's valid range (0.000000..2.166667). It will never be firedEvent PlayerAttackReset
+      has a time (4.100000) outside the clip's valid range (0.000000..3.500000).
+      It will never be firedEvent PlayerAttackReset has a time (4.666667) outside
+      the clip's valid range (0.000000..4.166667). It will never be firedEvent PlayerAttackReset
+      has a time (5.666667) outside the clip's valid range (0.000000..5.166667).
+      It will never be firedEvent PlayerAttackReset has a time (6.000000) outside
+      the clip's valid range (0.000000..5.666667). It will never be fired
     animationRetargetingWarnings: 
     animationDoRetargetingWarnings: 0
     importAnimatedCustomProperties: 0
@@ -835,7 +841,7 @@ ModelImporter:
       takeName: attack2
       internalID: -5612658629409835226
       firstFrame: 0
-      lastFrame: 180
+      lastFrame: 84
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -854,7 +860,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PlayerAttackReset
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -864,7 +877,7 @@ ModelImporter:
       takeName: attack3
       internalID: 5332256259459953303
       firstFrame: 0
-      lastFrame: 180
+      lastFrame: 123
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -883,7 +896,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PlayerAttackReset
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -893,7 +913,7 @@ ModelImporter:
       takeName: attack4
       internalID: -6588316505826729248
       firstFrame: 0
-      lastFrame: 180
+      lastFrame: 140
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -912,7 +932,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PlayerAttackReset
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -922,7 +949,7 @@ ModelImporter:
       takeName: attack5
       internalID: 6284980315472727677
       firstFrame: 0
-      lastFrame: 180
+      lastFrame: 170
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -941,7 +968,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PlayerAttackReset
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -970,7 +1004,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PlayerAttackReset
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -999,7 +1040,14 @@ ModelImporter:
       mirror: 0
       bodyMask: 01000000010000000100000001000000010000000100000001000000010000000100000001000000010000000100000001000000
       curves: []
-      events: []
+      events:
+      - time: 1
+        functionName: PlayerAttackReset
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 0
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
