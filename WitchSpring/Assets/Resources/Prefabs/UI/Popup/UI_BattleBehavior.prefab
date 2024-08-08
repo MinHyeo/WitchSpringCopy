@@ -506,6 +506,7 @@ GameObject:
   - component: {fileID: 1603014234760518712}
   - component: {fileID: 681615683821330357}
   - component: {fileID: 952414142207213663}
+  - component: {fileID: 2971702971278048830}
   m_Layer: 5
   m_Name: UI_BattleBehavior
   m_TagString: Untagged
@@ -525,9 +526,9 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
-  - {fileID: 4395940226696865951}
   - {fileID: 1909667052417408301}
   - {fileID: 7462389310927509100}
+  - {fileID: 4395940226696865951}
   - {fileID: 5730361762868744588}
   - {fileID: 7507954752138495403}
   - {fileID: 1322037828695341977}
@@ -578,6 +579,27 @@ MonoBehaviour:
   m_FillOrigin: 0
   m_UseSpriteMesh: 0
   m_PixelsPerUnitMultiplier: 1
+--- !u!95 &2971702971278048830
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3532251850348098836}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 6e229c313416c924cba811e45a307c4a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &4266617681307483476
 GameObject:
   m_ObjectHideFlags: 0
@@ -668,7 +690,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 3008972670517762937}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7005552095029939173}
+        m_TargetAssemblyTypeName: UI_BattleBehavior, Assembly-CSharp
+        m_MethodName: Button_attack
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &3008972670517762937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -930,7 +964,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 6975833213987921461}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7005552095029939173}
+        m_TargetAssemblyTypeName: UI_BattleBehavior, Assembly-CSharp
+        m_MethodName: Button_Avoid
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &6975833213987921461
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -971,7 +1017,7 @@ GameObject:
   - component: {fileID: 8642508661999763890}
   - component: {fileID: 4335344515985542309}
   m_Layer: 5
-  m_Name: ManaAttack_Button
+  m_Name: MagicSword_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1048,7 +1094,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 4335344515985542309}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7005552095029939173}
+        m_TargetAssemblyTypeName: UI_BattleBehavior, Assembly-CSharp
+        m_MethodName: Button_magicSword
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &4335344515985542309
 MonoBehaviour:
   m_ObjectHideFlags: 0

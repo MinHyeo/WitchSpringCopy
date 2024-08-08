@@ -23,18 +23,18 @@ public class BattleTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            Debug.Log("배틀 트리거");
-            popup = Managers.UI.ShowPopupUI<UI_Popup>("UI_MonsterEncounter");
-            // 임시
-            Managers.Player.EncounterMonster(monster.GetComponent<littleDampFrog>());
-            
-
-            Managers.Player.playerController.MonsterEncounter(monster.transform.position);
+            if (Managers.Battle.GetIsBattle() == false)
+            {
+                Debug.Log("배틀 트리거");
+                popup = Managers.UI.ShowPopupUI<UI_Popup>("UI_MonsterEncounter");
+                Managers.Battle.EncounterMonster(monster.GetComponent<littleDampFrog>());
+                Managers.Player.playerController.MonsterEncounter(monster.transform.position);
+            }
         }
             
+
+
     }
-
-
 
     private void OnDrawGizmos()
     {

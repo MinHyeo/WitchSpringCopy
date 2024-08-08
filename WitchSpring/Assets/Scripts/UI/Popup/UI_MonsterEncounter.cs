@@ -26,24 +26,24 @@ public class UI_MonsterEncounter : MonoBehaviour
     public void Button_EnterBattle()
     {
         Managers.UI.ClosePopupUI(popup);
-        Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
+        Managers.Battle.StartBattle();
     }
 
     public void Button_Avoid()
     {
         Managers.UI.ClosePopupUI(popup);
-        Managers.Player.playerController.Escape();
+        Managers.Battle.EndBattle();
     }
 
     public void Init()
     {
-        monster = Managers.Player.CurMonster();
+        monster = Managers.Battle.CurMonster();
         if (monster != null)
         {
             text_monsterName.text = monster.monsterName;
             text_monsterInfo.text = monster.monsterInfo;
             text_monsterStat.text = 
-                $"Ã¼·Â: {monster.hp}\n" +
+                $"Ã¼·Â: {monster.maxHp}\n" +
                 $"Èû: {monster.strength}\n" +
                 $"¸¶·Â: {monster.spellPower}\n" +
                 $"¹ÎÃ¸: {monster.speed}\n"+

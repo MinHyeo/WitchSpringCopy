@@ -21,10 +21,9 @@ public class Stat
 [Serializable]
 public class MonsterStat
 {
-    public int monsterID;
     public string monsterName;
     public string monsterInfo;
-    public int hp;
+    public int maxHp;
     public float strength;
     public float spellPower;
     public float speed;
@@ -47,17 +46,19 @@ public class StatData : ILoader<int, Stat>
     }
 }
 [Serializable]
-public class MonsterStatData : ILoader<int, MonsterStat>
+public class MonsterStatData : ILoader<string, MonsterStat>
 {
     public List<MonsterStat> monsterStats = new List<MonsterStat>();
 
-    public Dictionary<int, MonsterStat> MakeDict()
+    public Dictionary<string, MonsterStat> MakeDict()
     {
-        Dictionary<int, MonsterStat> dict = new Dictionary<int, MonsterStat>();
+        Dictionary<string, MonsterStat> dict = new Dictionary<string, MonsterStat>();
         foreach (MonsterStat monsterStat in monsterStats)
-            dict.Add(monsterStat.monsterID, monsterStat);
+            dict.Add(monsterStat.monsterName, monsterStat);
         return dict;
     }
+
+ 
 }
 
 #endregion

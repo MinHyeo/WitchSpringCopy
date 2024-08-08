@@ -10,10 +10,7 @@ public class GameScene : BaseScene
 
         SceneType = Define.Scene.Game;
 
-        if (Managers.Data.MonsterStatDict.TryGetValue(1, out MonsterStat monsterStat))
-        {
-            Debug.Log($"{monsterStat}");
-        }
+        Managers.UI.ShowSceneUI<UI_Scene>("UI_PlayerInfo");
     }
     
     public override void Clear()

@@ -10,15 +10,16 @@ public interface ILoader<Key, Value>
 
 }
 
+
 public class DataManager
 {
 
     public Dictionary<int, Stat> StatDict { get; private set; } = new Dictionary<int, Stat>();
-    public Dictionary<int, MonsterStat> MonsterStatDict { get; private set; } = new Dictionary<int, MonsterStat>();
+    public Dictionary<string, MonsterStat> MonsterStatDict { get; private set; } = new Dictionary<string, MonsterStat>();
     public void Init()
     {
         StatDict = LoadJson<StatData, int, Stat>("StatData").MakeDict();
-        MonsterStatDict = LoadJson<MonsterStatData, int, MonsterStat>("MonsterStatData").MakeDict();
+        MonsterStatDict = LoadJson<MonsterStatData, string, MonsterStat>("MonsterStatData").MakeDict();
     }
 
     Loader LoadJson<Loader, Key, Value>(string path) where Loader : ILoader<Key, Value>

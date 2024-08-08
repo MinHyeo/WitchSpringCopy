@@ -4,9 +4,9 @@ using UnityEngine;
 
 public class littleDampFrog : MonoBehaviour
 {
-    private int monsterID=1;
-    public string monsterName;
+    public string monsterName = "어린 안개 두꺼비";
     public string monsterInfo;
+    public int maxHp;
     public int hp;
     public float strength;
     public float spellPower;
@@ -22,9 +22,9 @@ public class littleDampFrog : MonoBehaviour
     
     void Start()
     {
-        if(Managers.Data.StatDict.TryGetValue(monsterID, out Stat monsterStat))
+        if(Managers.Data.MonsterStatDict.TryGetValue(monsterName, out MonsterStat monsterStat))
         {
-            hp = monsterStat.hp;
+            maxHp = monsterStat.maxHp;
             strength = monsterStat.strength;
             spellPower = monsterStat.spellPower;
             speed = monsterStat.speed;
@@ -32,6 +32,8 @@ public class littleDampFrog : MonoBehaviour
             spellDefense = monsterStat.spellDefense;
             monsterName = monsterStat.monsterName;
             monsterInfo = monsterStat.monsterInfo;
+
+            hp = maxHp;
         }
         else
         {
@@ -42,5 +44,17 @@ public class littleDampFrog : MonoBehaviour
     void Update()
     {
         
+    }
+    public void TakeDamage(float damage)
+    {
+        float finalDamage = damage - defense;
+        Debug.Log("데미지 받음: " + finalDamage);
+        hp -= (int)finalDamage;
+    }
+    public void TakeDamage_Magic(float damage)
+    {
+        float finalDamage = damage - spellDefense;
+        Debug.Log("데미지 받음: " + finalDamage);
+        hp -= (int)finalDamage;
     }
 }

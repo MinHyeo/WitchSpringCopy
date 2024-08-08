@@ -36,7 +36,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003
+    path: stage_0/airuddy_0/Bip003
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -61,7 +61,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -131,7 +131,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -201,7 +201,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -226,7 +226,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -251,8 +252,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -277,8 +278,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -303,8 +304,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0/Bip003 L Toe01
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0/Bip003 L Toe01
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -329,8 +330,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0/Bip003 L Toe01/Bip003 L Toe02
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0/Bip003 L Toe01/Bip003 L Toe02
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -400,7 +401,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -425,7 +426,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -450,8 +452,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -476,8 +478,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -502,8 +504,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0/Bip003 R Toe01
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0/Bip003 R Toe01
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -528,8 +530,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0/Bip003 R Toe01/Bip003 R Toe02
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0/Bip003 R Toe01/Bip003 R Toe02
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -590,7 +592,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -615,7 +617,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -640,8 +643,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -666,8 +669,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -755,8 +758,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -817,8 +820,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone001
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone001
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -879,8 +882,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone001/Bone002
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone001/Bone002
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -950,8 +953,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone001/Bone002/Bone003
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone001/Bone002/Bone003
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1183,8 +1186,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone004
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone004
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1425,8 +1428,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone006
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone006
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1451,8 +1454,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1558,8 +1561,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1620,8 +1623,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1646,9 +1650,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1673,9 +1677,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand/Bip003 L Finger0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand/Bip003 L Finger0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1700,9 +1704,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand/Bip003 L Finger1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand/Bip003 L Finger1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1727,8 +1731,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1825,8 +1829,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1896,8 +1900,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1922,9 +1927,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1949,9 +1954,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand/Bip003 R Finger0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand/Bip003 R Finger0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -1976,9 +1981,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand/Bip003 R Finger1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand/Bip003 R Finger1
   m_CompressedRotationCurves: []
   m_EulerCurves: []
   m_PositionCurves:
@@ -2006,7 +2011,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003
+    path: stage_0/airuddy_0/Bip003
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2031,7 +2036,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2200,7 +2205,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2342,7 +2347,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2367,7 +2372,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2392,8 +2398,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2418,8 +2424,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2444,8 +2450,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0/Bip003 L Toe01
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0/Bip003 L Toe01
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2470,8 +2476,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0/Bip003 L Toe01/Bip003 L Toe02
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0/Bip003 L Toe01/Bip003 L Toe02
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2631,7 +2637,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2656,7 +2662,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2681,8 +2688,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2707,8 +2714,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2733,8 +2740,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0/Bip003 R Toe01
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0/Bip003 R Toe01
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2759,8 +2766,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0/Bip003 R Toe01/Bip003 R Toe02
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0/Bip003 R Toe01/Bip003 R Toe02
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2884,7 +2891,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2909,7 +2916,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2934,8 +2942,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2960,8 +2968,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -2986,8 +2994,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3012,8 +3020,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone004
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone004
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3038,8 +3046,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone006
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone006
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3064,8 +3072,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3423,8 +3431,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3449,8 +3457,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3475,9 +3484,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3502,9 +3511,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand/Bip003 L Finger0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand/Bip003 L Finger0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3529,9 +3538,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand/Bip003 L Finger1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand/Bip003 L Finger1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -3556,8 +3565,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4023,8 +4032,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4049,8 +4058,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4075,9 +4085,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4102,9 +4112,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand/Bip003 R Finger0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand/Bip003 R Finger0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4129,9 +4139,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand/Bip003 R Finger1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand/Bip003 R Finger1
   m_ScaleCurves:
   - curve:
       serializedVersion: 2
@@ -4157,7 +4167,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003
+    path: stage_0/airuddy_0/Bip003
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4182,7 +4192,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4207,7 +4217,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4232,7 +4242,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4257,7 +4267,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4282,8 +4293,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4308,8 +4319,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4334,8 +4345,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0/Bip003 L Toe01
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0/Bip003 L Toe01
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4360,8 +4371,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003 L Calf/Bip003
-      L Foot/Bip003 L Toe0/Bip003 L Toe01/Bip003 L Toe02
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 L Thigh/Bip003
+      L Calf/Bip003 L Foot/Bip003 L Toe0/Bip003 L Toe01/Bip003 L Toe02
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4386,7 +4397,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4411,7 +4422,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4436,34 +4448,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot
-  - curve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: {x: 0.9999999, y: 1, z: 0.9999999}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      - serializedVersion: 3
-        time: 6.0000005
-        value: {x: 0.9999999, y: 1, z: 0.9999999}
-        inSlope: {x: 0, y: 0, z: 0}
-        outSlope: {x: 0, y: 0, z: 0}
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4488,8 +4474,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0/Bip003 R Toe01
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4514,8 +4500,34 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003 R Calf/Bip003
-      R Foot/Bip003 R Toe0/Bip003 R Toe01/Bip003 R Toe02
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0/Bip003 R Toe01
+  - curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: {x: 0.9999999, y: 1, z: 0.9999999}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      - serializedVersion: 3
+        time: 6.0000005
+        value: {x: 0.9999999, y: 1, z: 0.9999999}
+        inSlope: {x: 0, y: 0, z: 0}
+        outSlope: {x: 0, y: 0, z: 0}
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+        outWeight: {x: 0.33333334, y: 0.33333334, z: 0.33333334}
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 R Thigh/Bip003
+      R Calf/Bip003 R Foot/Bip003 R Toe0/Bip003 R Toe01/Bip003 R Toe02
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4540,7 +4552,7 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4565,7 +4577,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4590,8 +4603,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4616,8 +4629,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4642,8 +4655,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4668,8 +4681,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone004
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone004
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4694,8 +4707,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 Head/Bone006
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 Head/Bone006
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4720,8 +4733,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4746,8 +4759,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4772,8 +4785,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4798,9 +4812,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4825,9 +4839,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand/Bip003 L Finger0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand/Bip003 L Finger0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4852,9 +4866,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003 L Forearm/Bip003
-      L Hand/Bip003 L Finger1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 L Clavicle/Bip003 L UpperArm/Bip003
+      L Forearm/Bip003 L Hand/Bip003 L Finger1
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4879,8 +4893,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4905,8 +4919,8 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4931,8 +4945,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4957,9 +4972,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -4984,9 +4999,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand/Bip003 R Finger0
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand/Bip003 R Finger0
   - curve:
       serializedVersion: 2
       m_Curve:
@@ -5011,9 +5026,9 @@ AnimationClip:
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
-    path: airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003 Spine2/Bip003
-      Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003 R Forearm/Bip003
-      R Hand/Bip003 R Finger1
+    path: stage_0/airuddy_0/Bip003/Bip003 Pelvis/Bip003 Spine/Bip003 Spine1/Bip003
+      Spine2/Bip003 Spine3/Bip003 Neck/Bip003 R Clavicle/Bip003 R UpperArm/Bip003
+      R Forearm/Bip003 R Hand/Bip003 R Finger1
   m_FloatCurves: []
   m_PPtrCurves: []
   m_SampleRate: 30
@@ -5024,7 +5039,7 @@ AnimationClip:
   m_ClipBindingConstant:
     genericBindings:
     - serializedVersion: 2
-      path: 3855748583
+      path: 3568567778
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5033,7 +5048,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 137075242
+      path: 695158143
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5042,7 +5057,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1070235065
+      path: 512664300
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5051,7 +5066,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2872045445
+      path: 1526992817
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5060,7 +5075,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2631476
+      path: 2706138932
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5069,7 +5084,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 704880921
+      path: 2338840857
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5078,7 +5093,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3855748583
+      path: 3568567778
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5087,7 +5102,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 137075242
+      path: 695158143
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5096,7 +5111,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1070235065
+      path: 512664300
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5105,7 +5120,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2872045445
+      path: 1526992817
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5114,7 +5129,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2527633871
+      path: 3576512958
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5123,7 +5138,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 102279034
+      path: 879507345
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5132,7 +5147,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2837131100
+      path: 3543909478
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5141,7 +5156,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 773827175
+      path: 2407262823
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5150,7 +5165,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1987204085
+      path: 1141293854
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5159,7 +5174,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2558276313
+      path: 2852692530
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5168,7 +5183,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2631476
+      path: 2706138932
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5177,7 +5192,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2879043308
+      path: 2663257818
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5186,7 +5201,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 704880921
+      path: 2338840857
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5195,7 +5210,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3045785812
+      path: 2158993634
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5204,7 +5219,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3399653682
+      path: 2702067638
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5213,7 +5228,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1360441663
+      path: 2529568757
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5222,7 +5237,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2819174529
+      path: 4047933114
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5231,7 +5246,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1624151054
+      path: 2563892479
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5240,7 +5255,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 681362899
+      path: 737669154
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5249,7 +5264,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1166278470
+      path: 91394925
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5258,7 +5273,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3112435621
+      path: 3203485223
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5267,7 +5282,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 167660854
+      path: 1353839373
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5276,7 +5291,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3913582746
+      path: 291240043
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5285,7 +5300,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1171024151
+      path: 1185373414
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5294,7 +5309,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2818026224
+      path: 3875981019
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5303,7 +5318,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1408480059
+      path: 1417740985
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5312,7 +5327,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3477889706
+      path: 869224150
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5321,7 +5336,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2067562553
+      path: 115480804
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5330,7 +5345,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1941684810
+      path: 2454224161
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5339,7 +5354,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2527633871
+      path: 3576512958
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5348,7 +5363,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1987204085
+      path: 1141293854
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5357,7 +5372,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2558276313
+      path: 2852692530
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5366,7 +5381,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 893204014
+      path: 1976326661
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5375,7 +5390,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2879043308
+      path: 2663257818
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5384,7 +5399,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 925424711
+      path: 891468414
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5393,7 +5408,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1081896127
+      path: 4102626877
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5402,7 +5417,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 930831401
+      path: 2207133355
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5411,7 +5426,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 207259509
+      path: 1286335326
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5420,7 +5435,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3045785812
+      path: 2158993634
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5429,7 +5444,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4205886613
+      path: 4172995244
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5438,7 +5453,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2311328838
+      path: 1026647748
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5447,7 +5462,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4274201808
+      path: 1245075026
       attribute: 1
       script: {fileID: 0}
       typeID: 4
@@ -5456,7 +5471,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3399653682
+      path: 2702067638
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5465,7 +5480,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1360441663
+      path: 2529568757
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5474,7 +5489,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2819174529
+      path: 4047933114
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5483,7 +5498,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1624151054
+      path: 2563892479
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5492,7 +5507,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 681362899
+      path: 737669154
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5501,7 +5516,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1166278470
+      path: 91394925
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5510,7 +5525,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3112435621
+      path: 3203485223
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5519,7 +5534,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 167660854
+      path: 1353839373
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5528,7 +5543,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3913582746
+      path: 291240043
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5537,7 +5552,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1171024151
+      path: 1185373414
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5546,7 +5561,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2818026224
+      path: 3875981019
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5555,7 +5570,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1408480059
+      path: 1417740985
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5564,7 +5579,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3477889706
+      path: 869224150
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5573,7 +5588,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2067562553
+      path: 115480804
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5582,7 +5597,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1941684810
+      path: 2454224161
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5591,7 +5606,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 893204014
+      path: 1976326661
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5600,7 +5615,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 925424711
+      path: 891468414
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5609,7 +5624,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1081896127
+      path: 4102626877
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5618,7 +5633,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 930831401
+      path: 2207133355
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5627,7 +5642,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 207259509
+      path: 1286335326
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5636,7 +5651,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4205886613
+      path: 4172995244
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5645,7 +5660,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2311328838
+      path: 1026647748
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5654,7 +5669,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4274201808
+      path: 1245075026
       attribute: 2
       script: {fileID: 0}
       typeID: 4
@@ -5663,7 +5678,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3399653682
+      path: 2702067638
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5672,7 +5687,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1360441663
+      path: 2529568757
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5681,7 +5696,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3855748583
+      path: 3568567778
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5690,7 +5705,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 137075242
+      path: 695158143
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5699,7 +5714,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2819174529
+      path: 4047933114
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5708,7 +5723,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1624151054
+      path: 2563892479
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5717,7 +5732,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 681362899
+      path: 737669154
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5726,7 +5741,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1166278470
+      path: 91394925
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5735,7 +5750,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3112435621
+      path: 3203485223
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5744,7 +5759,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1070235065
+      path: 512664300
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5753,7 +5768,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 167660854
+      path: 1353839373
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5762,7 +5777,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3913582746
+      path: 291240043
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5771,7 +5786,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1171024151
+      path: 1185373414
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5780,7 +5795,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2818026224
+      path: 3875981019
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5789,7 +5804,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1408480059
+      path: 1417740985
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5798,7 +5813,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2872045445
+      path: 1526992817
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5807,7 +5822,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3477889706
+      path: 869224150
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5816,7 +5831,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2067562553
+      path: 115480804
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5825,7 +5840,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1941684810
+      path: 2454224161
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5834,7 +5849,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2527633871
+      path: 3576512958
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5843,7 +5858,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1987204085
+      path: 1141293854
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5852,7 +5867,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2558276313
+      path: 2852692530
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5861,7 +5876,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 893204014
+      path: 1976326661
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5870,7 +5885,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2631476
+      path: 2706138932
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5879,7 +5894,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2879043308
+      path: 2663257818
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5888,7 +5903,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 925424711
+      path: 891468414
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5897,7 +5912,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 1081896127
+      path: 4102626877
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5906,7 +5921,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 930831401
+      path: 2207133355
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5915,7 +5930,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 207259509
+      path: 1286335326
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5924,7 +5939,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 704880921
+      path: 2338840857
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5933,7 +5948,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 3045785812
+      path: 2158993634
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5942,7 +5957,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4205886613
+      path: 4172995244
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5951,7 +5966,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 2311328838
+      path: 1026647748
       attribute: 3
       script: {fileID: 0}
       typeID: 4
@@ -5960,7 +5975,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     - serializedVersion: 2
-      path: 4274201808
+      path: 1245075026
       attribute: 3
       script: {fileID: 0}
       typeID: 4

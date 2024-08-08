@@ -5,24 +5,14 @@ using UnityEngine;
 public class PlayerManager
 {
     public PlayerController playerController;
-    private littleDampFrog monster;
-
-    
+    public Player player;
     public void Init()
     {
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if(playerObject != null)
         {
             playerController = playerObject.GetComponent<PlayerController>();
+            player = playerObject.GetComponent<Player>();
         }
-    }
-
-    public void EncounterMonster(littleDampFrog monster)
-    {
-        this.monster = monster;
-    }
-    public littleDampFrog CurMonster()
-    {
-        return this.monster;
     }
 }

@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class UI_BattleBehavior : MonoBehaviour
 {
-    // Start is called before the first frame update
+    UI_Popup popup;
     void Start()
     {
-        
+       popup = gameObject.GetComponent<UI_Popup>();
     }
 
     // Update is called once per frame
@@ -15,4 +15,23 @@ public class UI_BattleBehavior : MonoBehaviour
     {
         
     }
+
+    public void Button_attack()
+    {
+        Managers.UI.ClosePopupUI(popup);
+        Managers.UI.ShowPopupUI<UI_Popup>("UI_attack");
+    }
+
+    public void Button_magicSword()
+    {
+        Managers.UI.ClosePopupUI(popup);
+        Managers.UI.ShowPopupUI<UI_Popup>("UI_magicSword");
+    }
+
+    public void Button_Avoid()
+    {
+        Managers.UI.ClosePopupUI(popup);
+        Managers.Battle.EndBattle();
+    }
+
 }

@@ -89,9 +89,18 @@ public class UIManager
         ClosePopupUI();
     }
 
+    public void CloseSceneUI(UI_Scene popup)
+    {
+        if (popup !=null)
+        {
+            Managers.Resource.Destroy(popup.gameObject);
+            popup=null;
+        }
+    }
+
     public void ClosePopupUI()
     {
-        if(_popupStack.Count == 0)
+        if (_popupStack.Count == 0)
             return;
 
         UI_Popup popup = _popupStack.Pop();

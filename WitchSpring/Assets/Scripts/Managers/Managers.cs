@@ -17,6 +17,8 @@ public class Managers : MonoBehaviour
     SoundManager _sound = new SoundManager();
     UIManager _ui = new UIManager();
     PlayerManager _player = new PlayerManager();
+    BattleManager _battle = new BattleManager();
+
 
     public static DataManager Data { get { return Instance._data; } }
     public static InputManager Input { get { return Instance.s_input; } }
@@ -26,6 +28,7 @@ public class Managers : MonoBehaviour
     public static SoundManager Sound { get { return Instance._sound; } }
     public static UIManager UI { get { return Instance._ui; } }
     public static PlayerManager Player { get { return Instance._player; } }
+    public static BattleManager Battle { get { return Instance._battle; } }
     void Start()
     {
         Init();
@@ -52,6 +55,7 @@ public class Managers : MonoBehaviour
             s_instance = go.GetComponent<Managers>();
 
             s_instance._player.Init();
+            s_instance._battle.Init();
             s_instance._data.Init();
             s_instance._pool.Init();
             s_instance._sound.Init();
