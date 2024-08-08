@@ -113,7 +113,7 @@ public class PlayerController : MonoBehaviour
         m_pos = Dest;
     }
 
-    public void Attack() {
+    public void PlayerAttack() {
         float damage = 0.0f;
         switch (attack_count)
         {
@@ -143,8 +143,10 @@ public class PlayerController : MonoBehaviour
         attack_count++;
     }
 
-    public void AttackReset() {
+    public void PlayerAttackReset() {
+        Debug.Log("Reset Attack Count");
         attack_count = 0;
+        GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
     }
 
     public void PlayerHit(int damage) {
