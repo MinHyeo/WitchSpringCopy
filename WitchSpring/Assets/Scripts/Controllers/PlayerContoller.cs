@@ -289,6 +289,13 @@ public class PlayerController : MonoBehaviour
     {
         manaTraceCount = 5;
     }
+    public void EndBattle()
+    {
+        manaSwordCount = 0;
+        absorbSwordCount = 0;
+        manaBallCount = 0;
+        manaTraceCount = 0;
+    }
 
 
 }

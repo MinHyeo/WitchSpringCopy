@@ -24,16 +24,7 @@ public class littleDampFrog : MonoBehaviour
     {
         if(Managers.Data.MonsterStatDict.TryGetValue(monsterName, out MonsterStat monsterStat))
         {
-            maxHp = monsterStat.maxHp;
-            strength = monsterStat.strength;
-            spellPower = monsterStat.spellPower;
-            speed = monsterStat.speed;
-            defense = monsterStat.defense;
-            spellDefense = monsterStat.spellDefense;
-            monsterName = monsterStat.monsterName;
-            monsterInfo = monsterStat.monsterInfo;
-
-            hp = maxHp;
+            SetStat(monsterStat);
         }
         else
         {
@@ -56,5 +47,35 @@ public class littleDampFrog : MonoBehaviour
         float finalDamage = damage - spellDefense;
         Debug.Log("데미지 받음: " + finalDamage);
         hp -= (int)finalDamage;
+    }
+
+    public void StartBattle()
+    {
+        if (Managers.Data.MonsterStatDict.TryGetValue(monsterName, out MonsterStat monsterStat))
+        {
+            SetStat(monsterStat);
+        }
+        BattleTrigger go = GetComponentInChildren<BattleTrigger>();
+        go.Trigger_Off();
+    }
+
+    public void EndBattle()
+    {
+        BattleTrigger go = GetComponentInChildren<BattleTrigger>();
+        go.Trigger_On();
+    }
+
+    public void SetStat(MonsterStat monsterStat)
+    {
+        maxHp = monsterStat.maxHp;
+        strength = monsterStat.strength;
+        spellPower = monsterStat.spellPower;
+        speed = monsterStat.speed;
+        defense = monsterStat.defense;
+        spellDefense = monsterStat.spellDefense;
+        monsterName = monsterStat.monsterName;
+        monsterInfo = monsterStat.monsterInfo;
+
+        hp = maxHp;
     }
 }

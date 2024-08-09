@@ -42,12 +42,15 @@ public class BattleManager
     public void StartBattle()
     {
         playerController.StartBattle();
+        monster.StartBattle();
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
         hpUI = Managers.UI.ShowSceneUI<UI_Scene>("UI_MonsterHpBar");
     }
     public void EndBattle()
     {
         playerController.Escape();
+        playerController.EndBattle();
+        monster.EndBattle();
         if (hpUI != null)
         {
             Managers.UI.CloseSceneUI(hpUI);

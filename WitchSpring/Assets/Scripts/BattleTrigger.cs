@@ -31,9 +31,15 @@ public class BattleTrigger : MonoBehaviour
                 Managers.Player.playerController.MonsterEncounter(monster.transform.position);
             }
         }
-            
+    }
 
-
+    public void Trigger_Off()
+    {
+        
+    }
+    public void Trigger_On()
+    {
+        
     }
 
     private void OnDrawGizmos()
