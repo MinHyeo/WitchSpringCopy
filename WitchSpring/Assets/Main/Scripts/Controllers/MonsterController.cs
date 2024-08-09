@@ -22,9 +22,17 @@ public class MonsterController : MonoBehaviour
     int _def;
     int _mdef;
 
+    public int MaxHP { get { return _maxHp; } }
+    public int HP { get { return _hp; } }
+    public int INT { get { return _int; } }
+    public int STR { get { return _str; } }
+    public int DEX { get { return _dex; } }
+    public int DEF { get { return _def; } }
+
     float _speed = 6.0f;
     float _attackDistance = 2.0f;
 
+    public bool _isDead = false;
     [SerializeField]
     public Define.MonsterState _state = Define.MonsterState.Idle;
     // Start is called before the first frame update
@@ -109,17 +117,6 @@ public class MonsterController : MonoBehaviour
             anim.SetFloat("Speed", _speed);
         }
     }
-    void UpdateHit()
-    {
-        _hp -= (_def );
-        Animator anim = GetComponent<Animator>();
-        anim.SetTrigger("Hit");
-    }
-    void UpdateDie()
-    {
-        Animator anim = GetComponent<Animator>();
-        anim.SetTrigger("Die");
-    }
     void Update()
     {
         switch(_state)
@@ -135,13 +132,6 @@ public class MonsterController : MonoBehaviour
             case Define.MonsterState.Comeback:
                 UpdateComeback();
                 break;
-
-            case Define.MonsterState.Hit:
-                CheckHealth();
-                break;
-
-            case Define.MonsterState.Die:
-                break;
         }
         
     }
@@ -153,13 +143,11 @@ public class MonsterController : MonoBehaviour
     }
     public void OnAttack()
     {
+        if(_isDead) return;
+
         _originalPos = transform.position;
         _state = Define.MonsterState.Attack;
         Camera.main.GetComponent<CameraController>()._mode = Define.CameraMode.MonsterFocused;
-    }
-    public void OnHit() 
-    {
-        _state = Define.MonsterState.Hit;
     }
     public void OnDie()
     {
@@ -175,23 +163,45 @@ public class MonsterController : MonoBehaviour
 
     public void OnHit(int Damage)
     {
+        _hp -= (Damage - _def);
+        CheckHealth();
+
+        GameObject.Find("@UI_Root").transform.Find("UI_MonsterHP(Clone)").GetComponent<UI_MonsterHP>().UpdateText();
         Animator anim = GetComponent<Animator>();
         anim.SetTrigger("Hit");
-        _hp -= Damage;
     }
 
     public void CheckHealth()
     {
-        if(_hp < 0)
+        if(_hp <= 0 && !_isDead)
         {
+            _isDead = true;
             _state = Define.MonsterState.Die;
+            Animator anim = GetComponent<Animator>();
+            anim.SetTrigger("Die");
+
+            GameManager.UI.ClosePopupUI();
+
+            PlayerController playerController = GameObject.Find("Player").GetComponent<PlayerController>();
+            playerController._state = Define.PlayerState.Escape;
+
+            Camera.main.GetComponent<CameraController>()._mode = Define.CameraMode.QuarterView;
+
+            gameObject.GetComponentInChildren<CollisionManager>().gameObject.SetActive(false);
+        }
+        else
+        {
+            return;
         }
     }
 
     public void Attacking()
     {
+        CheckHealth();
         PlayerController playerController = GameObject.Find("Player").GetComponent<PlayerController>();
-        playerController.OnHit(1);
+        playerController.OnHit(_str);
+        Camera.main.GetComponent<CameraController>().SetShakingCamera();
+
     }
 
 

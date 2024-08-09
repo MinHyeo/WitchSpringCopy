@@ -77,6 +77,7 @@ public class UI_Behaviors : UI_Popup
     {
         GameManager.UI.ClosePopupUI();
         GameManager.UI.ShowPopupUI<UI_Behaviors_STONE>();
+       
     }
 
     public void OnATKClicked(PointerEventData data)
@@ -120,7 +121,7 @@ public class UI_Behaviors : UI_Popup
         CameraController cameraController = camera.GetComponent<CameraController>();
         cameraController._mode = Define.CameraMode.QuarterView;
 
-        // 전투 행동 UI 닫기
+        GameManager.UI.ClosePopupUI();
         GameManager.UI.ClosePopupUI();
     }
 }

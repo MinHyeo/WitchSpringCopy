@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static Define;
 
 public class DataManager
 {
@@ -14,8 +15,7 @@ public class DataManager
     Dictionary<string, string> monsterDEX = new Dictionary<string, string>();
     Dictionary<string, string> monsterDEF = new Dictionary<string, string>();
     Dictionary<string, string> monsterMDEF = new Dictionary<string, string>();
-
-    public Player _playerStats = null;
+    Dictionary<string, string> playerStats = new Dictionary<string, string>();
 
     #region Monster
     [Serializable]
@@ -44,6 +44,7 @@ public class DataManager
     public class Player
     {
         public string HP;
+        public string MP;
         public string STR;
         public string INT;
         public string DEX;
@@ -80,8 +81,14 @@ public class DataManager
         TextAsset playerJson = GameManager.resource.Load<TextAsset>("Data/PlayerData");
         PlayerData playerData = JsonUtility.FromJson<PlayerData>(playerJson.text);
 
-        Player playerStats = playerData.Player[0];
-        _playerStats = playerStats;
+        Player player = playerData.Player[0]; // 배열의 첫 번째 요소에 접근
+        playerStats["HP"] = player.HP;
+        playerStats["MP"] = player.MP;
+        playerStats["STR"] = player.STR;
+        playerStats["INT"] = player.INT;
+        playerStats["DEX"] = player.DEX;
+        playerStats["DEF"] = player.DEF;
+        playerStats["MS"] = player.MS;
     }
 
     #region Monster Accessors
@@ -141,6 +148,19 @@ public class DataManager
 
             default:
                 return null;
+        }
+    }
+
+    public string GetPlayerStat(string statType)
+    {
+        if (playerStats.ContainsKey(statType))
+        {
+            return playerStats[statType];
+        }
+        else
+        {
+            Debug.Log($"{statType} is not a valid player stat.");
+            return null;
         }
     }
 

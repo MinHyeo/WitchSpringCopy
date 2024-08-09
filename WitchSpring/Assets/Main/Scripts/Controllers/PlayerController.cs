@@ -6,7 +6,6 @@ using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour
 {
-    [SerializeField]
     Vector3 _desPos;
     Vector3 _monsterPos;
     Vector3 _originalPos;
@@ -20,6 +19,15 @@ public class PlayerController : MonoBehaviour
     int _dex;
     int _def;
     float _speed;
+
+    public int MaxHP { get { return _maxHp; } }
+    public int HP { get { return _hp; } }
+    public int MaxMP { get { return _maxMp; } }
+    public int MP { get { return _mp; } }
+    public int INT { get { return _int; } }
+    public int STR { get { return _str; } }
+    public int DEX { get { return _dex; } }
+    public int DEF { get { return _def; } }
 
     float _escapeDistance = 8.0f;
     float _attackDistance = 3.5f;
@@ -36,17 +44,21 @@ public class PlayerController : MonoBehaviour
         GameManager.input.MouseAction -= OnMouseClicked;
         GameManager.input.MouseAction += OnMouseClicked;
 
-        _maxHp = int.Parse(GameManager.Data._playerStats.HP);
-        //_maxMp = int.Parse(GameManager.Data._playerStats.MP);
-        _int = int.Parse(GameManager.Data._playerStats.INT);
-        _str = int.Parse(GameManager.Data._playerStats.STR);
-        _dex = int.Parse(GameManager.Data._playerStats.DEX);
-        _def = int.Parse(GameManager.Data._playerStats.DEF);
-        _speed = float.Parse(GameManager.Data._playerStats.MS);
+        Init();
+    }
+
+    void Init()
+    {
+        _maxHp = int.Parse(GameManager.Data.GetPlayerStat("HP"));
+        _maxMp = int.Parse(GameManager.Data.GetPlayerStat("MP"));
+        _int = int.Parse(GameManager.Data.GetPlayerStat("INT"));
+        _str = int.Parse(GameManager.Data.GetPlayerStat("STR"));
+        _dex = int.Parse(GameManager.Data.GetPlayerStat("DEX"));
+        _def = int.Parse(GameManager.Data.GetPlayerStat("DEF"));
+        _speed = float.Parse(GameManager.Data.GetPlayerStat("MS"));
 
         _hp = _maxHp;
         _mp = _maxMp;
-
     }
 
     void UpdateIdle()
@@ -119,14 +131,13 @@ public class PlayerController : MonoBehaviour
         // 원래 위치로 이동하는 방향 계산
         if (dir.magnitude < 0.1f)
         {
-            _speed = 0.0f;
             transform.LookAt(_monsterPos);
             MonsterController monsterController = _monster.GetComponent<MonsterController>();
             monsterController.OnAttack();
-            
+
 
             //GameManager.UI.ShowPopupUI<UI_Behaviors>();
-            _state = Define.PlayerState.FightEnter;
+            _state = Define.PlayerState.Idle;
         }
         else
         {
@@ -247,13 +258,16 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int Damage)
     {
-        //_hp -= Damage;
+        _hp -= (Damage-_def);
+        GameObject.Find("@UI_Root").transform.Find("UI_Default(Clone)").GetComponent<UI_Default>().UpdateText();
+        Debug.Log(_hp);
         Debug.Log("플레이어 피격");
     }
 
     public void Attacking()
     {
         MonsterController monsterController = _monster.GetComponent<MonsterController>();
-        monsterController.OnHit(1); //데미지
+        monsterController.OnHit(_str); //데미지
+        Camera.main.GetComponent<CameraController>().SetShakingCamera();
     }
 }

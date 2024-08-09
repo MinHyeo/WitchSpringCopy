@@ -61,8 +61,11 @@ public class UI_FightEnter : UI_Popup
     {
         // 전투 입장 UI 닫고, 기본 UI열고, 전투 행동 UI 열기
         GameManager.UI.ClosePopupUI();
+
         GameManager.UI.ShowPopupUI<UI_Default>("UI_Default");
+        GameManager.UI.ShowPopupUI<UI_MonsterHP>("UI_MonsterHP");
         GameManager.UI.ShowPopupUI<UI_Behaviors>("UI_Behaviors");
+        
 
         CameraController cameraController = Camera.main.GetComponent<CameraController>();
         cameraController._mode = Define.CameraMode.PlayerFocused;

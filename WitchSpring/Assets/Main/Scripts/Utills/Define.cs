@@ -41,6 +41,7 @@ public class Define
         MonsterFocused,
         PlayerFocused,
         CentralFocused,
+        Shaking,
     }
 
 }
