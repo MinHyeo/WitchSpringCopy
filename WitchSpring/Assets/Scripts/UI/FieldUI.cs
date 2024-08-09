@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class FieldUI : MonoBehaviour
 {
     [Header("UI Text")]
-    [SerializeField] Text Days;
+    [SerializeField] Text times;
     [SerializeField] Text availvableTrainingDay;
     [SerializeField] Text location;
     [SerializeField] Text playerHP;
@@ -39,6 +39,7 @@ public class FieldUI : MonoBehaviour
         playerMp.text = $"{curMP}/{maxMP}";
         mpBar.value = curMP / maxMP;
 
+        times.text = $"{GameManager.Instance.Time}일 차";
     }
     public void UpdateLocatinInfo(string locationName = "여기 어디??") { 
         location.text = locationName;

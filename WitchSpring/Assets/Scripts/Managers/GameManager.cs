@@ -37,9 +37,17 @@ public class GameManager : MonoBehaviour
     public GameObject Monster { get { return Instance.monster; } set { monster = value; } }
     #endregion
 
+    #region GameElements
+    private int times;
+    public int Time { get { return Instance.times; } }
+
+    #endregion
+
+
     void Start()
     {
         player = GameObject.Find("Player_Test");
+        times = 0;
     }
 
     void Update()
