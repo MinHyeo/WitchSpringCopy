@@ -11,7 +11,16 @@ public class PlayerController : MonoBehaviour
     Vector3 _monsterPos;
     Vector3 _originalPos;
 
-    float _speed = 6.0f;
+    int _maxHp;
+    int _hp;
+    int _maxMp;
+    int _mp;
+    int _int;
+    int _str;
+    int _dex;
+    int _def;
+    float _speed;
+
     float _escapeDistance = 8.0f;
     float _attackDistance = 3.5f;
     int _attackNum = 0;
@@ -26,6 +35,18 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.input.MouseAction -= OnMouseClicked;
         GameManager.input.MouseAction += OnMouseClicked;
+
+        _maxHp = int.Parse(GameManager.Data._playerStats.HP);
+        //_maxMp = int.Parse(GameManager.Data._playerStats.MP);
+        _int = int.Parse(GameManager.Data._playerStats.INT);
+        _str = int.Parse(GameManager.Data._playerStats.STR);
+        _dex = int.Parse(GameManager.Data._playerStats.DEX);
+        _def = int.Parse(GameManager.Data._playerStats.DEF);
+        _speed = float.Parse(GameManager.Data._playerStats.MS);
+
+        _hp = _maxHp;
+        _mp = _maxMp;
+
     }
 
     void UpdateIdle()
@@ -102,6 +123,7 @@ public class PlayerController : MonoBehaviour
             transform.LookAt(_monsterPos);
             MonsterController monsterController = _monster.GetComponent<MonsterController>();
             monsterController.OnAttack();
+            
 
             //GameManager.UI.ShowPopupUI<UI_Behaviors>();
             _state = Define.PlayerState.FightEnter;
@@ -112,7 +134,6 @@ public class PlayerController : MonoBehaviour
             transform.position += dir.normalized * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-            transform.LookAt(_originalPos);
 
             Animator anim = GetComponent<Animator>();
             anim.SetFloat("speed", _speed);
@@ -226,8 +247,6 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int Damage)
     {
-        Animator anim = GetComponent<Animator>();
-        anim.SetTrigger("Hit");
         //_hp -= Damage;
         Debug.Log("플레이어 피격");
     }

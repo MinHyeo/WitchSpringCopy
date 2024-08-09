@@ -64,8 +64,7 @@ public class UI_FightEnter : UI_Popup
         GameManager.UI.ShowPopupUI<UI_Default>("UI_Default");
         GameManager.UI.ShowPopupUI<UI_Behaviors>("UI_Behaviors");
 
-        GameObject camera = GameObject.Find("Main Camera");
-        CameraController cameraController = camera.GetComponent<CameraController>();
+        CameraController cameraController = Camera.main.GetComponent<CameraController>();
         cameraController._mode = Define.CameraMode.PlayerFocused;
         
     }
@@ -77,8 +76,7 @@ public class UI_FightEnter : UI_Popup
         PlayerController playerController = player.GetComponent<PlayerController>();
         playerController._state = Define.PlayerState.Escape;
 
-        GameObject camera = GameObject.Find("Main Camera");
-        CameraController cameraController = camera.GetComponent<CameraController>();
+        CameraController cameraController = Camera.main.GetComponent<CameraController>();
         cameraController._mode = Define.CameraMode.QuarterView;
 
         // 전투 입장 UI 닫고, 기본 UI 열기

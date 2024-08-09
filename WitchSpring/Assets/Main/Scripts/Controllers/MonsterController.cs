@@ -23,7 +23,7 @@ public class MonsterController : MonoBehaviour
     int _mdef;
 
     float _speed = 6.0f;
-    float _attackDistance = 3.0f;
+    float _attackDistance = 2.0f;
 
     [SerializeField]
     public Define.MonsterState _state = Define.MonsterState.Idle;
@@ -66,7 +66,7 @@ public class MonsterController : MonoBehaviour
         if (distanceToMonster <= _attackDistance)
         {
             Animator anim = GetComponent<Animator>();
-            anim.SetTrigger("Attack");
+            anim.SetBool("Attack", true);
         }
         else
         {
@@ -91,8 +91,12 @@ public class MonsterController : MonoBehaviour
         {
             _speed = 0.0f;
             transform.LookAt(_player.transform.position);
-            GameManager.UI.ShowPopupUI<UI_Behaviors>();
+
+            if(GameManager.UI.CheckPopupUI<UI_Behaviors>()==false)
+                GameManager.UI.ShowPopupUI<UI_Behaviors>();
+
             _state = Define.MonsterState.Idle;
+            Camera.main.GetComponent<CameraController>()._mode = Define.CameraMode.PlayerFocused;
         }
         else
         {
@@ -100,7 +104,6 @@ public class MonsterController : MonoBehaviour
             transform.position += dir.normalized * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-            transform.LookAt(_originalPos);
 
             Animator anim = GetComponent<Animator>();
             anim.SetFloat("Speed", _speed);
@@ -152,6 +155,7 @@ public class MonsterController : MonoBehaviour
     {
         _originalPos = transform.position;
         _state = Define.MonsterState.Attack;
+        Camera.main.GetComponent<CameraController>()._mode = Define.CameraMode.MonsterFocused;
     }
     public void OnHit() 
     {
@@ -164,7 +168,8 @@ public class MonsterController : MonoBehaviour
 
     public void OnComeBack()
     {
-        
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("Attack", false);
         _state = Define.MonsterState.Comeback;
     }
 

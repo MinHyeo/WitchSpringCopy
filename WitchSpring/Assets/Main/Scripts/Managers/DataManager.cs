@@ -1,12 +1,10 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 public class DataManager
 {
-    
     string _objectName = null;
     Dictionary<string, string> monsterNames = new Dictionary<string, string>();
     Dictionary<string, string> monsterInfos = new Dictionary<string, string>();
@@ -17,8 +15,9 @@ public class DataManager
     Dictionary<string, string> monsterDEF = new Dictionary<string, string>();
     Dictionary<string, string> monsterMDEF = new Dictionary<string, string>();
 
+    public Player _playerStats = null;
 
-    #region
+    #region Monster
     [Serializable]
     public class Monster
     {
@@ -38,12 +37,33 @@ public class DataManager
     {
         public List<Monster> Monsters;
     }
-    #endregion  Monster
+    #endregion
+
+    #region Player
+    [Serializable]
+    public class Player
+    {
+        public string HP;
+        public string STR;
+        public string INT;
+        public string DEX;
+        public string DEF;
+        public string MS;
+    }
+
+    [Serializable]
+    public class PlayerData
+    {
+        public Player[] Player;
+    }
+    #endregion
+
     public void Init()
     {
-        TextAsset json = GameManager.resource.Load<TextAsset>("Data/MonsterData");
-        MonsterData monsterData = JsonUtility.FromJson<MonsterData>(json.text);
-        
+        // 몬스터
+        TextAsset monsterJson = GameManager.resource.Load<TextAsset>("Data/MonsterData");
+        MonsterData monsterData = JsonUtility.FromJson<MonsterData>(monsterJson.text);
+
         foreach (var monster in monsterData.Monsters)
         {
             monsterNames[monster.objectName] = monster.name;
@@ -54,11 +74,17 @@ public class DataManager
             monsterDEX[monster.objectName] = monster.DEX;
             monsterDEF[monster.objectName] = monster.DEF;
             monsterMDEF[monster.objectName] = monster.MDEF;
-            
         }
+
+        // 플레이어
+        TextAsset playerJson = GameManager.resource.Load<TextAsset>("Data/PlayerData");
+        PlayerData playerData = JsonUtility.FromJson<PlayerData>(playerJson.text);
+
+        Player playerStats = playerData.Player[0];
+        _playerStats = playerStats;
     }
 
-    #region
+    #region Monster Accessors
     public string GetMonsterName()
     {
         if (monsterNames.TryGetValue(_objectName, out string name))
@@ -93,7 +119,6 @@ public class DataManager
                 monsterHP.TryGetValue(_objectName, out string HP);
                 return HP;
 
-
             case "STR":
                 monsterSTR.TryGetValue(_objectName, out string STR);
                 return STR;
@@ -116,9 +141,7 @@ public class DataManager
 
             default:
                 return null;
-
         }
-        
     }
 
     public void GetCollidedObjectName(string objectName)

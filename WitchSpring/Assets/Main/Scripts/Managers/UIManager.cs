@@ -99,4 +99,14 @@ public class UIManager
         while(_popupStack.Count > 0)
             ClosePopupUI();
     }
+
+    public bool CheckPopupUI<T>() where T : UI_Popup
+    {
+        if (_popupStack.TryPeek(out UI_Popup topPopup))
+        {
+            return topPopup is T;
+        }
+        return false;
+    }
+
 }
