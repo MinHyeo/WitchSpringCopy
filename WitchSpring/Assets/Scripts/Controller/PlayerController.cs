@@ -7,7 +7,10 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
-    [SerializeField] int hp = 100;
+    [SerializeField] int curHp = 100;
+    [SerializeField] int maxHp = 100;
+    [SerializeField] int curmp = 100;
+    [SerializeField] int maxmp = 100;
     [SerializeField] float strength = 10.0f;
     [SerializeField] int attack_count = 1;
     [SerializeField] float p_speed;
@@ -17,6 +20,14 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Components")]
     [SerializeField] Animator P_Animator;
+
+    #region Get/Set
+    public int CurrentHP { get { return curHp; } set { curHp = value; } }
+    public int MaxHP { get { return maxHp; } set { maxHp = value; } }
+    public int CurrentMP { get { return curmp; } set { curmp = value; } }
+    public int MaxMP { get { return maxHp; } set { maxmp = value; } }
+
+    #endregion
 
     //상태에 따른 행동 메서드
     void StateIdle(){
@@ -151,8 +162,8 @@ public class PlayerController : MonoBehaviour
     }
 
     public void PlayerHit(int damage) {
-        hp -= damage;
-        if (hp < 0){
+        curHp -= damage;
+        if (curHp < 0){
             p_state = Define.PlayerStates.Dead;
         }
 
