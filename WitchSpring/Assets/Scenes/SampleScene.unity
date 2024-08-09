@@ -395,10 +395,10 @@ CapsuleCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Radius: 0.39013657
-  m_Height: 1.9179237
-  m_Direction: 1
-  m_Center: {x: 0, y: 0.9857012, z: -0.15013656}
+  m_Radius: 1
+  m_Height: 2
+  m_Direction: 0
+  m_Center: {x: 0, y: 1, z: 0}
 --- !u!54 &608592505
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -446,6 +446,7 @@ MonoBehaviour:
   attack_count: 1
   p_speed: 0
   wait_run_ration: 0
+  IsBattle: 0
   m_pos: {x: 0, y: 0, z: 0}
   p_state: 0
   P_Animator: {fileID: 0}
