@@ -14,6 +14,8 @@ public class PlayerController : MonoBehaviour
     Animator anim;
     Player player;
 
+    public ParticleSystem swordParticle;
+
     int attackNumber = 0;
     int manaSwordCount = 0;
     int absorbSwordCount = 0;
@@ -29,6 +31,7 @@ public class PlayerController : MonoBehaviour
         
         Managers.Input.MouseAction -= OnMouseClicked;
         Managers.Input.MouseAction += OnMouseClicked;
+        
     }
 
     public enum PlayerState
@@ -45,6 +48,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerState state = PlayerState.Idle;
     void Update()
     {
+        if(manaSwordCount <= 0)
+        {
+            swordParticle.Stop();
+        }
         switch (state)
         {
             case PlayerState.Die:
@@ -189,13 +196,16 @@ public class PlayerController : MonoBehaviour
         // 애니메이션
         anim.Play("run0");
     }
-
-    public void EndAttack()
+    public void EndTurn()
     {
         if (manaSwordCount > 0)
             manaSwordCount--;
-        if(manaBallCount > 0)
+        if (manaBallCount > 0)
             manaBallCount--;
+    }
+
+    public void EndAttack()
+    {
 
         state = PlayerState.Attacking_End;
         Vector3 dir = playerPos - transform.position;
@@ -203,7 +213,7 @@ public class PlayerController : MonoBehaviour
         {
             state = PlayerState.Idle_Battle;
             transform.LookAt(monsterPos);
-
+            EndTurn();
             //테스트용
             Managers.Battle.PlayerTrunOn();
         }
@@ -260,6 +270,7 @@ public class PlayerController : MonoBehaviour
     public void OnManaSword()
     {
         Debug.Log("마나 검술ON");
+        swordParticle.Play();
         manaSwordCount = 3;
         player.mp -= 40;
     }
