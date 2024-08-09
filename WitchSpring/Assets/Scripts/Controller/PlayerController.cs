@@ -7,9 +7,9 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
-    [SerializeField] int curHp = 100;
+    [SerializeField] int curHp = 50;
     [SerializeField] int maxHp = 100;
-    [SerializeField] int curmp = 100;
+    [SerializeField] int curmp = 80;
     [SerializeField] int maxmp = 100;
     [SerializeField] float strength = 10.0f;
     [SerializeField] int attack_count = 1;
