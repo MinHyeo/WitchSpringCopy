@@ -11,10 +11,6 @@ public class MonsterBattle : MonoBehaviour
     {
         if (player.gameObject.tag == "Player")
         {
-            if (player.GetComponent<PlayerController>().IsBattle)
-            {
-                return;
-            }
             GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);

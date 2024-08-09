@@ -15,7 +15,6 @@ public class EnterUI : MonoBehaviour
     {
         monsterinfoSet = GameManager.Data.MosterDict[monsterID];
         SetData();
-        GameManager.Player.GetComponent<PlayerController>().IsBattle = true;
     }
     public void SetData() {
         monsterName.text = monsterinfoSet.Name;
