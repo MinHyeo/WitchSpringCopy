@@ -40,6 +40,7 @@ public class PlayerController : MonoBehaviour
     void StateWalk()
     {
         Vector3 dir = m_pos - transform.position;
+        dir.y = 0;
         if (dir.magnitude < 0.001f)
         {
             //Change State
@@ -51,7 +52,7 @@ public class PlayerController : MonoBehaviour
             transform.position += dir.normalized * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-            transform.LookAt(m_pos);
+            //transform.LookAt(m_pos);
         }
 
         //Set Walk Animation
