@@ -15,6 +15,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] int attack_count = 1;
     [SerializeField] float p_speed;
     [SerializeField] float wait_run_ration;
+    [SerializeField] public bool IsBattle = false;
     [SerializeField] Vector3 m_pos;
     [SerializeField] Define.PlayerStates p_state = Define.PlayerStates.Idle;
 
@@ -44,6 +45,7 @@ public class PlayerController : MonoBehaviour
         {
             //Change State
             p_state = Define.PlayerStates.Idle;
+            IsBattle = false;
         }
         else
         {
@@ -165,6 +167,7 @@ public class PlayerController : MonoBehaviour
         curHp -= damage;
         if (curHp < 0){
             p_state = Define.PlayerStates.Dead;
+            IsBattle = false;
         }
 
     }

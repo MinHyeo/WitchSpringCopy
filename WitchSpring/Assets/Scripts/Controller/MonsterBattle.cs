@@ -9,9 +9,12 @@ public class MonsterBattle : MonoBehaviour
 
     private void OnTriggerEnter(Collider player)
     {
-        player.GetComponent<PlayerController>();
         if (player.gameObject.tag == "Player")
         {
+            if (player.GetComponent<PlayerController>().IsBattle)
+            {
+                return;
+            }
             GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);

@@ -19,7 +19,7 @@ public class SituationManager
 
                 GameManager.Player.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
                 
-                Vector3 playerDest = GameManager.Player.transform.TransformPoint(new Vector3(0.0f, 0.0f, 1.5f)); 
+                Vector3 playerDest = GameManager.Player.transform.TransformPoint(new Vector3(0.0f, 0.0f, 2.0f)); 
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest); 
                 break;
             case Define.Situations.Contact:
