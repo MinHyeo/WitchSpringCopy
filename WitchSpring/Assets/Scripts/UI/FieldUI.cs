@@ -11,9 +11,11 @@ public class FieldUI : MonoBehaviour
     [SerializeField] Text location;
     [SerializeField] Text playerHP;
     [SerializeField] Text playerMp;
+    [SerializeField] Text playerSp;
     [Header("UI Silder")]
     [SerializeField] Slider hpBar;
     [SerializeField] Slider mpBar;
+    [SerializeField] Slider soulBar;
 
 
     void Start()
@@ -39,7 +41,14 @@ public class FieldUI : MonoBehaviour
         playerMp.text = $"{curMP}/{maxMP}";
         mpBar.value = curMP / maxMP;
 
+        float curSp = GameManager.Player.GetComponent<PlayerController>().CurrentSP;
+        float maxSp = GameManager.Player.GetComponent<PlayerController>().MaxSP;
+        playerSp.text = $"{curSp}/{maxSp}";
+        soulBar.value = curSp / maxSp;  
+            
         times.text = $"{GameManager.Instance.Time}일 차";
+
+        availvableTrainingDay.text = $"{GameManager.Instance.TrainDay}";
     }
     public void UpdateLocatinInfo(string locationName = "여기 어디??") { 
         location.text = locationName;

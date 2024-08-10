@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float maxHp = 100.0f;
     [SerializeField] private float curmp = 80.0f;
     [SerializeField] private float maxmp = 100.0f;
+    [SerializeField] private float cursp = 10.0f;
+    [SerializeField] private float maxsp = 100.0f;
     [SerializeField] private float strength = 10.0f;
     [SerializeField] private int attack_count = 1;
     [SerializeField] private float p_speed;
@@ -26,6 +28,10 @@ public class PlayerController : MonoBehaviour
     public float MaxHP { get { return maxHp; } set { maxHp = value; } }
     public float CurrentMP { get { return curmp; } set { curmp = value; } }
     public float MaxMP { get { return maxHp; } set { maxmp = value; } }
+    public float CurrentSP { get { return cursp; } set { cursp = value; } }
+    public float MaxSP { get { return maxsp; } set { maxsp = value; } }
+
+
 
     #endregion
 

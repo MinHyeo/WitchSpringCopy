@@ -38,8 +38,11 @@ public class GameManager : MonoBehaviour
     #endregion
 
     #region GameElements
-    private int times;
-    public int Time { get { return Instance.times; } }
+    private int times = 0;
+    public int Time { get { return Instance.times; } set { times = value; } }
+
+    private int traindays = 0;
+    public int TrainDay { get { return Instance.times; } set { traindays = value; } }
 
     #endregion
 
