@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using UnityEditor.ShaderKeywordFilter;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -16,11 +17,18 @@ public class FieldUI : MonoBehaviour
     [SerializeField] Slider hpBar;
     [SerializeField] Slider mpBar;
     [SerializeField] Slider soulBar;
-
+    [Header("Silder Data")]
+    [SerializeField] PlayerController pData;
+    [SerializeField] float curHp;
+    [SerializeField] float maxHp;
+    [SerializeField] float curMP;
+    [SerializeField] float maxMP;
+    [SerializeField] float curSp;
+    [SerializeField] float maxSp;
 
     void Start()
     {
-        
+        pData = GameManager.Player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -31,18 +39,18 @@ public class FieldUI : MonoBehaviour
     }
 
     public void UpdateCharactorInfo() {
-        float curHp = GameManager.Player.GetComponent<PlayerController>().CurrentHP;
-        float maxHp = GameManager.Player.GetComponent<PlayerController>().MaxHP;
+        curHp = pData.CurrentHP;
+        maxHp = pData.MaxHP;
         playerHP.text = $"{curHp}/{maxHp}";
         hpBar.value = curHp / maxHp;
 
-        float curMP = GameManager.Player.GetComponent<PlayerController>().CurrentMP;
-        float maxMP = GameManager.Player.GetComponent<PlayerController>().MaxMP;
+        curMP = pData.CurrentMP;
+        maxMP = pData.MaxMP;
         playerMp.text = $"{curMP}/{maxMP}";
         mpBar.value = curMP / maxMP;
 
-        float curSp = GameManager.Player.GetComponent<PlayerController>().CurrentSP;
-        float maxSp = GameManager.Player.GetComponent<PlayerController>().MaxSP;
+        curSp = pData.CurrentSP;
+        maxSp = pData.MaxSP;
         playerSp.text = $"{curSp}/{maxSp}";
         soulBar.value = curSp / maxSp;  
             
@@ -52,5 +60,15 @@ public class FieldUI : MonoBehaviour
     }
     public void UpdateLocatinInfo(string locationName = "여기 어디??") { 
         location.text = locationName;
+    }
+
+    public void UseCrystalButton() {
+        //Use Soul
+        pData.RecoverHP(curSp);
+        pData.RecoverMP(curSp);
+        //Reset Soul
+        pData.CurrentSP = 0.0f;
+        //Data Update
+        UpdateCharactorInfo();
     }
 }

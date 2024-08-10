@@ -10,10 +10,10 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 m_pos;
     [SerializeField] private float curHp = 50.0f;
     [SerializeField] private float maxHp = 100.0f;
-    [SerializeField] private float curmp = 80.0f;
-    [SerializeField] private float maxmp = 100.0f;
-    [SerializeField] private float cursp = 10.0f;
-    [SerializeField] private float maxsp = 100.0f;
+    [SerializeField] private float curMp = 10.0f;
+    [SerializeField] private float maxMp = 100.0f;
+    [SerializeField] private float curSp = 10.0f;
+    [SerializeField] private float maxSp = 100.0f;
     [SerializeField] private float strength = 10.0f;
     [SerializeField] private int attack_count = 1;
     [SerializeField] private float p_speed;
@@ -26,10 +26,10 @@ public class PlayerController : MonoBehaviour
     #region Get/Set
     public float CurrentHP { get { return curHp; } set { curHp = value; } }
     public float MaxHP { get { return maxHp; } set { maxHp = value; } }
-    public float CurrentMP { get { return curmp; } set { curmp = value; } }
-    public float MaxMP { get { return maxHp; } set { maxmp = value; } }
-    public float CurrentSP { get { return cursp; } set { cursp = value; } }
-    public float MaxSP { get { return maxsp; } set { maxsp = value; } }
+    public float CurrentMP { get { return curMp; } set { curMp = value; } }
+    public float MaxMP { get { return maxMp; } set { maxMp = value; } }
+    public float CurrentSP { get { return curSp; } set { curSp = value; } }
+    public float MaxSP { get { return maxSp; } set { maxSp = value; } }
 
 
 
@@ -173,6 +173,22 @@ public class PlayerController : MonoBehaviour
         if (curHp < 0){
             p_state = Define.PlayerStates.Dead;
         }
+    }
 
+    public void RecoverHP(float recMount = 0.0f){
+        curHp += recMount;
+
+        if (curHp > MaxHP)
+        {
+            curHp = MaxHP;
+        }
+    }
+
+    public void RecoverMP(float recMount = 0.0f) {
+        curMp += recMount;
+
+        if (curMp > MaxHP){
+            curMp = MaxHP;
+        }
     }
 }

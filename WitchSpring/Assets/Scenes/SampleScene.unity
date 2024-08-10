@@ -439,12 +439,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pos: {x: 0, y: 0, z: 0}
-  curHp: 80
+  curHp: 50
   maxHp: 100
-  curmp: 50
-  maxmp: 100
-  cursp: 10
-  maxsp: 100
+  curMp: 10
+  maxMp: 100
+  curSp: 10
+  maxSp: 100
   strength: 100
   attack_count: 1
   p_speed: 0

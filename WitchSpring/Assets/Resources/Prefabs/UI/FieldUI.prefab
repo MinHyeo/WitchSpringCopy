@@ -1847,7 +1847,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 339966212189103327}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3821030865052021879}
+        m_TargetAssemblyTypeName: FieldUI, Assembly-CSharp
+        m_MethodName: UseCrystalButton
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6032751596154288345
 GameObject:
   m_ObjectHideFlags: 0
@@ -2620,6 +2632,13 @@ MonoBehaviour:
   hpBar: {fileID: 6410089166144007957}
   mpBar: {fileID: 5443954204584963473}
   soulBar: {fileID: 1789356083769588729}
+  pData: {fileID: 0}
+  curHp: 0
+  maxHp: 0
+  curMP: 0
+  maxMP: 0
+  curSp: 0
+  maxSp: 0
 --- !u!1 &8365232326681469340
 GameObject:
   m_ObjectHideFlags: 0
