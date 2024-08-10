@@ -52,4 +52,8 @@ public class UIManager
         return;
     }
 
+    public void SendUIMassage(string message) {
+        UIRoot.UIList["MessageUI"].GetComponent<MessageUI>().ShowMessage(message);
+    }
+
 }

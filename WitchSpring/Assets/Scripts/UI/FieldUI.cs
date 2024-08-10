@@ -70,5 +70,6 @@ public class FieldUI : MonoBehaviour
         pData.CurrentSP = 0.0f;
         //Data Update
         UpdateCharactorInfo();
+        GameManager.UI.SendUIMassage("크리스탈 사용");
     }
 }
