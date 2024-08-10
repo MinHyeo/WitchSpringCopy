@@ -114,6 +114,12 @@ public class PlayerController : MonoBehaviour
             || GameManager.Situation.currentSituations == Define.Situations.Contact) {
             return;
         }
+
+        if (GameManager.UI.IsMessageOn) {
+            GameManager.UI.CloseUIMessage();
+            return;
+        }
+        
         
         Ray Mouse_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

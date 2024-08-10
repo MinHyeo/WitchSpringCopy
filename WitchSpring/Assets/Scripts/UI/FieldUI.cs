@@ -17,6 +17,8 @@ public class FieldUI : MonoBehaviour
     [SerializeField] Slider hpBar;
     [SerializeField] Slider mpBar;
     [SerializeField] Slider soulBar;
+    [Header("UI Bttton")]
+    [SerializeField] Button inventory;
     [Header("Silder Data")]
     [SerializeField] PlayerController pData;
     [SerializeField] float curHp;
@@ -25,6 +27,7 @@ public class FieldUI : MonoBehaviour
     [SerializeField] float maxMP;
     [SerializeField] float curSp;
     [SerializeField] float maxSp;
+
 
     void Start()
     {
@@ -52,24 +55,43 @@ public class FieldUI : MonoBehaviour
         curSp = pData.CurrentSP;
         maxSp = pData.MaxSP;
         playerSp.text = $"{curSp}/{maxSp}";
-        soulBar.value = curSp / maxSp;  
-            
+        soulBar.value = curSp / maxSp;
+
         times.text = $"{GameManager.Instance.Time}일 차";
 
         availvableTrainingDay.text = $"{GameManager.Instance.TrainDay}";
     }
-    public void UpdateLocatinInfo(string locationName = "여기 어디??") { 
+    public void UpdateLocatinInfo(string locationName = "여기 어디??") {
         location.text = locationName;
     }
 
+    //Crystal Test Code
     public void UseCrystalButton() {
+        if (curSp <= 0) {
+            GameManager.UI.SendUIMassage("영혼석 없어서 사용 못 함 ㅅㄱ", Define.MessageType.System);
+            return;
+        }
         //Use Soul
         pData.RecoverHP(curSp);
         pData.RecoverMP(curSp);
+
+        GameManager.UI.SendUIMassage($"영혼석으로 체력과 마나를 {pData.CurrentSP}만큼씩 회복했습니다!", Define.MessageType.System);
+
         //Reset Soul
         pData.CurrentSP = 0.0f;
         //Data Update
         UpdateCharactorInfo();
-        GameManager.UI.SendUIMassage("크리스탈 사용");
+    }
+    public void InventoryButton()
+    {
+        GameManager.UI.SendUIMassage("아직 준비중...", Define.MessageType.System);
+    }
+    public void BattleMode() {
+        //Bock Button
+        inventory.interactable = false;
+    }
+    public void NormalMode()
+    {
+        inventory.interactable = true;
     }
 }

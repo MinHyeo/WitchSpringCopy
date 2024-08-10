@@ -7,6 +7,7 @@ public class UIManager
 {
     [Header("UI Setting")]
     public UIGroup UIRoot = null;
+    public bool IsMessageOn = false;
 
     public void Init() {
         GameObject uimanager = GameObject.Find("UI_Root");
@@ -23,7 +24,6 @@ public class UIManager
                 UIRoot.UIList[UIName].SetActive(false);
             }
         }
-
         ChangeUI("FieldUI");
     }
 
@@ -52,8 +52,14 @@ public class UIManager
         return;
     }
 
-    public void SendUIMassage(string message) {
-        UIRoot.UIList["MessageUI"].GetComponent<MessageUI>().ShowMessage(message);
+    public void SendUIMassage(string message, Define.MessageType messageType = Define.MessageType.System) {
+        UIRoot.UIList["MessageUI"].GetComponent<MessageUI>().ShowMessage(message, messageType);
+        IsMessageOn = true;
+    }
+
+    public void CloseUIMessage() {
+        UIRoot.UIList["MessageUI"].SetActive(false);
+        IsMessageOn = false;
     }
 
 }

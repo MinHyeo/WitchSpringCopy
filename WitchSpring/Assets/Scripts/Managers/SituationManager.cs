@@ -16,6 +16,7 @@ public class SituationManager
         switch (situations) {
             case Define.Situations.Normal:
                 GameManager.UI.ChangeUI("FieldUI");
+                GameManager.UI.UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().NormalMode();
 
                 GameManager.Player.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
                 
@@ -23,6 +24,7 @@ public class SituationManager
                 Vector3 playerDest = GameManager.Player.transform.TransformPoint(new Vector3(0.0f, 0.1f, 2.0f));
                 //계산 결과 전달
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest); 
+
                 break;
             case Define.Situations.Contact:
                 GameManager.UI.ChangeUI("EnterUI");

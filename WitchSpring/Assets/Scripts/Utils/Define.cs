@@ -64,4 +64,10 @@ public class Define
         EndAttack,
     }
 
+    public enum MessageType 
+    { 
+        Normal,
+        System,
+    }
+
 }
