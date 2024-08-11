@@ -12,6 +12,16 @@ public class Define
         Dead,
         Battle
     }
+
+    public enum PlayerBuff 
+    { 
+        MagicWord,
+        AbsorbSword,
+        MagicMaterialize,
+        MagicTrace,
+        //Acceleration,
+        MaxBuff
+    }
     public enum CameraMode
     {
         QuaterView,

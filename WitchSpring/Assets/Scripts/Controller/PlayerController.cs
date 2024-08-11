@@ -1,5 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using System.Xml.Linq;
+using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -19,6 +22,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float p_speed;
     [SerializeField] private float wait_run_ration;
     [SerializeField] private Define.PlayerStates p_state = Define.PlayerStates.Idle;
+    [SerializeField] private Dictionary<string, int> buffList = new Dictionary<string, int>();
 
     [Header("Player Components")]
     [SerializeField] private Animator P_Animator;
@@ -31,7 +35,7 @@ public class PlayerController : MonoBehaviour
     public float CurrentSP { get { return curSp; } set { curSp = value; } }
     public float MaxSP { get { return maxSp; } set { maxSp = value; } }
 
-
+    public Dictionary<string, int> Buff { get { return buffList; } }
 
     #endregion
 
@@ -88,6 +92,11 @@ public class PlayerController : MonoBehaviour
         GameManager.Input.MouseAction -= ClickToMove;
         GameManager.Input.MouseAction += ClickToMove;
         P_Animator = GetComponent<Animator>();
+
+        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++){
+            string BuffName = Enum.GetName(typeof(Define.PlayerBuff), i);
+            buffList.Add(BuffName, 0);
+        }
     }
 
     void Update()
@@ -169,7 +178,7 @@ public class PlayerController : MonoBehaviour
     }
 
     public void PlayerAttackReset() {
-        Debug.Log("Reset Attack Count");
+        //Debug.Log("Reset Attack Count");
         attack_count = 1;
         GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
     }

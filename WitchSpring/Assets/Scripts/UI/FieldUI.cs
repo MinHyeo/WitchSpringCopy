@@ -13,10 +13,12 @@ public class FieldUI : MonoBehaviour
     [SerializeField] Text playerHP;
     [SerializeField] Text playerMp;
     [SerializeField] Text playerSp;
+    [SerializeField] Text buffList;
     [Header("UI Silder")]
     [SerializeField] Slider hpBar;
     [SerializeField] Slider mpBar;
     [SerializeField] Slider soulBar;
+    [SerializeField] Slider turnBar;
     [Header("UI Bttton")]
     [SerializeField] Button inventory;
     [Header("Silder Data")]
@@ -32,6 +34,7 @@ public class FieldUI : MonoBehaviour
     void Start()
     {
         pData = GameManager.Player.GetComponent<PlayerController>();
+        buffList.text = "";
     }
 
     // Update is called once per frame
@@ -41,6 +44,7 @@ public class FieldUI : MonoBehaviour
         UpdateLocatinInfo();
     }
 
+    #region UIDataUpdate
     public void UpdateCharactorInfo() {
         curHp = pData.CurrentHP;
         maxHp = pData.MaxHP;
@@ -57,25 +61,32 @@ public class FieldUI : MonoBehaviour
         playerSp.text = $"{curSp}/{maxSp}";
         soulBar.value = curSp / maxSp;
 
-        times.text = $"{GameManager.Instance.Time}¿œ ¬˜";
+        times.text = $"{GameManager.Instance.Time}Ïùº Ï∞®";
 
         availvableTrainingDay.text = $"{GameManager.Instance.TrainDay}";
     }
-    public void UpdateLocatinInfo(string locationName = "ø©±‚ æÓµ??") {
+    public void UpdateLocatinInfo(string locationName = "Ïó¨Í∏∞Í∞Ä Ïñ¥ÎîîÏßÄ??") {
         location.text = locationName;
     }
+
+    public void UpdateBuffInfo() { 
+
+    
+    
+    }
+    #endregion
 
     //Crystal Test Code
     public void UseCrystalButton() {
         if (curSp <= 0) {
-            GameManager.UI.SendUIMassage("øµ»•ºÆ æ¯æÓº≠ ªÁøÎ ∏¯ «‘ §µ§°", Define.MessageType.System);
+            GameManager.UI.SendUIMassage("ÏòÅÌòºÏÑù Îã§ ÏîÄ „ÖÖ„Ñ±", Define.MessageType.System);
             return;
         }
         //Use Soul
         pData.RecoverHP(curSp);
         pData.RecoverMP(curSp);
 
-        GameManager.UI.SendUIMassage($"øµ»•ºÆ¿∏∑Œ √º∑¬∞˙ ∏∂≥™∏¶ {pData.CurrentSP}∏∏≈≠æø »∏∫π«ﬂΩ¿¥œ¥Ÿ!", Define.MessageType.System);
+        GameManager.UI.SendUIMassage($"ÏòÅÌòºÏÑù ÏÇ¨Ïö©ÏúºÎ°ú Ï≤¥Î†•Í≥º ÎßàÎÇòÎ•º {pData.CurrentSP}ÎßåÌÅºÏî© ÌöåÎ≥µÌñàÏäµÎãàÎã§!", Define.MessageType.System);
 
         //Reset Soul
         pData.CurrentSP = 0.0f;
@@ -84,14 +95,19 @@ public class FieldUI : MonoBehaviour
     }
     public void InventoryButton()
     {
-        GameManager.UI.SendUIMassage("æ∆¡˜ ¡ÿ∫Ò¡ﬂ...", Define.MessageType.System);
+        GameManager.UI.SendUIMassage("ÏïÑÏßÅ Íµ¨ÌòÑ Ï§ë...", Define.MessageType.System);
     }
     public void BattleMode() {
-        //Bock Button
+        //Block
         inventory.interactable = false;
+        buffList.gameObject.SetActive(true);
+        turnBar.gameObject.SetActive(true);
+
     }
     public void NormalMode()
     {
         inventory.interactable = true;
+        buffList.gameObject.SetActive(false);
+        turnBar.gameObject.SetActive(false);
     }
 }

@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class BattleUI : MonoBehaviour
 {
-    public void SoulCystalButton() { 
-    
+    public void SoulCystalButton() {
+        GameManager.UI.UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().UseCrystalButton();
     }
     public void FenceButton() {
         GameManager.UI.ChangeUI("FenceUI");
