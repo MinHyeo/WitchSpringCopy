@@ -32,6 +32,7 @@ public class Define
     {
         Press,
         Click,
+        Check,
     }
 
     public enum Sound

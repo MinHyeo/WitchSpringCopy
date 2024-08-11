@@ -28,6 +28,9 @@ public class InputManager
                     _pressed = false;
                 }
             }
+            if (Input.GetMouseButton(0)) {
+                MouseAction.Invoke(Define.MouseEvent.Check);
+            }
         }
 
     }

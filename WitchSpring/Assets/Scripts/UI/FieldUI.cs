@@ -65,7 +65,7 @@ public class FieldUI : MonoBehaviour
 
         availvableTrainingDay.text = $"{GameManager.Instance.TrainDay}";
     }
-    public void UpdateLocatinInfo(string locationName = "여기가 어디지??") {
+    public void UpdateLocatinInfo(string locationName = "어디지??") {
         location.text = locationName;
     }
 

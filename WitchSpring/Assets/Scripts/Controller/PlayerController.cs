@@ -119,17 +119,17 @@ public class PlayerController : MonoBehaviour
     }
 
     void ClickToMove(Define.MouseEvent mouseEvent) {
+        if (GameManager.UI.IsMessageOn || mouseEvent == Define.MouseEvent.Check)
+        {
+            GameManager.UI.CloseUIMessage();
+            return;
+        }
+
         if (p_state == Define.PlayerStates.Dead || p_state == Define.PlayerStates.Battle
             || GameManager.Situation.currentSituations == Define.Situations.Contact) {
             return;
         }
 
-        if (GameManager.UI.IsMessageOn) {
-            GameManager.UI.CloseUIMessage();
-            return;
-        }
-        
-        
         Ray Mouse_Ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 
         RaycastHit Hit;
