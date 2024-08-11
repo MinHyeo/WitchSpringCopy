@@ -15,7 +15,7 @@ public class Define
 
     public enum PlayerBuff 
     { 
-        MagicWord,
+        MagicSword,
         AbsorbSword,
         MagicMaterialize,
         MagicTrace,
