@@ -11,12 +11,11 @@ public class MonsterBattle : MonoBehaviour
     {
         if (player.gameObject.tag == "Player")
         {
+            GameManager.Instance.Monster = monsterRoot;
             GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);
             player.transform.LookAt(transform.position);
-
-            GameManager.Instance.Monster = monsterRoot;
         }
     }
 }

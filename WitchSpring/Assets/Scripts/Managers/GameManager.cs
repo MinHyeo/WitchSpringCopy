@@ -29,12 +29,16 @@ public class GameManager : MonoBehaviour
 
     #endregion
 
-    #region PlayerAndMonster
+    #region Player,Monster,Camera
     GameObject player;
     public static GameObject Player { get { return Instance.player; } }
 
     GameObject monster;
     public GameObject Monster { get { return Instance.monster; } set { monster = value; } }
+
+    GameObject mainCamera;
+    public static GameObject Camera { get { return Instance.mainCamera;} }
+
     #endregion
 
     #region GameElements
@@ -47,9 +51,10 @@ public class GameManager : MonoBehaviour
     #endregion
 
 
-    void Start()
+    void Awake()
     {
         player = GameObject.Find("Player_Test");
+        mainCamera = GameObject.Find("Main Camera");
         times = 0;
     }
 

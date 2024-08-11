@@ -24,8 +24,8 @@ public class Define
     }
     public enum CameraMode
     {
-        QuaterView,
-        ZoomInView,
+        PlayerView,
+        MonsterView,
     }
 
     public enum MouseEvent
