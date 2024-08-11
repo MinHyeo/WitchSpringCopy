@@ -29,8 +29,15 @@ public class UIManager
 
     //UI Change
     public void ChangeUI(string UIName) {
+        if (UIName == "BattleUI") {
+            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().BattleMode();
+            UIRoot.UIList["FieldUI"].SetActive(true);
+        }
         HideUI();
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
+        if (UIName == "FieldUI"){
+            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().NormalMode();
+        }
         ShowUI();
     }
 

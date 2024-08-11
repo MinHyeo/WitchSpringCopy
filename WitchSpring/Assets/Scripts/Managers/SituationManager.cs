@@ -16,7 +16,7 @@ public class SituationManager
         switch (situations) {
             case Define.Situations.Normal:
                 GameManager.UI.ChangeUI("FieldUI");
-                GameManager.UI.UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().NormalMode();
+                //GameManager.UI.UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().NormalMode();
 
                 GameManager.Player.transform.Rotate(0.0f, 180.0f, 0.0f, Space.Self);
                 
@@ -26,10 +26,12 @@ public class SituationManager
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest); 
 
                 break;
+
             case Define.Situations.Contact:
                 GameManager.UI.ChangeUI("EnterUI");
                 GameManager.UI.SetData(monsterID);
                 break;
+
             case Define.Situations.Battle:
                 GameManager.UI.ChangeUI("BattleUI");
 
@@ -37,9 +39,11 @@ public class SituationManager
 
                 GameManager.Instance.Monster.transform.LookAt(GameManager.Player.transform.position);
                 break;
+
             case Define.Situations.StartAttack:
                 GameManager.UI.HideUI();
                 break;
+
             case Define.Situations.EndAttack:
                 GameManager.UI.ShowUI();
                 GameManager.UI.ChangeUI("BattleUI");
