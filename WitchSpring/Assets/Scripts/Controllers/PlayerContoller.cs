@@ -17,10 +17,8 @@ public class PlayerController : MonoBehaviour
     public ParticleSystem swordParticle;
 
     int attackNumber = 0;
-    int manaSwordCount = 0;
-    int absorbSwordCount = 0;
-    int manaBallCount = 0;
-    int manaTraceCount = 0;
+
+
     private void Awake()
     {
         anim = GetComponent<Animator>();
@@ -48,7 +46,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] PlayerState state = PlayerState.Idle;
     void Update()
     {
-        if(manaSwordCount <= 0)
+        if(player.manaSwordCount <= 0)
         {
             swordParticle.Stop();
         }
@@ -198,10 +196,14 @@ public class PlayerController : MonoBehaviour
     }
     public void EndTurn()
     {
-        if (manaSwordCount > 0)
-            manaSwordCount--;
-        if (manaBallCount > 0)
-            manaBallCount--;
+        if (player.manaSwordCount > 0)
+            player.manaSwordCount--;
+        if (player.manaBallCount > 0)
+            player.manaBallCount--;
+        if (player.absorbSwordCount > 0)
+            player.absorbSwordCount--;
+        if (player.manaTraceCount > 0)
+            player.manaTraceCount--;
     }
 
     public void EndAttack()
@@ -231,27 +233,27 @@ public class PlayerController : MonoBehaviour
     {
         float damage;
 
-        if(absorbSwordCount > 0)
+        if(player.absorbSwordCount > 0)
         {
             Debug.Log("흡수검술: " + (int)((player.strength + player.spellPower) * 0.08f));
             player.hp += (int)((player.strength + player.spellPower) * 0.08f);
         }
-        if (manaBallCount > 0)
+        if (player.manaBallCount > 0)
         {
             float magicDamage = player.spellPower * 1.5f;
             Managers.Battle.CurMonster().TakeDamage_Magic(magicDamage);
             Debug.Log("마력구체:" + magicDamage);
         }
-        if (manaSwordCount > 0)
+        if (player.manaSwordCount > 0)
         {
             Debug.Log("+마력검술");
-            damage = (player.strength * damageRatio) * (0.1f * manaSwordCount + 1.0f) + player.strength * (0.1f * manaSwordCount);
+            damage = (player.strength * damageRatio) * (0.1f * player.manaSwordCount + 1.0f) + player.strength * (0.1f * player.manaSwordCount);
         }
         else
         {
             damage = player.strength * damageRatio;
         }
-        if (manaTraceCount > 0)
+        if (player.manaTraceCount > 0)
         {
             Managers.Battle.CurMonster().TakeDamage(damage);
             GiveMagicDamage(1.0f);
@@ -271,30 +273,30 @@ public class PlayerController : MonoBehaviour
     {
         Debug.Log("마나 검술ON");
         swordParticle.Play();
-        manaSwordCount = 3;
+        player.manaSwordCount = 3;
         player.mp -= 40;
     }
     public void OnAbsorbSword()
     {
-        absorbSwordCount = 8;
+        player.absorbSwordCount = 8;
         player.mp -= 30;
     }
 
     public void OnManaBall()
     {
-        manaBallCount = 4;
+        player.manaBallCount = 4;
         player.mp -= 50;
     }
     public void OnManaTrace()
     {
-        manaTraceCount = 5;
+        player.manaTraceCount = 5;
     }
     public void EndBattle()
     {
-        manaSwordCount = 0;
-        absorbSwordCount = 0;
-        manaBallCount = 0;
-        manaTraceCount = 0;
+        player.manaSwordCount = 0;
+        player.absorbSwordCount = 0;
+        player.manaBallCount = 0;
+        player.manaTraceCount = 0;
     }
 
 

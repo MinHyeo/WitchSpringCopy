@@ -1,19 +1,27 @@
+using Cinemachine;
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngineInternal;
 
 public class CameraController : MonoBehaviour
 {
-    //[SerializeField] Define.CameraMode mode = Define.CameraMode.QuarterView;
     [SerializeField] Vector3 delta;
-    [SerializeField] GameObject player;
-    [SerializeField] private cameraTarget currentTarget = cameraTarget.Player;
-    [SerializeField] enum cameraTarget
+    [SerializeField] GameObject currentTarget;
+    Vector3 targetPosition;
+
+    private GameObject newTarget;
+    private GameObject oldTarget;
+    float distance;
+    [SerializeField]
+    enum CameraState
     {
-        Player,
-        Monster,
+        FollowTarget,
+        Moving,
     }
+    [SerializeField] CameraState state;
+
 
     void Start()
     {
@@ -23,15 +31,19 @@ public class CameraController : MonoBehaviour
     // Update is called once per frame
     void LateUpdate()
     {
-        switch (currentTarget)
+        if (currentTarget == null)
+            return;
+        switch (state)
         {
-            case cameraTarget.Player:
-                FollowTarget(player);
+            case CameraState.FollowTarget:
+                FollowTarget(currentTarget);
                 break;
-            case cameraTarget.Monster:
-                // FollowTarget(monster);
+            case CameraState.Moving:
+                UpdateSwitching();
                 break;
         }
+            
+
     }
 
     public void FollowTarget(GameObject target)
@@ -52,8 +64,34 @@ public class CameraController : MonoBehaviour
         transform.LookAt(target.transform);
     }
 
-    public void SetQuaterView(Vector3 delta) {
+    public void SetQuaterView(Vector3 delta)
+    {
         //mode = Define.CameraMode.QuarterView;
         this.delta = delta;
     }
+
+    public void SwitchTarget(GameObject newTarget)
+    {
+        if (newTarget == null || newTarget == currentTarget)
+            return;
+
+        oldTarget = currentTarget;
+        this.newTarget = newTarget;
+        state = CameraState.Moving;
+    }
+
+    public void UpdateSwitching()
+    {
+        transform.position = Vector3.Lerp(transform.position, newTarget.transform.position + delta, Time.deltaTime*5f);
+
+        distance = Vector3.Distance(transform.position, newTarget.transform.position + delta);
+
+        if(distance <= 0.3f) 
+        {
+            currentTarget = newTarget;
+            newTarget = null;
+            state = CameraState.FollowTarget;
+        }
+    }
+
 }

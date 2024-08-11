@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro.Examples;
 using UnityEngine;
 
 public class BattleManager
@@ -8,17 +9,13 @@ public class BattleManager
     public Player player;
     private littleDampFrog monster;
     public UI_Scene hpUI;
-    private GameObject camera;
     private CameraController cameraController;
     private bool isBattle=false;
 
+
     public void Init()
     {
-        camera = GameObject.FindGameObjectWithTag("MainCamera");
-        if (camera != null)
-        {
-            cameraController = camera.GetComponent<CameraController>();
-        }
+        cameraController = Camera.main.GetComponent<CameraController>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
         {
@@ -31,6 +28,7 @@ public class BattleManager
     {
         isBattle = true;
         this.monster = monster;
+        cameraController.SwitchTarget(monster.gameObject);
     }
 
     public littleDampFrog CurMonster()
@@ -41,6 +39,7 @@ public class BattleManager
 
     public void StartBattle()
     {
+        cameraController.SwitchTarget(player.gameObject);
         playerController.StartBattle();
         monster.StartBattle();
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
@@ -48,6 +47,7 @@ public class BattleManager
     }
     public void EndBattle()
     {
+        cameraController.SwitchTarget(player.gameObject);
         playerController.Escape();
         playerController.EndBattle();
         monster.EndBattle();

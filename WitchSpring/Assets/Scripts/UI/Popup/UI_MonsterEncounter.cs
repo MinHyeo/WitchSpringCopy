@@ -18,10 +18,6 @@ public class UI_MonsterEncounter : MonoBehaviour
         Init();
     }
 
-    void Update()
-    {
-        
-    }
 
     public void Button_EnterBattle()
     {

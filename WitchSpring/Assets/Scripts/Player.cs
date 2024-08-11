@@ -13,6 +13,10 @@ public class Player : MonoBehaviour
     public float agility=12;
     public float defence = 2;
 
+    public int manaSwordCount = 0;
+    public int absorbSwordCount = 0;
+    public int manaBallCount = 0;
+    public int manaTraceCount = 0;
 
     void Start()
     {

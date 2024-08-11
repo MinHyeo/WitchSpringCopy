@@ -41,6 +41,8 @@ public class littleDampFrog : MonoBehaviour
         float finalDamage = damage - defense;
         Debug.Log("데미지 받음: " + finalDamage);
         hp -= (int)finalDamage;
+        UI_Damage du = GetComponentInChildren<UI_Damage>();
+        du.ShowDamage((int)finalDamage);
     }
     public void TakeDamage_Magic(float damage)
     {

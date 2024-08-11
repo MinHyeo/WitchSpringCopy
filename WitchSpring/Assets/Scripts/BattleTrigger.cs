@@ -29,6 +29,8 @@ public class BattleTrigger : MonoBehaviour
                 popup = Managers.UI.ShowPopupUI<UI_Popup>("UI_MonsterEncounter");
                 Managers.Battle.EncounterMonster(monster.GetComponent<littleDampFrog>());
                 Managers.Player.playerController.MonsterEncounter(monster.transform.position);
+
+
             }
         }
     }
