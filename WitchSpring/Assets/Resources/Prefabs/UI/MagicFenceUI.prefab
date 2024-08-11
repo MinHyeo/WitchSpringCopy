@@ -410,14 +410,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7442033040771643492}
         m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
-        m_MethodName: MagicSwordButton
-        m_Mode: 1
+        m_MethodName: MagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MagicSword
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4498969385824758311
@@ -543,14 +543,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7442033040771643492}
         m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
-        m_MethodName: AbsorbSwordButton
-        m_Mode: 1
+        m_MethodName: MagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: AbsorbSword
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &4670916062894844563
@@ -676,14 +676,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7442033040771643492}
         m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
-        m_MethodName: MagicTraceButton
-        m_Mode: 1
+        m_MethodName: MagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MagicTrace
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &6227084531584273762
@@ -1079,14 +1079,14 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 7442033040771643492}
         m_TargetAssemblyTypeName: MagicFenceUI, Assembly-CSharp
-        m_MethodName: MagicMaterializeCancleButton
-        m_Mode: 1
+        m_MethodName: MagicButton
+        m_Mode: 5
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0
-          m_StringArgument: 
+          m_StringArgument: MagicMaterialize
           m_BoolArgument: 0
         m_CallState: 2
 --- !u!1 &7927828637755076839

@@ -10,6 +10,36 @@ public class FenceUI : MonoBehaviour
 
     public void AttackButton(int attackNumber)
     {
+        float Hpcost = 0.0f;
+        PlayerController playerHp = GameManager.Player.GetComponent<PlayerController>();
+        //Player HP Decrease
+        switch (attackNumber) {
+            case 2:
+                Hpcost = 4.0f;
+                break;
+            case 3:
+                Hpcost = 7.0f;
+                break;
+            case 4:
+                Hpcost = 30.0f;
+                break;
+            case 5:
+                Hpcost = 44.0f;
+                break;
+            case 6:
+                Hpcost = 64.0f;
+                break;
+            case 7:
+                Hpcost = 64.0f;
+                break;
+        }
+        if (playerHp.CurrentHP <= Hpcost) {
+            GameManager.UI.SendUIMassage("검술공격을 위한 현재 체력이 부족합니다!",Define.MessageType.System);
+            return;
+        }
+        playerHp.UseHPOrHit(Hpcost);
+
+
         GameManager.Situation.SetStiuation(Define.Situations.StartAttack);
 
         GameManager.Player.GetComponent<Animator>().SetInteger("AttackNumber", attackNumber);

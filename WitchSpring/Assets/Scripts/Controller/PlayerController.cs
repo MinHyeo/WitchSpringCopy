@@ -198,6 +198,10 @@ public class PlayerController : MonoBehaviour
             curHp = MaxHP;
         }
     }
+    public void UseHPOrHit(float decHp)
+    {
+        curHp -= decHp;
+    }
 
     public void RecoverMP(float recMount = 0.0f) {
         curMp += recMount;
@@ -206,4 +210,11 @@ public class PlayerController : MonoBehaviour
             curMp = MaxHP;
         }
     }
+    public void UseMP(float decMP) {
+        curMp -= decMP;
+        if (curMp < 0) {
+            curMp = 0.0f;
+        }
+    }
+    
 }
