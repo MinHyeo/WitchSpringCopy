@@ -821,7 +821,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 6833984076918872823}
         m_TargetAssemblyTypeName: BattleUI, Assembly-CSharp
-        m_MethodName: InventorylButton
+        m_MethodName: InventoryButton
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

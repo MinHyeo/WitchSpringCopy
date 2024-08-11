@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEditor.ShaderKeywordFilter;
@@ -42,6 +43,7 @@ public class FieldUI : MonoBehaviour
     {
         UpdateCharactorInfo();
         UpdateLocatinInfo();
+        UpdateBuffInfo();
     }
 
     #region UIDataUpdate
@@ -70,9 +72,13 @@ public class FieldUI : MonoBehaviour
     }
 
     public void UpdateBuffInfo() {
-        buffList.text += "";
-    
-    
+        buffList.text = "";
+        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++) {
+            string BuffName = Enum.GetName(typeof(Define.PlayerBuff), i);
+            if (GameManager.Player.GetComponent<PlayerController>().Buff[BuffName] != 0) { 
+                buffList.text += $"{BuffName} - 효과 {GameManager.Player.GetComponent<PlayerController>().Buff[BuffName]}회 남음\n";
+            }
+        }
     }
     #endregion
 

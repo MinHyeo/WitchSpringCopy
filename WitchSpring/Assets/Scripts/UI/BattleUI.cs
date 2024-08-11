@@ -21,13 +21,16 @@ public class BattleUI : MonoBehaviour
     }
 
     public void InventoryButton() {
-        GameManager.UI.ChangeUI("InventoryUI");
+        GameManager.UI.SendUIMassage("아직 구현 중...", Define.MessageType.System);
+        //GameManager.UI.ChangeUI("InventoryUI");
     }
 
     public void DollButton() {
-        GameManager.UI.ChangeUI("DollUI");
+        GameManager.UI.SendUIMassage("아직 구현 중...", Define.MessageType.System);
+        //GameManager.UI.ChangeUI("DollUI");
     }
     public void ShiledButton() {
+        GameManager.UI.SendUIMassage("아직 구현 중...", Define.MessageType.System);
         //TODO
 
     }
