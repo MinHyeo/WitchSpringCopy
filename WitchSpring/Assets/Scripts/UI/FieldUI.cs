@@ -69,8 +69,8 @@ public class FieldUI : MonoBehaviour
         location.text = locationName;
     }
 
-    public void UpdateBuffInfo() { 
-
+    public void UpdateBuffInfo() {
+        buffList.text += "";
     
     
     }

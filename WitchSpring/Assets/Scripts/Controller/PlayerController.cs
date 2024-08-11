@@ -13,8 +13,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Vector3 m_pos;
     [SerializeField] private float curHp = 50.0f;
     [SerializeField] private float maxHp = 100.0f;
-    [SerializeField] private float curMp = 10.0f;
-    [SerializeField] private float maxMp = 100.0f;
+    [SerializeField] private float curMp = 150.0f;
+    [SerializeField] private float maxMp = 200.0f;
     [SerializeField] private float curSp = 10.0f;
     [SerializeField] private float maxSp = 100.0f;
     [SerializeField] private float strength = 10.0f;
