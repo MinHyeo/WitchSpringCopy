@@ -12,10 +12,18 @@ public class MonsterBattle : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             GameManager.Instance.Monster = monsterRoot;
-            GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
+            
+            //GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
+            StartCoroutine("SituationWait");
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);
             player.transform.LookAt(transform.position);
         }
     }
+
+    IEnumerator SituationWait() {
+        yield return new WaitForSeconds(1.0f);
+        GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
+    }
+
 }

@@ -145,7 +145,7 @@ public class PlayerController : MonoBehaviour
         }
 
         if (p_state == Define.PlayerStates.Dead || p_state == Define.PlayerStates.Battle
-            || GameManager.Situation.currentSituations == Define.Situations.Contact)
+            || GameManager.Situation.currentSituations == Define.Situations.Contact || GameManager.Camera.GetComponent<CameraController>().CameraMoving)
         {
             return;
         }
