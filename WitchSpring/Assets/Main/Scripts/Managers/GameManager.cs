@@ -12,6 +12,7 @@ public class GameManager : MonoBehaviour
     InputManager _input = new InputManager();
     ResourceManager _resources = new ResourceManager();
     UIManager _ui = new UIManager();
+    BattleManager _battle;
 
     public static DataManager Data { get { return instance._data; } }
     public static ResourceManager resource { get { return instance._resources; } }

@@ -92,7 +92,7 @@ public class MonsterController : MonoBehaviour
     {
 
         _speed = 6.0f;
-
+        
         Vector3 dir = _originalPos - transform.position;
         // 원래 위치로 이동하는 방향 계산
         if (dir.magnitude < 0.1f)
@@ -163,12 +163,30 @@ public class MonsterController : MonoBehaviour
 
     public void OnHit(int Damage)
     {
-        _hp -= (Damage - _def);
+        int trueDamage = Damage - _def;
+        _hp -= trueDamage;
+
+        GameObject UI = GameObject.Find("@UI_Root");
+        Transform ShowNum = UI.transform.Find("UI_MonsterHP(Clone)");
+        UI.transform.Find("UI_Default(Clone)").GetComponent<UI_Default>().UpdateText();
+        ShowNum.Find("Text_Damage").GetComponent<Nums>().SetShowState(Nums.ShowState.Monster);
+        ShowNum.GetComponent<UI_MonsterHP>().UpdateDamageText(trueDamage.ToString());
+
         CheckHealth();
 
         GameObject.Find("@UI_Root").transform.Find("UI_MonsterHP(Clone)").GetComponent<UI_MonsterHP>().UpdateText();
         Animator anim = GetComponent<Animator>();
-        anim.SetTrigger("Hit");
+        if (anim.GetCurrentAnimatorStateInfo(0).IsName("Get Hit") &&
+            anim.GetCurrentAnimatorStateInfo(0).normalizedTime < 1.0f)
+        {
+            // 이미 실행 중인 애니메이션이면, 애니메이터를 리셋합니다.
+            anim.Play("Get Hit", 0, 0.0f);
+        }
+        else
+        {
+            // 애니메이션이 실행 중이지 않다면, 애니메이션을 시작합니다.
+            anim.Play("Get Hit");
+        }
     }
 
     public void CheckHealth()

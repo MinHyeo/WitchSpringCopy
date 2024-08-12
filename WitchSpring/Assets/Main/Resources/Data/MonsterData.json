@@ -16,7 +16,7 @@
             "objectName": "littleDampFrog",
             "name": "어린 안개두꺼비",
             "description": "안개숲에 서식하는 대형 두꺼비.\n죽을 때까지 성장하는 특징이 있다.",
-            "HP": "90",
+            "HP": "999",
             "STR": "13",
             "INT": "0",
             "DEX": "5",

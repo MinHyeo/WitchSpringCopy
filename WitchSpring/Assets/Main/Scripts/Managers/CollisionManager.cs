@@ -17,6 +17,7 @@ public class CollisionManager : MonoBehaviour
 
             Transform parentTransform = transform.parent;
             GameManager.Data.GetCollidedObjectName(parentTransform.gameObject.name);
+            
 
             OnFight.Invoke(parentTransform.gameObject);
         }

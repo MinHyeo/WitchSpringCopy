@@ -12,6 +12,8 @@ public class MonsterHP : MonoBehaviour
 
     Vector3 offset = new Vector3(0.0f, -0.3f, 0.0f);
     Transform targetTr = null;
+
+
     void Start()
     {
         canvas = GetComponentInParent<Canvas>();

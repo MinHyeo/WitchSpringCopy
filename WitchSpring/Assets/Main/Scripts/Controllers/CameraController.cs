@@ -13,7 +13,7 @@ public class CameraController : MonoBehaviour
     Vector3 _monsterPos;
 
     [SerializeField]
-    GameObject _player = null;
+    public GameObject _player = null;
     [SerializeField]
     float playerYDelta = 0.9f;
 
@@ -134,9 +134,9 @@ public class CameraController : MonoBehaviour
             shakeTimeRemaining -= Time.deltaTime;
 
             // 흔들림의 강도에 따라 랜덤한 회전 각을 생성
-            float x = Random.Range(-shakeMagnitude, shakeMagnitude) * 5; // 강도 증가
-            float y = Random.Range(-shakeMagnitude, shakeMagnitude) * 5; // 강도 증가
-            float z = Random.Range(-shakeMagnitude, shakeMagnitude) * 5;
+            float x = Random.Range(-shakeMagnitude, shakeMagnitude) * 5.5f; // 강도 증가
+            float y = Random.Range(-shakeMagnitude, shakeMagnitude) * 5.5f; // 강도 증가
+            float z = Random.Range(-shakeMagnitude, shakeMagnitude) * 5.5f;
 
             // Euler 각을 Quaternion으로 변환
             transform.rotation = Quaternion.Euler(x, y, z) * transform.rotation;

@@ -43,12 +43,35 @@ public class UI_Behaviors_MANAS : UI_Popup
         GameObject Button_Close = GetButton((int)Buttons.Button_Close).gameObject;
         AddUIEvent(Button_Close, OnCloseClicked, Define.UIEvent.Click);
 
+        GameObject Button_ManaSword1 = GetButton((int)Buttons.Button_ManaSword1).gameObject;
+        AddUIEvent(Button_ManaSword1, OnMana1Clicked, Define.UIEvent.Click);
+
+        GameObject Button_ManaSword2 = GetButton((int)Buttons.Button_ManaSword2).gameObject;
+        AddUIEvent(Button_ManaSword2, OnMana2Clicked, Define.UIEvent.Click);
+
         //GameObject go = GetImage((int)Images.ItemIcon).gameObject;
         //AddUIEvent(go, (PointerEventData data) => { go.gameObject.transform.position = data.position; }, Define.UIEvent.Drag);
     }
     public void OnCloseClicked(PointerEventData data)
     {
         // 마력검술 UI 닫기, 전투행동 UI 열기
+        GameManager.UI.ClosePopupUI();
+        GameManager.UI.ShowPopupUI<UI_Behaviors>();
+    }
+
+    public void OnMana1Clicked(PointerEventData data)
+    {
+        // 마력검술 UI 닫기, 전투행동 UI 열기
+        GameObject.Find("Player").GetComponent<PlayerController>().ManaSword("ManaSword");
+        GameManager.UI.ClosePopupUI();
+        GameManager.UI.ShowPopupUI<UI_Behaviors>();
+        
+    }
+
+    public void OnMana2Clicked(PointerEventData data)
+    {
+        
+        GameObject.Find("Player").GetComponent<PlayerController>().ManaSword("AbsorptionBlade");
         GameManager.UI.ClosePopupUI();
         GameManager.UI.ShowPopupUI<UI_Behaviors>();
     }

@@ -1,11 +1,18 @@
 using Microsoft.Win32.SafeHandles;
+using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Playables;
 
 public class PlayerController : MonoBehaviour
 {
+    public GameObject testParticle;
+    public GameObject testParticle2;
+    public GameObject testParticle3;
+    public GameObject testParticle4;
+
     Vector3 _desPos;
     Vector3 _monsterPos;
     Vector3 _originalPos;
@@ -32,6 +39,9 @@ public class PlayerController : MonoBehaviour
     float _escapeDistance = 8.0f;
     float _attackDistance = 3.5f;
     int _attackNum = 0;
+
+    public bool isMana = false;
+    int ManaCount = 0;
 
     GameObject _monster = null;
 
@@ -249,6 +259,7 @@ public class PlayerController : MonoBehaviour
         anim.SetInteger("ATK", 0);
 
         _state = Define.PlayerState.Comeback;
+        testParticle.GetComponent<Particle_ManaSword>().SetIdle_ManaSword();
     }
 
     public void OnEscape()
@@ -258,16 +269,86 @@ public class PlayerController : MonoBehaviour
 
     public void OnHit(int Damage)
     {
-        _hp -= (Damage-_def);
-        GameObject.Find("@UI_Root").transform.Find("UI_Default(Clone)").GetComponent<UI_Default>().UpdateText();
+        int trueDamage = Damage - _def;
+        _hp -= (trueDamage);
+
+        GameObject UI = GameObject.Find("@UI_Root");
+        Transform ShowNum = UI.transform.Find("UI_MonsterHP(Clone)");
+
+        UI.transform.Find("UI_Default(Clone)").GetComponent<UI_Default>().UpdateText();
+        ShowNum.Find("Text_Damage").GetComponent<Nums>().SetShowState(Nums.ShowState.Player);
+        ShowNum.GetComponent<UI_MonsterHP>().UpdateDamageText(trueDamage.ToString());
+
         Debug.Log(_hp);
         Debug.Log("플레이어 피격");
     }
 
-    public void Attacking()
+    public void Attacking(int ATKnum)
     {
+        if(isMana)
+        {
+            testParticle.GetComponent<Particle_ManaSword>().SetATK();
+            
+            ManaCount++;
+            Debug.Log($"마나검술 {ManaCount}회");
+            if (ManaCount >= 10) 
+            {
+                _str -= 10;
+                testParticle.GetComponent<Particle_ManaSword>().StopParticle_ManaSword();
+                isMana = false;
+                ManaCount = 0;
+            }
+        }
         MonsterController monsterController = _monster.GetComponent<MonsterController>();
-        monsterController.OnHit(_str); //데미지
+        int trueDamage = 0;
+
+        switch (ATKnum)
+        {
+            case 1:
+                trueDamage = _str;
+                break;
+            case 2:
+                trueDamage = Convert.ToInt32(_str * 1.2f);
+                break;
+            case 3:
+                trueDamage = Convert.ToInt32(_str * 1.25f);
+                break;
+            case 4:
+                trueDamage = Convert.ToInt32(_str * 1.3f);
+                break;
+            case 5:
+                trueDamage = Convert.ToInt32(_str * 1.35f);
+                break;
+            case 6:
+                trueDamage = Convert.ToInt32(_str * 1.4f);
+                break;
+            case 7:
+                trueDamage = Convert.ToInt32(_str * 1.45f);
+                break;
+        }
+
+        monsterController.OnHit(trueDamage); //데미지
+        
         Camera.main.GetComponent<CameraController>().SetShakingCamera();
+        
+    }
+
+    public void ManaSword(string Mana)
+    {
+        isMana = true;
+        switch(Mana)
+        {
+            case "ManaSword":
+                testParticle.GetComponent<Particle_ManaSword>().StartParticle_ManaSword();
+                _str += 10; //계산식 추가
+                break;
+            case "AbsorptionBlade":
+                testParticle2.GetComponent<Particle_AbsorptionBlade>().StartParticle_AbsorptionBlade();
+                break;
+            case "ManaOrb":
+                break;
+            case "TraceOfMana":
+                break;
+        }
     }
 }
