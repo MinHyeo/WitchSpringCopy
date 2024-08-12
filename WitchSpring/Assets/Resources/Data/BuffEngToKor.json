@@ -1,0 +1,20 @@
+{
+    "BuffList": [
+        {
+            "BuffName" :"MagicSword", 
+            "Korean" : "마력 검 날"
+        },
+        {
+            "BuffName" :"AbsorbSword", 
+            "Korean" : "흡수 검 날" 
+        },
+        {
+            "BuffName" :"MagicMaterialize",
+            "Korean": "마력 구체"
+        },
+        {
+            "BuffName": "MagicTrace",
+            "Korean": "마력의 흔적"
+        }
+    ]    
+}

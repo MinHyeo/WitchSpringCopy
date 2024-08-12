@@ -11,14 +11,17 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
     [SerializeField] private Vector3 m_pos;
-    [SerializeField] private float curHp = 50.0f;
-    [SerializeField] private float maxHp = 100.0f;
-    [SerializeField] private float curMp = 150.0f;
-    [SerializeField] private float maxMp = 200.0f;
-    [SerializeField] private float curSp = 10.0f;
-    [SerializeField] private float maxSp = 100.0f;
-    [SerializeField] private float strength = 10.0f;
-    [SerializeField] private int attack_count = 1;
+    [SerializeField] private float curHp;
+    [SerializeField] private float maxHp;
+    [SerializeField] private float curMp;
+    [SerializeField] private float maxMp;
+    [SerializeField] private float curSp;
+    [SerializeField] private float maxSp;
+    [SerializeField] private float magic;
+    [SerializeField] private float strength;
+    [SerializeField] private float agility;
+    [SerializeField] private float defense;
+    [SerializeField] private float attack_count = 1;
     [SerializeField] private float p_speed;
     [SerializeField] private float wait_run_ration;
     [SerializeField] private Define.PlayerStates p_state = Define.PlayerStates.Idle;
@@ -34,13 +37,58 @@ public class PlayerController : MonoBehaviour
     public float MaxMP { get { return maxMp; } set { maxMp = value; } }
     public float CurrentSP { get { return curSp; } set { curSp = value; } }
     public float MaxSP { get { return maxSp; } set { maxSp = value; } }
+    public float Magic { get { return magic; } set { magic = value; } }
 
     public Dictionary<string, int> Buff { get { return buffList; } }
+    private List<MagicFenceType> magicFences;
 
     #endregion
 
+    void Start()
+    {
+        GameManager.Input.MouseAction -= ClickToMove;
+        GameManager.Input.MouseAction += ClickToMove;
+        p_speed = 5.0f;
+        curHp = 50.0f;
+        maxHp = 100.0f;
+        curMp = 150.0f;
+        maxMp = 200.0f;
+        curSp = 10.0f;
+        maxSp = 100.0f;
+        magic = 10.0f;
+        strength = 10.0f;
+        agility = 10.0f;
+        defense = 10.0f;
+
+        P_Animator = GetComponent<Animator>();
+
+        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++){
+            string BuffName = Enum.GetName(typeof(Define.PlayerBuff), i);
+            buffList.Add(BuffName, 0);
+        }
+    }
+
+    void Update()
+    {
+        //Status Pattern
+        switch (p_state) {
+            case Define.PlayerStates.Idle:
+                StateIdle();
+                break;
+            case Define.PlayerStates.Walk:
+                StateWalk();
+                break;
+            case Define.PlayerStates.Dead:
+                StateDead();
+                break;
+            case Define.PlayerStates.Battle:
+                StateBattle();
+                break;
+        }
+    }
     //상태에 따른 행동 메서드
-    void StateIdle(){
+    void StateIdle()
+    {
         wait_run_ration = Mathf.Lerp(wait_run_ration, 0, 10.0f * Time.deltaTime);
 
         //Set Idle Animation
@@ -80,43 +128,13 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void StateBattle() {
+    void StateBattle()
+    {
         P_Animator.SetFloat("Speed", 0.0f);
         P_Animator.SetBool("IsBattle", true);
         return;
     }
 
-    void Start()
-    {
-        p_speed = 5.0f;
-        GameManager.Input.MouseAction -= ClickToMove;
-        GameManager.Input.MouseAction += ClickToMove;
-        P_Animator = GetComponent<Animator>();
-
-        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++){
-            string BuffName = Enum.GetName(typeof(Define.PlayerBuff), i);
-            buffList.Add(BuffName, 0);
-        }
-    }
-
-    void Update()
-    {
-        //Status Pattern
-        switch (p_state) {
-            case Define.PlayerStates.Idle:
-                StateIdle();
-                break;
-            case Define.PlayerStates.Walk:
-                StateWalk();
-                break;
-            case Define.PlayerStates.Dead:
-                StateDead();
-                break;
-            case Define.PlayerStates.Battle:
-                StateBattle();
-                break;
-        }
-    }
 
     void ClickToMove(Define.MouseEvent mouseEvent) {
         if (GameManager.UI.IsMessageOn || mouseEvent == Define.MouseEvent.Check)
@@ -175,12 +193,29 @@ public class PlayerController : MonoBehaviour
         }
         GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterHit(damage);
         attack_count++;
+
+        if (Buff["MagicTrace"] > 0) {
+            Buff["MagicTrace"]--;
+        }
     }
 
+
     public void PlayerAttackReset() {
-        //Debug.Log("Reset Attack Count");
         attack_count = 1;
         GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
+
+        //Useable Buff Check
+        if (Buff["MagicSword"] > 0|| Buff["AbsorbSword"] > 0|| Buff["MagicMaterialize"] > 0) {
+            if (Buff["MagicSword"] > 0) {
+                Buff["MagicSword"]--;
+            }
+            if (Buff["AbsorbSword"] > 0) {
+                Buff["AbsorbSword"]--;
+            }
+            if (Buff["MagicMaterialize"] > 0) {
+                Buff["MagicMaterialize"]--;
+            }
+        }
     }
 
     public void PlayerHit(int damage) {

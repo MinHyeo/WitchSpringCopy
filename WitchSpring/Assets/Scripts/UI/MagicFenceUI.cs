@@ -2,6 +2,14 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
+
+public class MagicFenceType 
+{
+    public string name;
+    public int count;
+    public int mpCost;
+}
+
 public class MagicFenceUI : MonoBehaviour
 {
     public void CancelButton() {
@@ -27,7 +35,7 @@ public class MagicFenceUI : MonoBehaviour
                 break;
             case "MagicMaterialize":
                 buffInfo = "4회 동안 마력구체";
-                    playerInfo.Buff[buffName] = 4; ;
+                playerInfo.Buff[buffName] = 4;
                 Mpcost = 50.0f;
                 break;
             case "MagicTrace":
