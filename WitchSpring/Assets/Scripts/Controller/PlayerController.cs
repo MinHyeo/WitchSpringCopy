@@ -1,8 +1,5 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Xml.Linq;
-using Unity.VisualScripting;
 using UnityEngine;
 
 
@@ -29,6 +26,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Components")]
     [SerializeField] private Animator P_Animator;
+    [SerializeField] private ParticleSystem P_Particle;
 
     #region Get/Set
     public float CurrentHP { get { return curHp; } set { curHp = value; } }
@@ -62,7 +60,8 @@ public class PlayerController : MonoBehaviour
 
         P_Animator = GetComponent<Animator>();
 
-        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++){
+        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++)
+        {
             string BuffName = Enum.GetName(typeof(Define.PlayerBuff), i);
             buffList.Add(BuffName, 0);
         }
@@ -71,7 +70,8 @@ public class PlayerController : MonoBehaviour
     void Update()
     {
         //Status Pattern
-        switch (p_state) {
+        switch (p_state)
+        {
             case Define.PlayerStates.Idle:
                 StateIdle();
                 break;
@@ -136,7 +136,8 @@ public class PlayerController : MonoBehaviour
     }
 
 
-    void ClickToMove(Define.MouseEvent mouseEvent) {
+    void ClickToMove(Define.MouseEvent mouseEvent)
+    {
         if (GameManager.UI.IsMessageOn || mouseEvent == Define.MouseEvent.Check)
         {
             GameManager.UI.CloseUIMessage();
@@ -144,7 +145,8 @@ public class PlayerController : MonoBehaviour
         }
 
         if (p_state == Define.PlayerStates.Dead || p_state == Define.PlayerStates.Battle
-            || GameManager.Situation.currentSituations == Define.Situations.Contact) {
+            || GameManager.Situation.currentSituations == Define.Situations.Contact)
+        {
             return;
         }
 
@@ -159,12 +161,14 @@ public class PlayerController : MonoBehaviour
         }
     }
 
-    public void SetPlayerState(Define.PlayerStates playerState, Vector3 Dest = default(Vector3)) { 
+    public void SetPlayerState(Define.PlayerStates playerState, Vector3 Dest = default(Vector3))
+    {
         p_state = playerState;
         m_pos = Dest;
     }
 
-    public void PlayerAttack() {
+    public void PlayerAttack()
+    {
         float damage = 0.0f;
 
         switch (attack_count)
@@ -194,38 +198,60 @@ public class PlayerController : MonoBehaviour
         GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterHit(damage);
         attack_count++;
 
-        if (Buff["MagicTrace"] > 0) {
+
+        if (Buff["MagicSword"] > 0)
+        {
+            //GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterHit(strength * 1.3f);
+        }
+        if (Buff["AbsorbSword"] > 0)
+        {
+            RecoverHP(strength * magic * 0.08f);
+
+        }
+        if (Buff["MagicMaterialize"] > 0)
+        {
+            GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterHit(magic / 2);
+        }
+
+
+        if (Buff["MagicTrace"] > 0)
+        {
             Buff["MagicTrace"]--;
         }
     }
 
 
-    public void PlayerAttackReset() {
+    public void PlayerAttackReset()
+    {
         attack_count = 1;
         GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
 
-        //Useable Buff Check
-        if (Buff["MagicSword"] > 0|| Buff["AbsorbSword"] > 0|| Buff["MagicMaterialize"] > 0) {
-            if (Buff["MagicSword"] > 0) {
-                Buff["MagicSword"]--;
-            }
-            if (Buff["AbsorbSword"] > 0) {
-                Buff["AbsorbSword"]--;
-            }
-            if (Buff["MagicMaterialize"] > 0) {
-                Buff["MagicMaterialize"]--;
-            }
+        if (Buff["MagicSword"] > 0)
+        {
+            Buff["MagicSword"]--;
+        }
+        if (Buff["AbsorbSword"] > 0)
+        {
+            Buff["AbsorbSword"]--;
+
+        }
+        if (Buff["MagicMaterialize"] > 0)
+        {
+            Buff["MagicMaterialize"]--;
         }
     }
 
-    public void PlayerHit(int damage) {
+    public void PlayerHit(int damage)
+    {
         curHp -= damage;
-        if (curHp < 0){
+        if (curHp < 0)
+        {
             p_state = Define.PlayerStates.Dead;
         }
     }
 
-    public void RecoverHP(float recMount = 0.0f){
+    public void RecoverHP(float recMount = 0.0f)
+    {
         curHp += recMount;
 
         if (curHp > MaxHP)
@@ -238,18 +264,22 @@ public class PlayerController : MonoBehaviour
         curHp -= decHp;
     }
 
-    public void RecoverMP(float recMount = 0.0f) {
+    public void RecoverMP(float recMount = 0.0f)
+    {
         curMp += recMount;
 
-        if (curMp > MaxHP){
+        if (curMp > MaxHP)
+        {
             curMp = MaxHP;
         }
     }
-    public void UseMP(float decMP) {
+    public void UseMP(float decMP)
+    {
         curMp -= decMP;
-        if (curMp < 0) {
+        if (curMp < 0)
+        {
             curMp = 0.0f;
         }
     }
-    
+
 }
