@@ -288,13 +288,15 @@ public class PlayerController : MonoBehaviour
         if(isMana)
         {
             testParticle.GetComponent<Particle_ManaSword>().SetATK();
-            
+            testParticle2.GetComponent<Particle_AbsorptionBlade>().SetATK();
+
             ManaCount++;
             Debug.Log($"마나검술 {ManaCount}회");
             if (ManaCount >= 10) 
             {
                 _str -= 10;
                 testParticle.GetComponent<Particle_ManaSword>().StopParticle_ManaSword();
+                testParticle2.GetComponent<Particle_AbsorptionBlade>().StopParticle_AbsorptionBlade();
                 isMana = false;
                 ManaCount = 0;
             }

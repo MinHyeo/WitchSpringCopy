@@ -19,7 +19,6 @@ public class Particle_AbsorptionBlade : MonoBehaviour
     public void SetATK()
     {
         var main = particle.main;
-        var shape = particle.shape;
 
         // 시뮬레이션 공간을 World로 설정합니다.
         main.simulationSpace = ParticleSystemSimulationSpace.World;

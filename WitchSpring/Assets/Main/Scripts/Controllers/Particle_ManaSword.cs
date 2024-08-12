@@ -19,9 +19,7 @@ public class Particle_ManaSword : MonoBehaviour
     public void SetATK()
     {
         var main = particle.main;
-        var shape = particle.shape;
 
-        // 시뮬레이션 공간을 World로 설정합니다.
         main.simulationSpace = ParticleSystemSimulationSpace.World;
         main.startSize = 0.85f;
     }
@@ -29,7 +27,6 @@ public class Particle_ManaSword : MonoBehaviour
     {
         var main = particle.main;
 
-        // 시뮬레이션 공간을 World로 설정합니다.
         main.simulationSpace = ParticleSystemSimulationSpace.Local;
         main.startSize = 0.35f;
     }
@@ -37,7 +34,7 @@ public class Particle_ManaSword : MonoBehaviour
     {
         particle.Stop(true, ParticleSystemStopBehavior.StopEmitting);
     }
-    public void SetupExplosionEffect()
+    /*public void SetupExplosionEffect()
     {
         // Main module 설정
         var main = particle.main;
@@ -75,5 +72,5 @@ public class Particle_ManaSword : MonoBehaviour
 
         // 폭발 이펙트를 재생
         particle.Play();
-    }
+    }*/
 }
