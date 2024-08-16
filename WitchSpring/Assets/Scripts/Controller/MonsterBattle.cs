@@ -24,7 +24,7 @@ public class MonsterBattle : MonoBehaviour
 
     IEnumerator SituationWait() {
         yield return new WaitForSeconds(1.0f);
-        GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
+        GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.parent.name);
     }
 
 }
