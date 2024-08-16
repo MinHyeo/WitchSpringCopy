@@ -35,12 +35,18 @@ public class FieldUI : MonoBehaviour
     [SerializeField] float maxMP;
     [SerializeField] float curSp;
     [SerializeField] float maxSp;
+    [Header("UI Componet")]
+    [SerializeField] Animator UIAni;
 
-
-    void Start()
+    private void Awake()
     {
         pData = GameManager.Player.GetComponent<PlayerController>();
 
+        UIAni = GetComponent<Animator>();
+    }
+
+    void Start()
+    {
         buffList.text = "";
 
         for (int i = 0; i < (int)Define.EmotionType.MaxEmotion; i++){
@@ -129,6 +135,14 @@ public class FieldUI : MonoBehaviour
         buffList.gameObject.SetActive(false);
         turnBar.gameObject.SetActive(false);
         emotion.gameObject.SetActive(false);
+    }
+
+    public void ShowFieldUI() {
+        UIAni.Play("Show");
+    }
+
+    public void HideFieldUI() {
+        UIAni.Play("Hide");
     }
 
     public void ShowQuestion(Define.EmotionType emotionType)

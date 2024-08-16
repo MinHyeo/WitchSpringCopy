@@ -232,7 +232,7 @@ public class PlayerController : MonoBehaviour
         {
             //GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterHit(strength * 1.3f);
         }
-        if (Buff["AbsorbSword"] > 0)
+        if (Buff["AbsorbSword"] > 0 && curHp < MaxHP)
         {
             RecoverHP(strength * magic * 0.08f);
 

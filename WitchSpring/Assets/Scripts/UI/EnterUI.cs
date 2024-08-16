@@ -9,12 +9,19 @@ public class EnterUI : MonoBehaviour
     public Text monsterName;
     public Text monsterExplain;
     public Text monsterStat;
+    [Tooltip("°´Ã¼ »ý¼ºÇÒ ¶§ ÇÒ´ç µÊ")]
+    private Animator UIAni;
 
+    private void Awake()
+    {
+        UIAni = gameObject.GetComponent<Animator>();
+    }
 
     public void Init(string monsterID = null)
     {
         monsterinfoSet = GameManager.Data.MosterDict[monsterID];
         SetData();
+        UIAni.Play("Show");
     }
     public void SetData() {
         monsterName.text = monsterinfoSet.Name;

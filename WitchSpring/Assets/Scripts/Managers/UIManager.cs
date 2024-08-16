@@ -30,15 +30,19 @@ public class UIManager
     //UI Change
     public void ChangeUI(string UIName) {
         if (UIName == "BattleUI") {
-            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().BattleMode();
             UIRoot.UIList["FieldUI"].SetActive(true);
+            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().BattleMode();
+            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
+            UIRoot.UIList[UIName].GetComponent<BattleUI>().ShowBattleUI();
+
         }
         HideUI();
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
+        ShowUI();
         if (UIName == "FieldUI"){
             UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().NormalMode();
+            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
         }
-        ShowUI();
     }
 
     public void SetData(string MonsterID = null) {

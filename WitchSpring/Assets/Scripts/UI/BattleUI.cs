@@ -5,6 +5,12 @@ using UnityEngine;
 
 public class BattleUI : MonoBehaviour
 {
+    [SerializeField] Animator UIAni;
+
+    private void Awake()
+    {
+        UIAni = GetComponent<Animator>();
+    }
     public void SoulCystalButton() {
         GameManager.UI.UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().UseCrystalButton();
     }
@@ -43,6 +49,11 @@ public class BattleUI : MonoBehaviour
         GameManager.Player.GetComponent<PlayerController>().MagicFenceBuffSet();
 
         GameManager.Situation.SetStiuation(Define.Situations.Normal);
+    }
+
+    public void ShowBattleUI() 
+    {
+        UIAni.Play("Show");
     }
 
 }
