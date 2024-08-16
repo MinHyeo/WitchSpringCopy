@@ -81,4 +81,11 @@ public class Define
         System,
     }
 
+    public enum EmotionType { 
+        Exclamation,
+        Qustion,
+        Angry,
+        MaxEmotion
+    }
+
 }

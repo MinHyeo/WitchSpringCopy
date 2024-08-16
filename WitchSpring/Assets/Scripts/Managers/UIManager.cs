@@ -69,4 +69,8 @@ public class UIManager
         IsMessageOn = false;
     }
 
+    public void Question(Define.EmotionType emotionType) {
+        UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowQuestion(emotionType);
+    }
+
 }

@@ -5594,6 +5594,8 @@ MonoBehaviour:
   Cam_Mode: 0
   Target: {fileID: 0}
   Cam_Pos: {x: 0, y: 5, z: -5}
+  cameraSpeed: 3
+  flag: 0
 --- !u!1001 &1214197303
 PrefabInstance:
   m_ObjectHideFlags: 0

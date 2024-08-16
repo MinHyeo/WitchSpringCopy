@@ -12,8 +12,9 @@ public class MonsterBattle : MonoBehaviour
         if (player.gameObject.tag == "Player")
         {
             GameManager.Instance.Monster = monsterRoot;
-            
-            //GameManager.Situation.SetStiuation(Define.Situations.Contact, transform.parent.name);
+
+            GameManager.UI.Question(Define.EmotionType.Exclamation);
+
             StartCoroutine("SituationWait");
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);

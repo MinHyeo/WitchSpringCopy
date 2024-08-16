@@ -20,6 +20,11 @@ public class FieldUI : MonoBehaviour
     [SerializeField] Slider mpBar;
     [SerializeField] Slider soulBar;
     [SerializeField] Slider turnBar;
+    [Header("UI Image")]
+    [SerializeField] Image emotion;
+    [Header("UI Sprite")]
+    [SerializeField] Sprite[] emotionSprites;
+    [SerializeField] Dictionary<string, Sprite> uiSprites= new Dictionary<string, Sprite>();
     [Header("UI Bttton")]
     [SerializeField] Button inventory;
     [Header("Silder Data")]
@@ -35,7 +40,14 @@ public class FieldUI : MonoBehaviour
     void Start()
     {
         pData = GameManager.Player.GetComponent<PlayerController>();
+
         buffList.text = "";
+
+        for (int i = 0; i < (int)Define.EmotionType.MaxEmotion; i++){
+            uiSprites.Add(emotionSprites[i].name, emotionSprites[i]);
+        }
+
+        emotion.gameObject.SetActive(false);
     }
 
     // Update is called once per frame
@@ -108,6 +120,7 @@ public class FieldUI : MonoBehaviour
         inventory.interactable = false;
         buffList.gameObject.SetActive(true);
         turnBar.gameObject.SetActive(true);
+        emotion.gameObject.SetActive(false);
 
     }
     public void NormalMode()
@@ -115,5 +128,18 @@ public class FieldUI : MonoBehaviour
         inventory.interactable = true;
         buffList.gameObject.SetActive(false);
         turnBar.gameObject.SetActive(false);
+        emotion.gameObject.SetActive(false);
+    }
+
+    public void ShowQuestion(Define.EmotionType emotionType)
+    {
+        string type = emotionType.ToString();
+        emotion.sprite = uiSprites[type];
+        emotion.gameObject.SetActive(true); 
+    }
+
+    IEnumerator EmotionTime() { 
+        yield return new WaitForSeconds(0.5f);
+        emotion.gameObject.SetActive(false);
     }
 }
