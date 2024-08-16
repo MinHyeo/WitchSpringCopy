@@ -11,6 +11,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField] int Agility;
     [SerializeField] int Defense;
     [SerializeField] int MagicResist;
+    [SerializeField] public bool IsDead;
 
     [Header("Monster Component")]
     [SerializeField] Animator monsterAni;
@@ -34,8 +35,8 @@ public class MonsterController : MonoBehaviour
         {
             Debug.Log("Monster Dead");
             monsterAni.SetBool("IsDead", true);
+            IsDead = true;
             return;
         }
-        
     }
 }

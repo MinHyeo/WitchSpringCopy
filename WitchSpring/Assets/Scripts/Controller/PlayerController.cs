@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using UnityEditor.Timeline.Actions;
 using UnityEngine;
 
 
@@ -8,6 +9,7 @@ public class PlayerController : MonoBehaviour
 {
     [Header("Player Info")]
     [SerializeField] private Vector3 m_pos;
+    [SerializeField] private Vector3 p_pos;
     [SerializeField] private float curHp;
     [SerializeField] private float maxHp;
     [SerializeField] private float curMp;
@@ -21,11 +23,15 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float attack_count = 1;
     [SerializeField] private float p_speed;
     [SerializeField] private float wait_run_ration;
+    [SerializeField] private int attackNumber = 0;
+    [SerializeField] private bool attackFlag= false;
     [SerializeField] private Define.PlayerStates p_state = Define.PlayerStates.Idle;
     [SerializeField] private Dictionary<string, int> buffList = new Dictionary<string, int>();
 
     [Header("Player Components")]
+    [Tooltip("스크립트에서 가져옴")]
     [SerializeField] private Animator P_Animator;
+    [Tooltip("스크립트에서 가져옴")]
     [SerializeField] private ParticleSystem P_Particle;   
 
     #region Get/Set
@@ -36,6 +42,7 @@ public class PlayerController : MonoBehaviour
     public float CurrentSP { get { return curSp; } set { curSp = value; } }
     public float MaxSP { get { return maxSp; } set { maxSp = value; } }
     public float Magic { get { return magic; } set { magic = value; } }
+    public int AttackNumber { set { attackNumber = value; } }
 
     public Dictionary<string, int> Buff { get { return buffList; } }
     private List<MagicFenceType> magicFences;
@@ -47,7 +54,7 @@ public class PlayerController : MonoBehaviour
         GameManager.Input.MouseAction -= ClickToMove;
         GameManager.Input.MouseAction += ClickToMove;
         p_speed = 5.0f;
-        curHp = 50.0f;
+        curHp = 90.0f;
         maxHp = 100.0f;
         curMp = 150.0f;
         maxMp = 200.0f;
@@ -95,16 +102,35 @@ public class PlayerController : MonoBehaviour
 
         //Set Idle Animation
         P_Animator.SetFloat("Speed", 0.0f);
+        p_pos = transform.position;
     }
 
     void StateWalk()
     {
+        if (attackFlag) {
+            p_pos = transform.position;
+        }
         Vector3 dir = m_pos - transform.position;
         dir.y = 0;
         if (dir.magnitude < 0.001f)
         {
             //Change State
             p_state = Define.PlayerStates.Idle;
+            if (attackFlag) {
+                transform.Rotate(new Vector3(0.0f,180.0f, 0.0f), Space.Self);
+                attackFlag = false;
+                P_Animator.SetBool("IsBattle", true);
+                if (!GameManager.Instance.Monster.GetComponent<MonsterController>().IsDead) {
+                    GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
+                }
+                else
+                {
+                    GameManager.Instance.Monster.transform.parent.gameObject.SetActive(false);
+                    GameManager.Instance.Monster = null;
+                    GameManager.Situation.SetStiuation(Define.Situations.Normal);
+                }
+                return;
+            }
         }
         else
         {
@@ -112,8 +138,9 @@ public class PlayerController : MonoBehaviour
             transform.position += dir.normalized * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-            //transform.LookAt(m_pos);
         }
+
+
 
         //Set Walk Animation
         P_Animator.SetFloat("Speed", p_speed);
@@ -226,8 +253,8 @@ public class PlayerController : MonoBehaviour
     public void PlayerAttackReset()
     {
         attack_count = 1;
-        GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
         MagicFenceBuffSet();
+        SetPlayerState(Define.PlayerStates.Walk, p_pos);
     }
 
     public void PlayerHit(int damage)
@@ -282,4 +309,10 @@ public class PlayerController : MonoBehaviour
         P_Particle.Stop();
     }
 
+    public void FenceAttack()
+    {
+        attackFlag = true;
+        P_Animator.SetInteger("AttackNumber", attackNumber);
+        P_Animator.SetTrigger("Attack");
+    }
 }

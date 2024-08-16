@@ -221,6 +221,7 @@ Transform:
   m_Children:
   - {fileID: 210795439}
   - {fileID: 568773478}
+  - {fileID: 257830995}
   m_Father: {fileID: 1214197304}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &210795438
@@ -290,6 +291,72 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   monsterRoot: {fileID: 1642320924}
+--- !u!1 &257830994
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 257830995}
+  - component: {fileID: 257830996}
+  - component: {fileID: 257830997}
+  m_Layer: 0
+  m_Name: AttackRange
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &257830995
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257830994}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 2.2}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 122754484}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!135 &257830996
+SphereCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257830994}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 1
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Radius: 2
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &257830997
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 257830994}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2dc3120816ecffc47b8cb1144a4dc55e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &568773477
 GameObject:
   m_ObjectHideFlags: 0
@@ -559,7 +626,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_pos: {x: 0, y: 0, z: 0}
-  curHp: 50
+  p_pos: {x: 0, y: 0, z: 0}
+  curHp: 90
   maxHp: 100
   curMp: 150
   maxMp: 200
@@ -572,6 +640,8 @@ MonoBehaviour:
   attack_count: 1
   p_speed: 0
   wait_run_ration: 0
+  attackNumber: 0
+  attackFlag: 0
   p_state: 0
   P_Animator: {fileID: 0}
   P_Particle: {fileID: 0}
@@ -5916,6 +5986,7 @@ MonoBehaviour:
   Agility: 0
   Defense: 0
   MagicResist: 0
+  IsDead: 0
   monsterAni: {fileID: 0}
 --- !u!1001 &8295315437642232539
 PrefabInstance:

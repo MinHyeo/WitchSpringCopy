@@ -4,16 +4,18 @@ using UnityEngine;
 
 public class FenceUI : MonoBehaviour
 {
+    public int attackNum;
     public void CancelButton() {
         GameManager.UI.ChangeUI("BattleUI");
     }
 
     public void AttackButton(int attackNumber)
     {
+        this.attackNum = attackNumber;
         float Hpcost = 0.0f;
         PlayerController playerHp = GameManager.Player.GetComponent<PlayerController>();
         //Player HP Decrease
-        switch (attackNumber) {
+        switch (attackNum) {
             case 2:
                 Hpcost = 4.0f;
                 break;
@@ -42,8 +44,8 @@ public class FenceUI : MonoBehaviour
 
         GameManager.Situation.SetStiuation(Define.Situations.StartAttack);
 
-        GameManager.Player.GetComponent<Animator>().SetInteger("AttackNumber", attackNumber);
-        GameManager.Player.GetComponent<Animator>().SetTrigger("Attack");
+        GameManager.Player.GetComponent<PlayerController>().AttackNumber = attackNumber;
+        GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, GameManager.Instance.Monster.transform.position);
     }
 
 }

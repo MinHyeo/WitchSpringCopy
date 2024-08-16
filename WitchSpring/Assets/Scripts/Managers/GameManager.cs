@@ -33,7 +33,7 @@ public class GameManager : MonoBehaviour
     GameObject player;
     public static GameObject Player { get { return Instance.player; } }
 
-    GameObject monster;
+    GameObject monster = null;
     public GameObject Monster { get { return Instance.monster; } set { monster = value; } }
 
     GameObject mainCamera;
