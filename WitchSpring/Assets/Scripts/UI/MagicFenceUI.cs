@@ -77,6 +77,8 @@ public class MagicFenceUI : MonoBehaviour
         }
         playerInfo.UseMP(Mpcost);
 
+        playerInfo.MagicFenceBuffSet();
+
         GameManager.UI.ChangeUI("BattleUI");
         GameManager.UI.SendUIMassage(buffInfo + " 효과가 지속됩니다.", Define.MessageType.System);
     }

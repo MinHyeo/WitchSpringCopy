@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -35,6 +36,12 @@ public class BattleUI : MonoBehaviour
 
     }
     public void EscapelButton() {
+        for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++) {
+            string bufName = Enum.GetName(typeof(Define.PlayerBuff), i);
+            GameManager.Player.GetComponent<PlayerController>().Buff[bufName] = 0;
+        }
+        GameManager.Player.GetComponent<PlayerController>().MagicFenceBuffSet();
+
         GameManager.Situation.SetStiuation(Define.Situations.Normal);
     }
 

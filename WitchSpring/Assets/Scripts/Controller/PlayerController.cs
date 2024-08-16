@@ -26,7 +26,7 @@ public class PlayerController : MonoBehaviour
 
     [Header("Player Components")]
     [SerializeField] private Animator P_Animator;
-    [SerializeField] private ParticleSystem P_Particle;
+    [SerializeField] private ParticleSystem P_Particle;   
 
     #region Get/Set
     public float CurrentHP { get { return curHp; } set { curHp = value; } }
@@ -59,6 +59,8 @@ public class PlayerController : MonoBehaviour
         defense = 10.0f;
 
         P_Animator = GetComponent<Animator>();
+
+        P_Particle = transform.GetComponentInChildren<ParticleSystem>();
 
         for (int i = 0; i < (int)Define.PlayerBuff.MaxBuff; i++)
         {
@@ -225,20 +227,7 @@ public class PlayerController : MonoBehaviour
     {
         attack_count = 1;
         GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
-
-        if (Buff["MagicSword"] > 0)
-        {
-            Buff["MagicSword"]--;
-        }
-        if (Buff["AbsorbSword"] > 0)
-        {
-            Buff["AbsorbSword"]--;
-
-        }
-        if (Buff["MagicMaterialize"] > 0)
-        {
-            Buff["MagicMaterialize"]--;
-        }
+        MagicFenceBuffSet();
     }
 
     public void PlayerHit(int damage)
@@ -280,6 +269,17 @@ public class PlayerController : MonoBehaviour
         {
             curMp = 0.0f;
         }
+    }
+
+    public void MagicFenceBuffSet() {
+        if (Buff["MagicSword"] > 0 || Buff["AbsorbSword"] > 0 || Buff["MagicMaterialize"] > 0)
+        {
+            if (!P_Particle.IsAlive()) {
+                P_Particle.Play();
+            }
+            return;
+        }
+        P_Particle.Stop();
     }
 
 }
