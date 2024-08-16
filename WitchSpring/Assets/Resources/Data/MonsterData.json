@@ -9,7 +9,8 @@
             "Magic" : "0",
             "Agility" : "0",
             "Defense" : "0",
-            "MagicResist" : "0"
+            "MagicResist" : "0",
+            "Soul" : "1"
         },
         {
             "MonsterID" : "LittleFrog",
@@ -20,7 +21,8 @@
             "Magic" : "0",
             "Agility" : "5",
             "Defense" : "0",
-            "MagicResist" : "0" 
+            "MagicResist" : "0" ,
+            "Soul" : "30"
         }
     ]    
 }

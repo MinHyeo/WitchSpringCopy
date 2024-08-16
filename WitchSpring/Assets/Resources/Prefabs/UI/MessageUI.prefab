@@ -197,7 +197,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   messagData: {fileID: 7294843034875922348}
   messageBox: {fileID: 3671197742936950074}
-  normal: {fileID: 21300000, guid: a72da9b0b4670ca4494842c9ed45f553, type: 3}
+  normal: {fileID: 21300000, guid: f3f2675001a15534a80e2509a65fa8c4, type: 3}
   system: {fileID: 21300000, guid: e3f715cbfb2b6c64a8dd758035ebba51, type: 3}
 --- !u!1 &7123084251748934337
 GameObject:

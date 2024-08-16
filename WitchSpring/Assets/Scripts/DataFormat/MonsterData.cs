@@ -16,6 +16,7 @@ public class MonsterInfo
     public int Agility;
     public int Defense;
     public int MagicResist;
+    public int Soul;
 }
 
 [Serializable]

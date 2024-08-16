@@ -11,6 +11,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField] int Agility;
     [SerializeField] int Defense;
     [SerializeField] int MagicResist;
+    [SerializeField] int Soul;
     [SerializeField] public bool IsDead;
 
     [Header("Monster Component")]
@@ -23,6 +24,7 @@ public class MonsterController : MonoBehaviour
         Agility = data.Agility;
         Defense = data.Defense;
         MagicResist = data.MagicResist;
+        Soul = data.Soul;
         monsterAni = transform.parent.GetComponent<Animator>();
     }
 
@@ -31,10 +33,12 @@ public class MonsterController : MonoBehaviour
 
         HP -= (int)damage;
 
-        if (HP < 0)
+        if (HP < 0 && !IsDead)
         {
             Debug.Log("Monster Dead");
             monsterAni.SetBool("IsDead", true);
+            GameManager.UI.SendUIMassage($"영혼석 채우기 + {Soul}", Define.MessageType.Normal);
+            GameManager.Player.GetComponent<PlayerController>().CurrentSP += (float)Soul;
             IsDead = true;
             return;
         }
