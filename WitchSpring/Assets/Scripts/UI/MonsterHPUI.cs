@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using System.Threading;
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -54,5 +55,8 @@ public class MonsterHPUI : MonoBehaviour
         monsterHPText.text = curhp.ToString();
     }
     public void ShowDamage(int damage) {
+        GameObject DamageBox = new GameObject();
+        DamageBox.transform.parent = dagameRoot.transform;
+        Animator DboxAni = Util.GetOrAddComponent<Animator>(DamageBox);
     }
 }

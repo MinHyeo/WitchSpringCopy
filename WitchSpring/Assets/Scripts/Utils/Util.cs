@@ -7,8 +7,6 @@ using UnityEngine;
 //기능성 함수 저장용 클래스(Find 메서드)
 public class Util
 {
-
-    //Component 가져오기, 없으면 추가
     public static T GetOrAddComponent<T>(GameObject gameObject) where T : UnityEngine.Component
     {
         T component = gameObject.GetComponent<T>();
