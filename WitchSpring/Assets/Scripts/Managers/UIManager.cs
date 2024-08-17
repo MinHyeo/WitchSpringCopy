@@ -29,19 +29,27 @@ public class UIManager
 
     //UI Change
     public void ChangeUI(string UIName) {
-        if (UIName == "BattleUI") {
-            UIRoot.UIList["FieldUI"].SetActive(true);
-            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().BattleMode();
-            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
-            UIRoot.UIList[UIName].GetComponent<BattleUI>().ShowBattleUI();
-
+        if (UIRoot.CurrentUI != null)
+        {
+            HideUI();
         }
-        HideUI();
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
         ShowUI();
-        if (UIName == "FieldUI"){
-            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().NormalMode();
-            UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
+        switch (UIName) {
+            case "FieldUI":
+
+                UIRoot.UIList[UIName].GetComponent<FieldUI>().NormalMode();
+                UIRoot.UIList[UIName].GetComponent<FieldUI>().ShowFieldUI();
+                break;
+            case "BattleUI":
+                UIRoot.UIList["FieldUI"].SetActive(true);
+                UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().BattleMode();
+                UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
+                UIRoot.UIList[UIName].GetComponent<BattleUI>().ShowBattleUI();
+                break;
+            case "":
+
+                break;
         }
     }
 
