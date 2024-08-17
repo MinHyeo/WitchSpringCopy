@@ -126,7 +126,7 @@ public class PlayerController : MonoBehaviour
                 else
                 {
                     GameManager.Instance.Monster.transform.parent.gameObject.SetActive(false);
-                    GameManager.Instance.Monster = null;
+                    GameManager.Instance.Monster.GetComponent<MonsterController>().Disconnect();
                     GameManager.Situation.SetStiuation(Define.Situations.Normal);
                 }
                 return;

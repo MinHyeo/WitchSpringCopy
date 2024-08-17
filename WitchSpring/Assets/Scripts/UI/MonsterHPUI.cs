@@ -27,25 +27,20 @@ public class MonsterHPUI : MonoBehaviour
         canvas.gameObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
-    private void LateUpdate()
-    {
-        GetMonsterHP();
-    }
-
     public void ShowHP()
     {
         //Set Data
         GetMonsterHP();
         //Set position
-        canvas.transform.rotation = Quaternion.LookRotation(Vector3.back);
-        Vector3 sliderPos = GameManager.Instance.Monster.transform.position + new Vector3(0.0f, 0.1f, 1.0f);
+        Vector3 sliderPos = GameManager.Instance.Monster.transform.position + new Vector3(0.0f, 0.1f, -1.2f);
         canvas.transform.position = sliderPos;
+        canvas.transform.Rotate(45.0f, 0.0f, 0.0f);
     }
 
     public void GetMonsterHP() {
         int curhp = GameManager.Instance.Monster.GetComponent<MonsterController>().CurrentHP;
         int maxhp = GameManager.Instance.Monster.GetComponent<MonsterController>().MaxHP;
-        monsterHPBar.value = curhp / maxhp;
+        monsterHPBar.value = (float)curhp / (float)maxhp;
         monsterHPText.text = curhp.ToString();
     }
 }

@@ -42,9 +42,9 @@ public class MonsterController : MonoBehaviour
 
     public void SetHpBar() {
         hp = GameManager.Resource.Instantiate("UI/MonsterHPUI");
-        hp.transform.parent = transform.parent;
         Hpbar = hp.GetComponent<MonsterHPUI>();
         Hpbar.ShowHP();
+        hp.transform.parent = transform.parent;
     }
 
     public void Disconnect()
@@ -60,6 +60,8 @@ public class MonsterController : MonoBehaviour
         Debug.Log($"Monster Hitted {(int)damage}");
 
         curHP -= (int)damage;
+
+        Hpbar.GetMonsterHP();
 
         if (curHP < 0 && !IsDead)
         {
