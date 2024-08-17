@@ -20,8 +20,9 @@ public class FieldUI : MonoBehaviour
     [SerializeField] Slider mpBar;
     [SerializeField] Slider soulBar;
     [SerializeField] Slider turnBar;
-    [Header("UI Image")]
+    [Header("UI Image & Sprite")]
     [SerializeField] Image emotion;
+    [SerializeField] Dictionary<int, Sprite> healNum = new Dictionary<int, Sprite>();
     [Header("UI Sprite")]
     [SerializeField] Sprite[] emotionSprites;
     [SerializeField] Dictionary<string, Sprite> uiSprites= new Dictionary<string, Sprite>();
@@ -43,15 +44,23 @@ public class FieldUI : MonoBehaviour
         pData = GameManager.Player.GetComponent<PlayerController>();
 
         UIAni = GetComponent<Animator>();
+
+
+        for (int i = 0; i < (int)Define.EmotionType.MaxEmotion; i++)
+        {
+            uiSprites.Add(emotionSprites[i].name, emotionSprites[i]);
+        }
+
+        for (int i = 0; i < 10; i++)
+        {
+            Sprite number = GameManager.Resource.Load<Sprite>($"Sprite/Heal/{i}");
+            healNum.Add(i, number);
+        }
     }
 
     void Start()
     {
         buffList.text = "";
-
-        for (int i = 0; i < (int)Define.EmotionType.MaxEmotion; i++){
-            uiSprites.Add(emotionSprites[i].name, emotionSprites[i]);
-        }
 
         emotion.gameObject.SetActive(false);
     }
@@ -150,6 +159,19 @@ public class FieldUI : MonoBehaviour
         string type = emotionType.ToString();
         emotion.sprite = uiSprites[type];
         emotion.gameObject.SetActive(true); 
+    }
+
+    public void ShowHeal(int Heal)
+    {
+        List<Sprite> Hsprite = new List<Sprite>();
+        while (Heal > 0)
+        {
+            Hsprite.Add(healNum[(int)(Heal % 10)]);
+            //Debug.Log($"{Count + 1}의 자리 수: {damage % 10}");
+            Heal /= 10;
+        }
+        HealBoxUI DamageBox = GameManager.Resource.Instantiate("UI/HealBox", gameObject.transform).GetComponent<HealBoxUI>();
+        DamageBox.SetHeal(Hsprite);
     }
 
     IEnumerator EmotionTime() { 

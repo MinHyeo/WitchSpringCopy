@@ -274,6 +274,7 @@ public class PlayerController : MonoBehaviour
         {
             curHp = MaxHP;
         }
+        GameManager.UI.Heal((int)recMount);
     }
     public void UseHPOrHit(float decHp)
     {

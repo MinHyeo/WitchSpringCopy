@@ -93,4 +93,7 @@ public class UIManager
         UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowQuestion(emotionType);
     }
 
+    public void Heal(int Heal) {
+        UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowHeal(Heal);
+    }
 }
