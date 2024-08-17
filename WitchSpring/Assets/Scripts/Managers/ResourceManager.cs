@@ -37,12 +37,4 @@ public class ResourceManager
 
         return gameObject;
     }
-
-    public void Destroy(GameObject gO)
-    {
-        if (gO == null)
-        {
-            return;
-        }
-    }
 }

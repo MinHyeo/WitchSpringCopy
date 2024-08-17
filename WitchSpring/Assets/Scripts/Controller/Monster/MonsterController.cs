@@ -14,8 +14,8 @@ public class MonsterController : MonoBehaviour
     [SerializeField] int magicResist;
     [SerializeField] int soul;
     [SerializeField] public bool IsDead;
-    [SerializeField] MonsterHPUI Hpbar;
-    [SerializeField] GameObject hp = null;
+    [SerializeField] MonsterHPUI HPUI;
+    [SerializeField] GameObject UIObject = null;
 
     [Header("Monster Component")]
     [SerializeField] Animator monsterAni;
@@ -41,17 +41,17 @@ public class MonsterController : MonoBehaviour
     }
 
     public void SetHpBar() {
-        hp = GameManager.Resource.Instantiate("UI/MonsterHPUI");
-        Hpbar = hp.GetComponent<MonsterHPUI>();
-        Hpbar.ShowHP();
-        hp.transform.parent = transform.parent;
+        UIObject = GameManager.Resource.Instantiate("UI/MonsterHPUI");
+        HPUI = UIObject.GetComponent<MonsterHPUI>();
+        HPUI.ShowHP();
+        UIObject.transform.parent = transform.parent;
     }
 
     public void Disconnect()
     {
-        if (hp != null)
+        if (UIObject != null)
         {
-            Destroy(hp);
+            Destroy(UIObject);
         }
         GameManager.Instance.Monster = null;
     }
@@ -61,7 +61,8 @@ public class MonsterController : MonoBehaviour
 
         curHP -= (int)damage;
 
-        Hpbar.GetMonsterHP();
+        HPUI.GetMonsterHP();
+        HPUI.ShowDamage((int)damage);
 
         if (curHP < 0 && !IsDead)
         {

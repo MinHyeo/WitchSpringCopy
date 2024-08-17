@@ -7,14 +7,24 @@ using UnityEngine.UI;
 public class MonsterHPUI : MonoBehaviour
 {
     [Header("UI Canvas")]
-    Canvas canvas;
-    [Header("UI Silder")]
+    [SerializeField] Canvas canvas;
+    [Header("UI Elements")]
     [SerializeField] Slider monsterHPBar;
+    [SerializeField] GameObject dagameRoot;
+    [Header("UI Demage Sprites")]
+    [SerializeField] Dictionary<int, Sprite> damageNum = new Dictionary<int, Sprite>();
     [Header("UI Text")]
     [SerializeField] Text monsterHPText;
 
     private void Awake()
     {
+        for (int i = 0; i < 10; i++) 
+        {
+            Sprite number = GameManager.Resource.Load<Sprite>($"Sprite/Damage/{i}");
+            damageNum.Add(i, number);
+        }
+
+        //dagameRoot = transform.Find("Damge").gameObject;
         canvas = GetComponent<Canvas>();
         Init();
     }
@@ -42,5 +52,7 @@ public class MonsterHPUI : MonoBehaviour
         int maxhp = GameManager.Instance.Monster.GetComponent<MonsterController>().MaxHP;
         monsterHPBar.value = (float)curhp / (float)maxhp;
         monsterHPText.text = curhp.ToString();
+    }
+    public void ShowDamage(int damage) {
     }
 }
