@@ -483,11 +483,23 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 1626512086159332960}
     m_Modifications:
+    - target: {fileID: 135071503683994518, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2622419990869423166, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3232929353758830861, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
       propertyPath: m_Name
       value: DamageBox
       objectReference: {fileID: 0}
-    - target: {fileID: 3232929353758830861, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
+    - target: {fileID: 4271898893744844494, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4616501270635238820, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
       propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
@@ -529,6 +541,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 6120350670653834327, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7993008480285225265, guid: d5ced7761d21dab45907e0620a918bc5, type: 3}
+      propertyPath: m_IsActive
       value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
