@@ -5,6 +5,12 @@ using UnityEngine;
 public class FenceUI : MonoBehaviour
 {
     public int attackNum;
+    [SerializeField] Animator UIAni;
+    private void Awake()
+    {
+        UIAni = GetComponent<Animator>();
+    }
+
     public void CancelButton() {
         GameManager.UI.ChangeUI("BattleUI");
     }
@@ -46,6 +52,11 @@ public class FenceUI : MonoBehaviour
 
         GameManager.Player.GetComponent<PlayerController>().AttackNumber = attackNumber;
         GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, GameManager.Instance.Monster.transform.position);
+    }
+
+    public void ShowFenceUI()
+    {
+        UIAni.Play("Show");
     }
 
 }

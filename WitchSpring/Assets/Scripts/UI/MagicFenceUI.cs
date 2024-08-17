@@ -12,6 +12,12 @@ public class MagicFenceType
 
 public class MagicFenceUI : MonoBehaviour
 {
+    [SerializeField] Animator UIAni;
+    private void Awake()
+    {
+        UIAni = GetComponent<Animator>();
+    }
+
     public void CancelButton() {
         GameManager.UI.ChangeUI("BattleUI");
     }
@@ -81,5 +87,9 @@ public class MagicFenceUI : MonoBehaviour
 
         GameManager.UI.ChangeUI("BattleUI");
         GameManager.UI.SendUIMassage(buffInfo + " 효과가 지속됩니다.", Define.MessageType.System);
+    }
+    public void ShowMagicFenceUI()
+    {
+        UIAni.Play("Show");
     }
 }

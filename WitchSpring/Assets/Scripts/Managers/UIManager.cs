@@ -35,9 +35,9 @@ public class UIManager
         }
         UIRoot.CurrentUI = UIRoot.UIList[UIName];
         ShowUI();
+        //Switch for Animation
         switch (UIName) {
             case "FieldUI":
-
                 UIRoot.UIList[UIName].GetComponent<FieldUI>().NormalMode();
                 UIRoot.UIList[UIName].GetComponent<FieldUI>().ShowFieldUI();
                 break;
@@ -47,8 +47,14 @@ public class UIManager
                 UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
                 UIRoot.UIList[UIName].GetComponent<BattleUI>().ShowBattleUI();
                 break;
-            case "":
-
+            case"FenceUI":
+                UIRoot.UIList[UIName].GetComponent<FenceUI>().ShowFenceUI();
+                break;
+            case "MagicFenceUI":
+                UIRoot.UIList[UIName].GetComponent<MagicFenceUI>().ShowMagicFenceUI();
+                break;
+            case "MagicUI":
+                UIRoot.UIList[UIName].GetComponent<MagicUI>().ShowMagicUI();
                 break;
         }
     }
