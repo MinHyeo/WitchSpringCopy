@@ -3229,6 +3229,7 @@ MonoBehaviour:
   mpBar: {fileID: 5443954204584963473}
   soulBar: {fileID: 1789356083769588729}
   turnBar: {fileID: 7187937248305482508}
+  MonsterHPBar: {fileID: 0}
   emotion: {fileID: 7092361564100420321}
   emotionSprites:
   - {fileID: 21300000, guid: 470ead6d6a1925c4db9896db2aea776b, type: 3}
@@ -3242,6 +3243,7 @@ MonoBehaviour:
   maxMP: 0
   curSp: 0
   maxSp: 0
+  UIAni: {fileID: 0}
 --- !u!1 &8365232326681469340
 GameObject:
   m_ObjectHideFlags: 0

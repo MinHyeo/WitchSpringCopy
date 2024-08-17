@@ -40,11 +40,13 @@ public class UIManager
             case "FieldUI":
                 UIRoot.UIList[UIName].GetComponent<FieldUI>().NormalMode();
                 UIRoot.UIList[UIName].GetComponent<FieldUI>().ShowFieldUI();
+                //UIRoot.UIList["MonsterHPUI"].SetActive(false);
                 break;
             case "BattleUI":
                 UIRoot.UIList["FieldUI"].SetActive(true);
                 UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().BattleMode();
                 UIRoot.UIList["FieldUI"].GetComponent<FieldUI>().ShowFieldUI();
+                //UIRoot.UIList["MonsterHPUI"].SetActive(true);
                 UIRoot.UIList[UIName].GetComponent<BattleUI>().ShowBattleUI();
                 break;
             case"FenceUI":

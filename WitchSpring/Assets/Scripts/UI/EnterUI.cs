@@ -38,6 +38,8 @@ public class EnterUI : MonoBehaviour
     {
         GameManager.Situation.SetStiuation(Define.Situations.Battle);
         GameManager.Instance.Monster.GetComponent<MonsterController>().SetStat(monsterinfoSet);
+        GameManager.Instance.Monster.GetComponent<MonsterController>().SetHpBar();
+
     }
 
     public void EscapeButtion() {

@@ -459,7 +459,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a890e6426b527974e87f8e6f8b5aa54f, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -4.68
+      value: -4.57
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: a890e6426b527974e87f8e6f8b5aa54f, type: 3}
       propertyPath: m_LocalRotation.w
@@ -5980,14 +5980,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 75370a57cab6a314e8d8e7ed6ca37cfb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  HP: 0
-  Strength: 0
-  Magic: 0
-  Agility: 0
-  Defense: 0
-  MagicResist: 0
-  Soul: 0
+  curHP: 0
+  maxHP: 0
+  strength: 0
+  magic: 0
+  agility: 0
+  defense: 0
+  magicResist: 0
+  soul: 0
   IsDead: 0
+  Hpbar: {fileID: 0}
   monsterAni: {fileID: 0}
 --- !u!1001 &716750934970874908
 PrefabInstance:

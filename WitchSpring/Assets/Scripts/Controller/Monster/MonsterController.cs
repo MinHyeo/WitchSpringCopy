@@ -5,40 +5,68 @@ using UnityEngine;
 public class MonsterController : MonoBehaviour
 {
     [Header("Monster Info")]
-    [SerializeField] int HP;
-    [SerializeField] int Strength;
-    [SerializeField] int Magic;
-    [SerializeField] int Agility;
-    [SerializeField] int Defense;
-    [SerializeField] int MagicResist;
-    [SerializeField] int Soul;
+    [SerializeField] int curHP;
+    [SerializeField] int maxHP;
+    [SerializeField] int strength;
+    [SerializeField] int magic;
+    [SerializeField] int agility;
+    [SerializeField] int defense;
+    [SerializeField] int magicResist;
+    [SerializeField] int soul;
     [SerializeField] public bool IsDead;
+    [SerializeField] MonsterHPUI Hpbar;
+    [SerializeField] GameObject hp = null;
 
     [Header("Monster Component")]
     [SerializeField] Animator monsterAni;
 
+
+    #region Get/Set
+    public int CurrentHP { get { return curHP; } }
+
+    public int MaxHP { get { return maxHP; } }
+
+    #endregion
+
     public void SetStat(MonsterInfo data) {
-        HP = data.HP;
-        Strength = data.Strength;
-        Magic = data.Magic;
-        Agility = data.Agility;
-        Defense = data.Defense;
-        MagicResist = data.MagicResist;
-        Soul = data.Soul;
+        curHP = data.HP;
+        maxHP = data.HP;
+        strength = data.Strength;
+        magic = data.Magic;
+        agility = data.Agility;
+        defense = data.Defense;
+        magicResist = data.MagicResist;
+        soul = data.Soul;
         monsterAni = transform.parent.GetComponent<Animator>();
+    }
+
+    public void SetHpBar() {
+        hp = GameManager.Resource.Instantiate("UI/MonsterHPUI");
+        hp.transform.parent = transform.parent;
+        Hpbar = hp.GetComponent<MonsterHPUI>();
+        Hpbar.ShowHP();
+    }
+
+    public void Disconnect()
+    {
+        if (hp != null)
+        {
+            Destroy(hp);
+        }
+        GameManager.Instance.Monster = null;
     }
 
     public void MonsterHit(float damage) {
         Debug.Log($"Monster Hitted {(int)damage}");
 
-        HP -= (int)damage;
+        curHP -= (int)damage;
 
-        if (HP < 0 && !IsDead)
+        if (curHP < 0 && !IsDead)
         {
             Debug.Log("Monster Dead");
             monsterAni.SetBool("IsDead", true);
-            GameManager.UI.SendUIMassage($"영혼석 채우기 + {Soul}", Define.MessageType.Normal);
-            GameManager.Player.GetComponent<PlayerController>().CurrentSP += (float)Soul;
+            GameManager.UI.SendUIMassage($"영혼석 채우기 + {soul}", Define.MessageType.Normal);
+            GameManager.Player.GetComponent<PlayerController>().CurrentSP += (float)soul;
             IsDead = true;
             return;
         }

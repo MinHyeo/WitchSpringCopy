@@ -63,6 +63,7 @@ public class Define
         MagicUI,
         //InventoryUI,
         MessageUI,
+        //MonsterHPUI,
         MaxUI
     }
 
