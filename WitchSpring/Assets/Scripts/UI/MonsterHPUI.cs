@@ -54,9 +54,16 @@ public class MonsterHPUI : MonoBehaviour
         monsterHPBar.value = (float)curhp / (float)maxhp;
         monsterHPText.text = curhp.ToString();
     }
-    public void ShowDamage(int damage) {
-        GameObject DamageBox = new GameObject();
-        DamageBox.transform.parent = dagameRoot.transform;
-        Animator DboxAni = Util.GetOrAddComponent<Animator>(DamageBox);
+    public void ShowDamage(int damage) 
+    {
+        int Count = 0;
+        Stack<Sprite> Dsprite = new Stack<Sprite>();
+        while (damage > 0) {
+            Dsprite.Push(damageNum[(int)(damage % 10)]);
+            Debug.Log($"{Count + 1}의 자리 수: {damage % 10}");
+            damage /= 10;
+            Count++;
+        }
+        DamageBoxUI DamageBox = GameManager.Resource.Instantiate("UI/DamageBox",gameObject.transform).GetComponent<DamageBoxUI>();
     }
 }
