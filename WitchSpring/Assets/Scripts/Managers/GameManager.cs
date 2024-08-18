@@ -89,12 +89,10 @@ public class GameManager : MonoBehaviour
     public void EndTurn() {
         if (Player.GetComponent<PlayerController>().PlayerTurn) {
             GM_Instance.M_Situation.SetStiuation(Define.Situations.EndAttack); //Show UI
-            Debug.Log("Monster Trun AGT ++");
             Monster.GetComponent<MonsterController>().MonsterCurAgt += Monster.GetComponent<MonsterController>().MonsterAility;
         }
         else if (Monster.GetComponent<MonsterController>().MonsterTurn) {
-            Monster.GetComponent<MonsterController>().Attack();
-            Debug.Log("Player Trun AGT ++");
+            Monster.GetComponent<MonsterController>().MonsterAttack();
             Player.GetComponent<PlayerController>().PlayerCurAgt += Player.GetComponent<PlayerController>().PlayerAgility;
         }
         else

@@ -52,6 +52,7 @@ public class FenceUI : MonoBehaviour
 
         playerHp.AttackNumber = attackNumber;
         playerHp.SetPlayerState(Define.PlayerStates.Walk, GameManager.Instance.Monster.transform.position);
+        GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterCurAgt += GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterAility;
         playerHp.UseTurn();
     }
 

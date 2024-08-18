@@ -204,7 +204,7 @@ public class FieldUI : MonoBehaviour
 
     IEnumerator TurnCheck() {
         while (true) {
-            yield return new WaitForSeconds(0.3f);
+            yield return new WaitForSeconds(0.4f);
             if (!GameManager.Player.GetComponent<PlayerController>().PlayerWait && !GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterWait) {
                 GameManager.GM_Instance.EndTurn();
             }   
