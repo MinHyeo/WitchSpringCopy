@@ -636,144 +636,17 @@ MonoBehaviour:
   magic: 0
   strength: 100
   agility: 0
+  curAgility: 0
   defense: 0
   attack_count: 1
   p_speed: 0
   wait_run_ration: 0
   attackNumber: 0
   attackFlag: 0
+  IsTurn: 1
   p_state: 0
   P_Animator: {fileID: 0}
   P_Particle: {fileID: 0}
---- !u!1001 &638198242
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 0}
-    m_Modifications:
-    - target: {fileID: 2277372434842436012, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 2277372434842436012, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6328675434620885400, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 6328675434620885400, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140219096190820163, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7140219096190820163, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7730779388210893239, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 7730779388210893239, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_Pivot.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_Pivot.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMin.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchorMin.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_SizeDelta.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_SizeDelta.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchoredPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_AnchoredPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8077104752484850884, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 8176167789644621770, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
-      propertyPath: m_Name
-      value: FieldUI
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: 4d5b829b68f65844f99b58715e9c2179, type: 3}
 --- !u!4 &682180335 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -7024146877873699786, guid: a890e6426b527974e87f8e6f8b5aa54f, type: 3}
@@ -6118,6 +5991,7 @@ MonoBehaviour:
   magicResist: 0
   soul: 0
   IsDead: 0
+  IsTurn: 0
   HPUI: {fileID: 0}
   UIObject: {fileID: 0}
   monsterAni: {fileID: 0}
@@ -6189,4 +6063,3 @@ SceneRoots:
   - {fileID: 608592502}
   - {fileID: 1214197303}
   - {fileID: 3559512747721866575}
-  - {fileID: 638198242}

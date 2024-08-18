@@ -11,6 +11,7 @@ public class MonsterHPUI : MonoBehaviour
     [SerializeField] Canvas canvas;
     [Header("UI Elements")]
     [SerializeField] Slider monsterHPBar;
+    [SerializeField] Slider monsterTurnBar;
     [SerializeField] GameObject dagameRoot;
     [Header("UI Demage Sprites")]
     [SerializeField] Dictionary<int, Sprite> damageNum = new Dictionary<int, Sprite>();
@@ -25,7 +26,6 @@ public class MonsterHPUI : MonoBehaviour
             damageNum.Add(i, number);
         }
 
-        //dagameRoot = transform.Find("Damge").gameObject;
         canvas = GetComponent<Canvas>();
         Init();
     }

@@ -82,4 +82,13 @@ public class GameManager : MonoBehaviour
             GM_Instance.M_Data.Init();
         }
     }
+
+    public void EndTurn() {
+        if (Player.GetComponent<PlayerController>().PlayerTurn) {
+            GM_Instance.M_Situation.SetStiuation(Define.Situations.EndAttack);
+        }
+        else if (Monster.GetComponent<MonsterController>().MonsterTurn) { 
+        }
+    
+    }
 }

@@ -36,6 +36,8 @@ public class FieldUI : MonoBehaviour
     [SerializeField] float maxMP;
     [SerializeField] float curSp;
     [SerializeField] float maxSp;
+    [SerializeField] float totalTurn = 0.0f;
+    [SerializeField] bool IsBattle = false;
     [Header("UI Componet")]
     [SerializeField] Animator UIAni;
 
@@ -93,6 +95,19 @@ public class FieldUI : MonoBehaviour
         times.text = $"{GameManager.Instance.Time}일 차";
 
         availvableTrainingDay.text = $"{GameManager.Instance.TrainDay}";
+
+        if (IsBattle){
+            if (totalTurn == 0.0f) {
+                totalTurn = pData.PlayerAgility +
+                        GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterAility;
+            }
+            if (pData.PlayerTurn) {
+                turnBar.value = 1.0f;
+                return;
+            }
+            turnBar.value = (float)pData.PlayerCurAgt /totalTurn;
+        }
+
     }
     public void UpdateLocatinInfo(string locationName = "어디지??") {
         location.text = locationName;
@@ -131,15 +146,18 @@ public class FieldUI : MonoBehaviour
         GameManager.UI.SendUIMassage("아직 구현 중...", Define.MessageType.System);
     }
     public void BattleMode() {
+        IsBattle = true;
         //Block
         inventory.interactable = false;
         buffList.gameObject.SetActive(true);
         turnBar.gameObject.SetActive(true);
         emotion.gameObject.SetActive(false);
-
     }
     public void NormalMode()
     {
+        IsBattle = false;
+
+        totalTurn = 0.0f;
         inventory.interactable = true;
         buffList.gameObject.SetActive(false);
         turnBar.gameObject.SetActive(false);

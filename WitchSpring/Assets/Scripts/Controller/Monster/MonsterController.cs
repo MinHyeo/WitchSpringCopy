@@ -13,7 +13,8 @@ public class MonsterController : MonoBehaviour
     [SerializeField] int defense;
     [SerializeField] int magicResist;
     [SerializeField] int soul;
-    [SerializeField] public bool IsDead;
+    [SerializeField] public bool IsDead = false;
+    [SerializeField] public bool IsTurn = false;
     [SerializeField] MonsterHPUI HPUI;
     [SerializeField] GameObject UIObject = null;
 
@@ -26,6 +27,9 @@ public class MonsterController : MonoBehaviour
 
     public int MaxHP { get { return maxHP; } }
 
+    public int MonsterAility { get { return agility; } }
+
+    public bool MonsterTurn { get { return IsTurn; } }
     #endregion
 
     public void SetStat(MonsterInfo data) {
@@ -73,5 +77,14 @@ public class MonsterController : MonoBehaviour
             IsDead = true;
             return;
         }
+    }
+
+    public void Attack() {
+        GameManager.Player.GetComponent<PlayerController>().PlayerHit(strength);
+        IsTurn = false;
+    }
+
+    public void SetTurn(int Total) { 
+    
     }
 }

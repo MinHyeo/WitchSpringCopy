@@ -44,6 +44,7 @@ public class SituationManager
                 GameManager.UI.ChangeUI("BattleUI");
 
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
+                GameManager.Player.GetComponent<PlayerController>().PlayerTurn = true;
 
                 GameManager.Instance.Monster.transform.LookAt(GameManager.Player.transform.position);
                 break;
