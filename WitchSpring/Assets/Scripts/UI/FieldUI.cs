@@ -155,7 +155,7 @@ public class FieldUI : MonoBehaviour
         buffList.gameObject.SetActive(true);
         turnBar.gameObject.SetActive(true);
         emotion.gameObject.SetActive(false);
-        StartCoroutine("TurnCheck");
+        GameManager.GM_Instance.Battle = true;
     }
     public void NormalMode()
     {
@@ -165,7 +165,7 @@ public class FieldUI : MonoBehaviour
         buffList.gameObject.SetActive(false);
         turnBar.gameObject.SetActive(false);
         emotion.gameObject.SetActive(false);
-        StopCoroutine("TurnCheck");
+        GameManager.GM_Instance.Battle = false;
     }
 
     public void ShowFieldUI() {
@@ -199,12 +199,5 @@ public class FieldUI : MonoBehaviour
     IEnumerator EmotionTime() { 
         yield return new WaitForSeconds(0.5f);
         emotion.gameObject.SetActive(false);
-    }
-
-    IEnumerator TurnCheck() {
-        while (true) {
-            yield return new WaitForSeconds(1.0f);
-            GameManager.GM_Instance.TurnManage();
-        }
     }
 }

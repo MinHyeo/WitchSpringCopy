@@ -51,6 +51,9 @@ public class GameManager : MonoBehaviour
 
     private List<GameObject> TurnList = new List<GameObject>();
 
+    private bool IsBattle = false;
+    public bool Battle { get { return IsBattle; } set { IsBattle = value; } }
+
     #endregion
 
 
@@ -64,6 +67,10 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         M_Input.OnUpdate();
+        if (IsBattle)
+        {
+            TurnManage();
+        }
     }
 
     //Creat GameManager Object and Get GameManager Component
@@ -87,13 +94,16 @@ public class GameManager : MonoBehaviour
     }
 
     public void TurnManage() {
-        if (Player.GetComponent<PlayerController>().PlayerTurn && !Player.GetComponent<PlayerController>().PlayerWait) {
-            Player.GetComponent<PlayerController>().PlayerWait = true;
+        if (Player.GetComponent<PlayerController>().PlayerTurn) {
+            if (Player.GetComponent<PlayerController>().PlayerWait) {
+                Player.GetComponent<PlayerController>().PlayerWait = true;
+            }
         }
-        else if (Monster.GetComponent<MonsterController>().MonsterTurn && !Monster.GetComponent<MonsterController>().MonsterWait) {
-
-            Monster.GetComponent<MonsterController>().MonsterWait = true;
-            Monster.GetComponent<MonsterController>().MonsterAttackSignal();
+        else if (Monster.GetComponent<MonsterController>().MonsterTurn) {
+            if (!Monster.GetComponent<MonsterController>().MonsterWait) {
+                Monster.GetComponent<MonsterController>().MonsterWait = true;
+                Monster.GetComponent<MonsterController>().MonsterAttackSignal();
+            }
         }
         else if(!Player.GetComponent<PlayerController>().PlayerTurn && !Monster.GetComponent<MonsterController>().MonsterTurn &&
                 !Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
