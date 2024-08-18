@@ -91,6 +91,7 @@ public class GameManager : MonoBehaviour
             Player.GetComponent<PlayerController>().PlayerWait = true;
         }
         else if (Monster.GetComponent<MonsterController>().MonsterTurn && !Monster.GetComponent<MonsterController>().MonsterWait) {
+
             Monster.GetComponent<MonsterController>().MonsterWait = true;
             Monster.GetComponent<MonsterController>().MonsterAttackSignal();
         }

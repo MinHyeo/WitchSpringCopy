@@ -23,12 +23,15 @@ public class MonsterController : MonoBehaviour
 
     [Header("Monster Component")]
     [SerializeField] Animator monsterAni;
+    [SerializeField] MonsterOnlyAttack attack;
 
 
     #region Get/Set
     public float CurrentHP { get { return curHP; } }
 
     public float MaxHP { get { return maxHP; } }
+
+    public float Strength { get { return strength; } }
 
     public float MonsterAility { get { return agility; } }
 
@@ -93,10 +96,5 @@ public class MonsterController : MonoBehaviour
         curAGT = 0.0f;
         monsterAni.SetTrigger("MonsterAttack");
     }
-    public void MonsterAttackReset() {
-        IsWait = false;
-    }
-    public void MonsterAttack() {
-        GameManager.Player.GetComponent<PlayerController>().PlayerHit((int)strength);
-    }
+    
 }
