@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.ComponentModel;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -48,6 +49,8 @@ public class GameManager : MonoBehaviour
     private int traindays = 0;
     public int TrainDay { get { return Instance.times; } set { traindays = value; } }
 
+    private List<GameObject> TurnList = new List<GameObject>();
+
     #endregion
 
 
@@ -85,9 +88,20 @@ public class GameManager : MonoBehaviour
 
     public void EndTurn() {
         if (Player.GetComponent<PlayerController>().PlayerTurn) {
-            GM_Instance.M_Situation.SetStiuation(Define.Situations.EndAttack);
+            GM_Instance.M_Situation.SetStiuation(Define.Situations.EndAttack); //Show UI
+            Debug.Log("Monster Trun AGT ++");
+            Monster.GetComponent<MonsterController>().MonsterCurAgt += Monster.GetComponent<MonsterController>().MonsterAility;
         }
-        else if (Monster.GetComponent<MonsterController>().MonsterTurn) { 
+        else if (Monster.GetComponent<MonsterController>().MonsterTurn) {
+            Monster.GetComponent<MonsterController>().Attack();
+            Debug.Log("Player Trun AGT ++");
+            Player.GetComponent<PlayerController>().PlayerCurAgt += Player.GetComponent<PlayerController>().PlayerAgility;
+        }
+        else
+        {
+            Debug.Log("Monster and Player Trun AGT");
+            Player.GetComponent<PlayerController>().PlayerCurAgt+= Player.GetComponent<PlayerController>().PlayerAgility;
+            Monster.GetComponent<MonsterController>().MonsterCurAgt+= Monster.GetComponent<MonsterController>().MonsterAility;
         }
     
     }

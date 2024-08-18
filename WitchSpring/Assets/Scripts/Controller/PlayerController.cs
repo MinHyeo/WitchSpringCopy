@@ -19,7 +19,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float magic;
     [SerializeField] private float strength;
     [SerializeField] private float agility;
-    [SerializeField] private float curAgility;
+    [SerializeField] private float curAGT;
     [SerializeField] private float defense;
     [SerializeField] private float attack_count = 1;
     [SerializeField] private float p_speed;
@@ -27,6 +27,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private int attackNumber = 0;
     [SerializeField] private bool attackFlag= false;
     [SerializeField] private bool IsTurn= true;
+    [SerializeField] private bool IsWait= false;
     [SerializeField] private Define.PlayerStates p_state = Define.PlayerStates.Idle;
     [SerializeField] private Dictionary<string, int> buffList = new Dictionary<string, int>();
 
@@ -45,9 +46,10 @@ public class PlayerController : MonoBehaviour
     public float MaxSP { get { return maxSp; } set { maxSp = value; } }
     public float Magic { get { return magic; } set { magic = value; } }
     public float PlayerAgility { get { return agility; } }
-    public float PlayerCurAgt { get { return curAgility; } set { curAgility = value; } }
+    public float PlayerCurAgt { get { return curAGT; } set { curAGT = value; } }
     public int AttackNumber { set { attackNumber = value; } }
     public bool PlayerTurn { get { return IsTurn; } set { IsTurn = value; } }
+    public bool PlayerWait { get { return IsWait; } set { IsWait = value; } }
 
     public Dictionary<string, int> Buff { get { return buffList; } }
     private List<MagicFenceType> magicFences;
@@ -124,6 +126,7 @@ public class PlayerController : MonoBehaviour
             if (attackFlag) {
                 transform.Rotate(new Vector3(0.0f,180.0f, 0.0f), Space.Self);
                 attackFlag = false;
+                IsWait = false;
                 P_Animator.SetBool("IsBattle", true);
                 if (GameManager.Instance.Monster.GetComponent<MonsterController>().IsDead) {
                     GameManager.Instance.Monster.transform.parent.gameObject.SetActive(false);
@@ -256,11 +259,10 @@ public class PlayerController : MonoBehaviour
         attack_count = 1;
         MagicFenceBuffSet();
         SetPlayerState(Define.PlayerStates.Walk, p_pos);
-        GameManager.GM_Instance.GetComponent<GameManager>().EndTurn();
     }
 
     public void UseTurn() {
-        curAgility = 0.0f;
+        curAGT = 0.0f;
         IsTurn = false;
     }
 

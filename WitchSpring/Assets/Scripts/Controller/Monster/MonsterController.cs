@@ -1,20 +1,23 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class MonsterController : MonoBehaviour
 {
     [Header("Monster Info")]
-    [SerializeField] int curHP;
-    [SerializeField] int maxHP;
-    [SerializeField] int strength;
-    [SerializeField] int magic;
-    [SerializeField] int agility;
-    [SerializeField] int defense;
-    [SerializeField] int magicResist;
-    [SerializeField] int soul;
+    [SerializeField] float curHP;
+    [SerializeField] float maxHP;
+    [SerializeField] float strength;
+    [SerializeField] float magic;
+    [SerializeField] float agility;
+    [SerializeField] float curAGT;
+    [SerializeField] float defense;
+    [SerializeField] float magicResist;
+    [SerializeField] float soul;
     [SerializeField] public bool IsDead = false;
     [SerializeField] public bool IsTurn = false;
+    [SerializeField] public bool IsWait = false;
     [SerializeField] MonsterHPUI HPUI;
     [SerializeField] GameObject UIObject = null;
 
@@ -23,13 +26,17 @@ public class MonsterController : MonoBehaviour
 
 
     #region Get/Set
-    public int CurrentHP { get { return curHP; } }
+    public float CurrentHP { get { return curHP; } }
 
-    public int MaxHP { get { return maxHP; } }
+    public float MaxHP { get { return maxHP; } }
 
-    public int MonsterAility { get { return agility; } }
+    public float MonsterAility { get { return agility; } }
 
-    public bool MonsterTurn { get { return IsTurn; } }
+    public float MonsterCurAgt { get { return curAGT; } set { curAGT = value; } }
+
+    public bool MonsterTurn { get { return IsTurn; } set { IsTurn = value; } }
+
+    public bool MonsterWait { get { return IsWait; } set { IsWait = value; } }
     #endregion
 
     public void SetStat(MonsterInfo data) {
@@ -38,6 +45,7 @@ public class MonsterController : MonoBehaviour
         strength = data.Strength;
         magic = data.Magic;
         agility = data.Agility;
+        curAGT = data.Agility;
         defense = data.Defense;
         magicResist = data.MagicResist;
         soul = data.Soul;
@@ -47,7 +55,7 @@ public class MonsterController : MonoBehaviour
     public void SetHpBar() {
         UIObject = GameManager.Resource.Instantiate("UI/MonsterHPUI");
         HPUI = UIObject.GetComponent<MonsterHPUI>();
-        HPUI.ShowHP();
+        HPUI.ShowHUD();
         UIObject.transform.parent = transform.parent;
     }
 
@@ -80,11 +88,9 @@ public class MonsterController : MonoBehaviour
     }
 
     public void Attack() {
-        GameManager.Player.GetComponent<PlayerController>().PlayerHit(strength);
+        GameManager.Player.GetComponent<PlayerController>().PlayerHit((int)strength);
         IsTurn = false;
-    }
-
-    public void SetTurn(int Total) { 
-    
+        IsWait = false;
+        curAGT = 0.0f;
     }
 }

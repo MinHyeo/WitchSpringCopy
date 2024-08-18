@@ -36,7 +36,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 0, y: 19.5}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2502212661413998164
@@ -398,6 +398,7 @@ MonoBehaviour:
   monsterTurnBar: {fileID: 6613193671449673281}
   dagameRoot: {fileID: 0}
   monsterHPText: {fileID: 1660273421955544616}
+  totalturn: 0
 --- !u!1 &4559899096484902717
 GameObject:
   m_ObjectHideFlags: 0
@@ -424,7 +425,7 @@ RectTransform:
   m_GameObject: {fileID: 4559899096484902717}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1, y: 2.2101, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 6560372855424758028}
@@ -433,7 +434,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0.2, y: -25.1}
+  m_AnchoredPosition: {x: -0.2, y: -5.6000004}
   m_SizeDelta: {x: 160, y: 20}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &6613193671449673281

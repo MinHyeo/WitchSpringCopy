@@ -106,6 +106,10 @@ public class FieldUI : MonoBehaviour
                 return;
             }
             turnBar.value = (float)pData.PlayerCurAgt /totalTurn;
+            if (turnBar.value >= 1) {
+                pData.PlayerTurn = true;
+                pData.PlayerWait = true;
+            }
         }
 
     }
@@ -152,16 +156,17 @@ public class FieldUI : MonoBehaviour
         buffList.gameObject.SetActive(true);
         turnBar.gameObject.SetActive(true);
         emotion.gameObject.SetActive(false);
+        StartCoroutine("TurnCheck");
     }
     public void NormalMode()
     {
         IsBattle = false;
-
         totalTurn = 0.0f;
         inventory.interactable = true;
         buffList.gameObject.SetActive(false);
         turnBar.gameObject.SetActive(false);
         emotion.gameObject.SetActive(false);
+        StopCoroutine("TurnCheck");
     }
 
     public void ShowFieldUI() {
@@ -195,5 +200,14 @@ public class FieldUI : MonoBehaviour
     IEnumerator EmotionTime() { 
         yield return new WaitForSeconds(0.5f);
         emotion.gameObject.SetActive(false);
+    }
+
+    IEnumerator TurnCheck() {
+        while (true) {
+            yield return new WaitForSeconds(0.3f);
+            if (!GameManager.Player.GetComponent<PlayerController>().PlayerWait && !GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterWait) {
+                GameManager.GM_Instance.EndTurn();
+            }   
+        }
     }
 }

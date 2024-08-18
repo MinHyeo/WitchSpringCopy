@@ -17,6 +17,9 @@ public class MonsterHPUI : MonoBehaviour
     [SerializeField] Dictionary<int, Sprite> damageNum = new Dictionary<int, Sprite>();
     [Header("UI Text")]
     [SerializeField] Text monsterHPText;
+    [Header("UI Info")]
+    [SerializeField] float totalturn = 0.0f;
+
 
     private void Awake()
     {
@@ -38,7 +41,7 @@ public class MonsterHPUI : MonoBehaviour
         canvas.gameObject.transform.localScale = new Vector3(0.01f, 0.01f, 0.01f);
     }
 
-    public void ShowHP()
+    public void ShowHUD()
     {
         //Set Data
         GetMonsterHP();
@@ -46,13 +49,21 @@ public class MonsterHPUI : MonoBehaviour
         Vector3 sliderPos = GameManager.Instance.Monster.transform.position + new Vector3(0.0f, 0.1f, -1.2f);
         canvas.transform.position = sliderPos;
         canvas.transform.Rotate(45.0f, 0.0f, 0.0f);
+
+        totalturn = GameManager.Player.GetComponent<PlayerController>().PlayerAgility +
+                    GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterAility;
+        StartCoroutine("CheckTurn");
     }
 
     public void GetMonsterHP() {
-        int curhp = GameManager.Instance.Monster.GetComponent<MonsterController>().CurrentHP;
-        int maxhp = GameManager.Instance.Monster.GetComponent<MonsterController>().MaxHP;
-        monsterHPBar.value = (float)curhp / (float)maxhp;
+        float curhp = GameManager.Instance.Monster.GetComponent<MonsterController>().CurrentHP;
+        float maxhp = GameManager.Instance.Monster.GetComponent<MonsterController>().MaxHP;
+        monsterHPBar.value = curhp / maxhp;
         monsterHPText.text = curhp.ToString();
+        if (curhp <= 0)
+        {
+            StopCoroutine("CheckTurn");
+        }
     }
     public void ShowDamage(int damage) 
     {
@@ -64,5 +75,16 @@ public class MonsterHPUI : MonoBehaviour
         }
         DamageBoxUI DamageBox = GameManager.Resource.Instantiate("UI/DamageBox",gameObject.transform).GetComponent<DamageBoxUI>();
         DamageBox.SetDamage(Dsprite);
+    }
+
+    IEnumerator CheckTurn() {
+        while (true) {
+            yield return new WaitForFixedUpdate();
+            monsterTurnBar.value = GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterCurAgt / totalturn;
+            if (monsterTurnBar.value >= 1) {
+                GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterTurn = true;
+                GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterWait = true;
+            }
+        }
     }
 }
