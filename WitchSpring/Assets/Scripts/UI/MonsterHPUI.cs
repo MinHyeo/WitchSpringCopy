@@ -83,7 +83,6 @@ public class MonsterHPUI : MonoBehaviour
             monsterTurnBar.value = GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterCurAgt / totalturn;
             if (monsterTurnBar.value >= 1) {
                 GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterTurn = true;
-                GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterWait = true;
             }
         }
     }

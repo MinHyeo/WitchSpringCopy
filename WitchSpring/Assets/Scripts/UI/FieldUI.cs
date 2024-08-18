@@ -108,7 +108,6 @@ public class FieldUI : MonoBehaviour
             turnBar.value = (float)pData.PlayerCurAgt /totalTurn;
             if (turnBar.value >= 1) {
                 pData.PlayerTurn = true;
-                pData.PlayerWait = true;
             }
         }
 
@@ -204,10 +203,8 @@ public class FieldUI : MonoBehaviour
 
     IEnumerator TurnCheck() {
         while (true) {
-            yield return new WaitForSeconds(0.4f);
-            if (!GameManager.Player.GetComponent<PlayerController>().PlayerWait && !GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterWait) {
-                GameManager.GM_Instance.EndTurn();
-            }   
+            yield return new WaitForSeconds(1.0f);
+            GameManager.GM_Instance.TurnManage();
         }
     }
 }

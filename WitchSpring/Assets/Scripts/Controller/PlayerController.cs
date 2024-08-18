@@ -259,6 +259,7 @@ public class PlayerController : MonoBehaviour
         attack_count = 1;
         MagicFenceBuffSet();
         SetPlayerState(Define.PlayerStates.Walk, p_pos);
+        IsWait = false;
     }
 
     public void UseTurn() {

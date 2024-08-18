@@ -87,7 +87,7 @@ public class MonsterController : MonoBehaviour
         }
     }
 
-    public void MonsterAttack() {
+    public void MonsterAttackSignal() {
         GameManager.Player.GetComponent<PlayerController>().PlayerCurAgt += GameManager.Player.GetComponent<PlayerController>().PlayerAgility;
         IsTurn = false;
         curAGT = 0.0f;
@@ -96,7 +96,7 @@ public class MonsterController : MonoBehaviour
     public void MonsterAttackReset() {
         IsWait = false;
     }
-    public void Attack() {
+    public void MonsterAttack() {
         GameManager.Player.GetComponent<PlayerController>().PlayerHit((int)strength);
     }
 }

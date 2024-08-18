@@ -86,16 +86,16 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void EndTurn() {
-        if (Player.GetComponent<PlayerController>().PlayerTurn) {
-            GM_Instance.M_Situation.SetStiuation(Define.Situations.EndAttack); //Show UI
-            Monster.GetComponent<MonsterController>().MonsterCurAgt += Monster.GetComponent<MonsterController>().MonsterAility;
+    public void TurnManage() {
+        if (Player.GetComponent<PlayerController>().PlayerTurn && !Player.GetComponent<PlayerController>().PlayerWait) {
+            Player.GetComponent<PlayerController>().PlayerWait = true;
         }
-        else if (Monster.GetComponent<MonsterController>().MonsterTurn) {
-            Monster.GetComponent<MonsterController>().MonsterAttack();
-            Player.GetComponent<PlayerController>().PlayerCurAgt += Player.GetComponent<PlayerController>().PlayerAgility;
+        else if (Monster.GetComponent<MonsterController>().MonsterTurn && !Monster.GetComponent<MonsterController>().MonsterWait) {
+            Monster.GetComponent<MonsterController>().MonsterWait = true;
+            Monster.GetComponent<MonsterController>().MonsterAttackSignal();
         }
-        else
+        else if(!Player.GetComponent<PlayerController>().PlayerTurn && !Monster.GetComponent<MonsterController>().MonsterTurn &&
+                !Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
         {
             Debug.Log("Monster and Player Trun AGT");
             Player.GetComponent<PlayerController>().PlayerCurAgt+= Player.GetComponent<PlayerController>().PlayerAgility;
