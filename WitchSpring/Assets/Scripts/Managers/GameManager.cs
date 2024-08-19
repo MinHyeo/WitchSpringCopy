@@ -108,6 +108,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
                 {
+                    Camera.GetComponent<CameraController>().WatchPlayer();
                     Player.GetComponent<PlayerController>().PlayerWait = true;
                     Situation.SetStiuation(Define.Situations.EndAttack);
                 }
@@ -116,6 +117,7 @@ public class GameManager : MonoBehaviour
             {
                 if (!Monster.GetComponent<MonsterController>().MonsterWait && !Player.GetComponent<PlayerController>().PlayerWait)
                 {
+                    Camera.GetComponent<CameraController>().WatchMonster();
                     Monster.GetComponent<MonsterController>().MonsterWait = true;
                     Monster.GetComponent<MonsterController>().MonsterAttackSignal();
                 }

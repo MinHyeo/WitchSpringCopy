@@ -20,6 +20,7 @@ public class MonsterController : MonoBehaviour
     [SerializeField] public bool IsWait = false;
     [SerializeField] MonsterHPUI HPUI;
     [SerializeField] GameObject UIObject = null;
+    [SerializeField] GameObject BattleEffect;
 
     [Header("Monster Component")]
     [SerializeField] Animator monsterAni;
@@ -40,6 +41,8 @@ public class MonsterController : MonoBehaviour
     public bool MonsterTurn { get { return IsTurn; } set { IsTurn = value; } }
 
     public bool MonsterWait { get { return IsWait; } set { IsWait = value; } }
+
+    public GameObject MonsterBattleEffect { get { return BattleEffect; } }
     #endregion
 
     public void SetStat(MonsterInfo data) {

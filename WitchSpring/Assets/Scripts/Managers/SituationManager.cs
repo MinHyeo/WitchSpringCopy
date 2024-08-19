@@ -25,8 +25,10 @@ public class SituationManager
                 Vector3 playerDest = GameManager.Player.transform.TransformPoint(new Vector3(0.0f, 0.1f, 2.0f));
                 //계산 결과 전달
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest);
+                GameManager.Player.GetComponent<PlayerController>().PlayerBatteEffect.SetActive(false);
 
                 if (GameManager.Instance.Monster != null) {
+                    GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterBattleEffect.SetActive(false);
                     GameManager.Instance.Monster.GetComponent<MonsterController>().Disconnect();
                 }
 
@@ -47,8 +49,10 @@ public class SituationManager
 
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Battle);
                 GameManager.Player.GetComponent<PlayerController>().PlayerTurn = true;
+                GameManager.Player.GetComponent<PlayerController>().PlayerBatteEffect.SetActive(true);
 
                 GameManager.Instance.Monster.transform.LookAt(GameManager.Player.transform.position);
+                GameManager.Instance.Monster.GetComponent<MonsterController>().MonsterBattleEffect.SetActive(true);
 
                 GameManager.Instance.StartBattle();
                 break;

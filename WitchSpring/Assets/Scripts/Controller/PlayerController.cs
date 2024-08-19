@@ -36,6 +36,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Animator P_Animator;
     [Tooltip("스크립트에서 가져옴")]
     [SerializeField] private ParticleSystem P_Particle;   
+    [SerializeField] GameObject BattleEffect;   
 
     #region Get/Set
     public float CurrentHP { get { return curHp; } set { curHp = value; } }
@@ -50,6 +51,8 @@ public class PlayerController : MonoBehaviour
     public int AttackNumber { set { attackNumber = value; } }
     public bool PlayerTurn { get { return IsTurn; } set { IsTurn = value; } }
     public bool PlayerWait { get { return IsWait; } set { IsWait = value; } }
+
+    public GameObject PlayerBatteEffect { get { return BattleEffect; } }
 
     public Dictionary<string, int> Buff { get { return buffList; } }
     private List<MagicFenceType> magicFences;
