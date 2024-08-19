@@ -12,6 +12,5 @@ public class MonsterOnlyAttack : MonoBehaviour
     public void MonsterAttackReset()
     {
         GameManager.Instance.Monster.GetComponent<MonsterController>().IsWait = false;
-        GameManager.Situation.SetStiuation(Define.Situations.EndAttack);
     }
 }

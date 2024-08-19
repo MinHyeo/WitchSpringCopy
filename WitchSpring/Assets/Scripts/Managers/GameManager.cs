@@ -106,12 +106,13 @@ public class GameManager : MonoBehaviour
             yield return new WaitForSeconds(0.7f);
             if (Player.GetComponent<PlayerController>().PlayerTurn)
             {
-                if (!Player.GetComponent<PlayerController>().PlayerWait)
+                if (!Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
                 {
                     Player.GetComponent<PlayerController>().PlayerWait = true;
+                    Situation.SetStiuation(Define.Situations.EndAttack);
                 }
             }
-            else if (Monster.GetComponent<MonsterController>().MonsterTurn)
+            else if (Monster != null && Monster.GetComponent<MonsterController>().MonsterTurn)
             {
                 if (!Monster.GetComponent<MonsterController>().MonsterWait && !Player.GetComponent<PlayerController>().PlayerWait)
                 {
@@ -119,7 +120,7 @@ public class GameManager : MonoBehaviour
                     Monster.GetComponent<MonsterController>().MonsterAttackSignal();
                 }
             }
-            else if (!Player.GetComponent<PlayerController>().PlayerTurn && !Monster.GetComponent<MonsterController>().MonsterTurn &&
+            else if (Monster != null && !Player.GetComponent<PlayerController>().PlayerTurn && !Monster.GetComponent<MonsterController>().MonsterTurn &&
                     !Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
             {
                 Debug.Log("Monster and Player Trun AGT");

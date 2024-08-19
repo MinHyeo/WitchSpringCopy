@@ -81,6 +81,7 @@ public class MonsterController : MonoBehaviour
 
         if (curHP < 0 && !IsDead)
         {
+            curHP = 0.0f;
             Debug.Log("Monster Dead");
             monsterAni.SetBool("IsDead", true);
             GameManager.UI.SendUIMassage($"영혼석 채우기 + {soul}", Define.MessageType.Normal);
