@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Threading;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,20 +11,29 @@ public class UI_PlayerInfo : MonoBehaviour
     [SerializeField] Text hpText;
     [SerializeField] Text mppText;
     [SerializeField] Text buffText;
+    [SerializeField] Slider ationGaugeBar;
 
     private List<Buff> activeBuffs = new List<Buff>();
     private Player player;
+    private BattleSystem battleSys;
 
-    private void Awake()
+    private void Start()
     {
         player = Managers.Player.player;
+        battleSys = Managers.Battle.GetBattleSystem();
     }
 
     void Update()
     {
         UpdateInfo();
         UpdateBuffs();
-        DisplayBuffs();
+        
+        if(battleSys.state != BattleSystem.BattleState.Idle)
+        {
+            SetAtionGauge();
+            DisplayBuffs();
+        }
+
     }
 
     void UpdateInfo()
@@ -42,6 +52,10 @@ public class UI_PlayerInfo : MonoBehaviour
         AddOrUpdateBuff("흡수 검술", player.absorbSwordCount);
         AddOrUpdateBuff("마력 구체", player.manaBallCount);
         AddOrUpdateBuff("마력의 흔적", player.manaTraceCount);
+    }
+    public void SetAtionGauge()
+    {
+        ationGaugeBar.value = battleSys.GetPlayerAction() / battleSys.GetMaxAtion();
     }
 
     void AddOrUpdateBuff(string buffName, int turns)

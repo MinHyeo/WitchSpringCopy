@@ -8,6 +8,7 @@ public class BattleTrigger : MonoBehaviour
     private CapsuleCollider col;
     private UI_Popup popup;
     public GameObject monster;
+    [SerializeField] GameObject trigger;
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
@@ -37,11 +38,11 @@ public class BattleTrigger : MonoBehaviour
 
     public void Trigger_Off()
     {
-        
+        trigger.SetActive(false);
     }
     public void Trigger_On()
     {
-        
+        trigger.SetActive(true) ;
     }
 
     private void OnDrawGizmos()

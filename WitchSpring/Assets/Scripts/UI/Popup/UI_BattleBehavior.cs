@@ -28,6 +28,12 @@ public class UI_BattleBehavior : MonoBehaviour
         Managers.UI.ShowPopupUI<UI_Popup>("UI_magicSword");
     }
 
+    public void Button_Magic()
+    {
+        Managers.UI.ClosePopupUI(popup);
+        Managers.UI.ShowPopupUI<UI_Popup>("UI_Magic");
+    }
+
     public void Button_Avoid()
     {
         Managers.UI.ClosePopupUI(popup);

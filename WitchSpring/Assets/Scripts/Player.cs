@@ -10,7 +10,7 @@ public class Player : MonoBehaviour
     public int maxMp=170;
     public float spellPower=10;
     public float strength=10;
-    public float agility=12;
+    public float speed=12;
     public float defence = 2;
 
     public int manaSwordCount = 0;

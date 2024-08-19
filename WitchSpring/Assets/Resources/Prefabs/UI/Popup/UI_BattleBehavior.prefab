@@ -272,7 +272,7 @@ GameObject:
   - component: {fileID: 6865024136645448897}
   - component: {fileID: 2427954025840590531}
   m_Layer: 5
-  m_Name: SpellAttack_Button
+  m_Name: Magic_Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -349,7 +349,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 2427954025840590531}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 7005552095029939173}
+        m_TargetAssemblyTypeName: UI_BattleBehavior, Assembly-CSharp
+        m_MethodName: Button_Magic
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2427954025840590531
 MonoBehaviour:
   m_ObjectHideFlags: 0

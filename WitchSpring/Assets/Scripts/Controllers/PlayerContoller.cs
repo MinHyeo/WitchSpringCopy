@@ -7,7 +7,7 @@ using UnityEngine.UIElements;
 public class PlayerController : MonoBehaviour
 {
     [SerializeField]
-    float speed = 10.0f;
+    float move_speed = 10.0f;
     Vector3 destPos;
     Vector3 monsterPos;
     Vector3 playerPos;
@@ -41,6 +41,7 @@ public class PlayerController : MonoBehaviour
         Idle_Battle,
         Attacking,
         Attacking_End,
+        Others,
     }
 
     [SerializeField] PlayerState state = PlayerState.Idle;
@@ -73,6 +74,8 @@ public class PlayerController : MonoBehaviour
             case PlayerState.Attacking_End:
                 EndAttack();
                 break;
+            case PlayerState.Others:
+                break;
 
 
         }
@@ -97,7 +100,7 @@ public class PlayerController : MonoBehaviour
         }
         else
         {
-            float moveDist = Mathf.Clamp(speed * Time.deltaTime, 0, dir.magnitude);
+            float moveDist = Mathf.Clamp(move_speed * Time.deltaTime, 0, dir.magnitude);
             transform.position += dir.normalized * moveDist;
 
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
@@ -170,30 +173,10 @@ public class PlayerController : MonoBehaviour
             case 7: player.hp -= 32; break;
         }
         state = PlayerState.Attacking;
+        Managers.Battle.PlayerAtioning();
     }
 
-    private void UpdateAttacking()
-    {
-        if (Managers.Battle.CurMonster() != null)
-        {
-            GameObject target = Managers.Battle.CurMonster().gameObject;
-            destPos = target.transform.position;
-            float distance = (destPos - transform.position).magnitude;
-            if (distance <= 1.5f)
-            {
-                anim.Play("attack"+attackNumber);
-                return;
-            }
-        }
 
-        Vector3 dir = monsterPos - transform.position;
-        float moveDist = Mathf.Clamp(speed * Time.deltaTime, 0, dir.magnitude);
-        transform.position += dir.normalized * moveDist;
-        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
-
-        // 애니메이션
-        anim.Play("run0");
-    }
     public void EndTurn()
     {
         if (player.manaSwordCount > 0)
@@ -204,11 +187,33 @@ public class PlayerController : MonoBehaviour
             player.absorbSwordCount--;
         if (player.manaTraceCount > 0)
             player.manaTraceCount--;
+        Managers.Battle.EndTurn();  
+    }
+    private void UpdateAttacking()
+    {
+        if (Managers.Battle.CurMonster() != null)
+        {
+            GameObject target = Managers.Battle.CurMonster().gameObject;
+            destPos = target.transform.position;
+            float distance = (destPos - transform.position).magnitude;
+            if (distance <= 1.5f)
+            {
+                anim.Play("attack" + attackNumber);
+                return;
+            }
+        }
+
+        Vector3 dir = monsterPos - transform.position;
+        float moveDist = Mathf.Clamp(move_speed * Time.deltaTime, 0, dir.magnitude);
+        transform.position += dir.normalized * moveDist;
+        transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
+
+        // 애니메이션
+        anim.Play("run0");
     }
 
     public void EndAttack()
     {
-
         state = PlayerState.Attacking_End;
         Vector3 dir = playerPos - transform.position;
         if (dir.magnitude < 0.0001f)
@@ -217,11 +222,11 @@ public class PlayerController : MonoBehaviour
             transform.LookAt(monsterPos);
             EndTurn();
             //테스트용
-            Managers.Battle.PlayerTrunOn();
+            //Managers.Battle.PlayerTrunOn();
         }
         else
         {
-            float moveDist = Mathf.Clamp(speed * Time.deltaTime, 0, dir.magnitude);
+            float moveDist = Mathf.Clamp(move_speed * Time.deltaTime, 0, dir.magnitude);
             transform.position += dir.normalized * moveDist;
             transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
         }
@@ -263,9 +268,28 @@ public class PlayerController : MonoBehaviour
         Debug.Log("검술:" + damage);
     }
 
-    public void GiveMagicDamage(float damage)
+    public void GiveMagicDamage(float damageRatio)
     {
+        float damage;
+        damage = player.spellPower * damageRatio;
         Managers.Battle.CurMonster().TakeDamage_Magic(damage);
+    }
+
+    public void Magic()
+    {
+        state = PlayerState.Others;
+        anim.Play("magic");
+        Managers.Battle.PlayerAtioning();
+    }
+    public void EndMagic()
+    {
+        state = PlayerState.Idle_Battle;
+        EndTurn();
+    }
+
+    public void TakeDamage(float damage)
+    {
+        player.hp -= (int)(damage - player.defence);
     }
 
 

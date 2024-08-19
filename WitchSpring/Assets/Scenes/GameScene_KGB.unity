@@ -606,6 +606,59 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!1 &1643936656
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1643936658}
+  - component: {fileID: 1643936657}
+  m_Layer: 0
+  m_Name: BattleSystem
+  m_TagString: BattleSystem
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1643936657
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643936656}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e83afd0cd0e3ff94a9febb2a60650638, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  playerAtion: 0
+  monsterAtion: 0
+  maxAtion: 0
+  isAtioning: 0
+  maxIncrease_monster: 0
+  maxIncrease_player: 0
+  oldPlayerAtion: 0
+  oldMonsterAtion: 0
+  state: 0
+--- !u!4 &1643936658
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1643936656}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -13.8, y: 0.5, z: 13.79}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1672370389
 GameObject:
   m_ObjectHideFlags: 0
@@ -749,6 +802,11 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 6330143425078586687, guid: dad12e620db29c64591f6a6ad5227305, type: 3}
   m_PrefabInstance: {fileID: 1090203023051443376}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1848319210 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4872060339807080253, guid: 1bda79de83be003429adbbb918800848, type: 3}
+  m_PrefabInstance: {fileID: 6810929659622694821}
+  m_PrefabAsset: {fileID: 0}
 --- !u!198 &2038862460 stripped
 ParticleSystem:
   m_CorrespondingSourceObject: {fileID: 8872914909895555965, guid: dad12e620db29c64591f6a6ad5227305, type: 3}
@@ -766,6 +824,10 @@ PrefabInstance:
       propertyPath: swordParticle
       value: 
       objectReference: {fileID: 2038862460}
+    - target: {fileID: 3200195881975563359, guid: dad12e620db29c64591f6a6ad5227305, type: 3}
+      propertyPath: speed
+      value: 13
+      objectReference: {fileID: 0}
     - target: {fileID: 6330143425078586687, guid: dad12e620db29c64591f6a6ad5227305, type: 3}
       propertyPath: m_Name
       value: airuddy_0
@@ -903,6 +965,10 @@ PrefabInstance:
       propertyPath: m_LocalScale.x
       value: 8
       objectReference: {fileID: 0}
+    - target: {fileID: 8104723912607509938, guid: 1bda79de83be003429adbbb918800848, type: 3}
+      propertyPath: trigger
+      value: 
+      objectReference: {fileID: 1848319210}
     - target: {fileID: 8933790281779273849, guid: 1bda79de83be003429adbbb918800848, type: 3}
       propertyPath: m_ProvidesContacts
       value: 0
@@ -930,3 +996,4 @@ SceneRoots:
   - {fileID: 6810929659622694821}
   - {fileID: 301499205}
   - {fileID: 50257271}
+  - {fileID: 1643936658}

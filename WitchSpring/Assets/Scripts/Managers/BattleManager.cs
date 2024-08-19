@@ -8,13 +8,16 @@ public class BattleManager
     public PlayerController playerController;
     public Player player;
     private littleDampFrog monster;
-    public UI_Scene hpUI;
+    private UI_Scene hpUI;
     private CameraController cameraController;
+    private BattleSystem battleSystem;
     private bool isBattle=false;
-
+    
 
     public void Init()
     {
+        GameObject battleSys = GameObject.FindGameObjectWithTag("BattleSystem");
+        battleSystem = battleSys.GetComponent<BattleSystem>();
         cameraController = Camera.main.GetComponent<CameraController>();
         GameObject playerObject = GameObject.FindGameObjectWithTag("Player");
         if (playerObject != null)
@@ -42,7 +45,7 @@ public class BattleManager
         cameraController.SwitchTarget(player.gameObject);
         playerController.StartBattle();
         monster.StartBattle();
-        Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
+        battleSystem.StartBattle();
         hpUI = Managers.UI.ShowSceneUI<UI_Scene>("UI_MonsterHpBar");
     }
     public void EndBattle()
@@ -61,6 +64,21 @@ public class BattleManager
     {
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
     }
+    public void PlayerAtioning()
+    {
+        battleSystem.state = BattleSystem.BattleState.PlayerActioning;
+        battleSystem.isAtioning = true;
+    }
+    public void MonsterTrunOn()
+    {
+        monster.Attack();
+        battleSystem.state = BattleSystem.BattleState.MonsterActioning;
+        battleSystem.isAtioning = true;
+    }
+    public void EndTurn()
+    {
+        battleSystem.isAtioning = false;
+    }
     public bool GetIsBattle()
     {
         return isBattle;
@@ -69,4 +87,9 @@ public class BattleManager
     {
         isBattle = isbattle;
     }
+    public BattleSystem GetBattleSystem()
+    {
+        return battleSystem;
+    }
+    
 }
