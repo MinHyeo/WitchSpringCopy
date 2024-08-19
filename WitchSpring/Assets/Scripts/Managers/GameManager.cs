@@ -67,10 +67,6 @@ public class GameManager : MonoBehaviour
     void Update()
     {
         M_Input.OnUpdate();
-        if (IsBattle)
-        {
-            TurnManage();
-        }
     }
 
     //Creat GameManager Object and Get GameManager Component
@@ -93,24 +89,44 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void TurnManage() {
-        if (Player.GetComponent<PlayerController>().PlayerTurn) {
-            if (Player.GetComponent<PlayerController>().PlayerWait) {
-                Player.GetComponent<PlayerController>().PlayerWait = true;
-            }
+    public void StartBattle() {
+        IsBattle = true;
+        StartCoroutine("TurnManage");
+    }
+
+    public void EndBattle() {
+        if (IsBattle) {
+            StopCoroutine("TurnMamage");
+            IsBattle = false;
         }
-        else if (Monster.GetComponent<MonsterController>().MonsterTurn) {
-            if (!Monster.GetComponent<MonsterController>().MonsterWait) {
-                Monster.GetComponent<MonsterController>().MonsterWait = true;
-                Monster.GetComponent<MonsterController>().MonsterAttackSignal();
+    }
+
+    IEnumerator TurnManage() {
+        while (true) { 
+            yield return new WaitForSeconds(0.7f);
+            if (Player.GetComponent<PlayerController>().PlayerTurn)
+            {
+                if (!Player.GetComponent<PlayerController>().PlayerWait)
+                {
+                    Player.GetComponent<PlayerController>().PlayerWait = true;
+                }
             }
-        }
-        else if(!Player.GetComponent<PlayerController>().PlayerTurn && !Monster.GetComponent<MonsterController>().MonsterTurn &&
-                !Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
-        {
-            Debug.Log("Monster and Player Trun AGT");
-            Player.GetComponent<PlayerController>().PlayerCurAgt+= Player.GetComponent<PlayerController>().PlayerAgility;
-            Monster.GetComponent<MonsterController>().MonsterCurAgt+= Monster.GetComponent<MonsterController>().MonsterAility;
+            else if (Monster.GetComponent<MonsterController>().MonsterTurn)
+            {
+                if (!Monster.GetComponent<MonsterController>().MonsterWait && !Player.GetComponent<PlayerController>().PlayerWait)
+                {
+                    Monster.GetComponent<MonsterController>().MonsterWait = true;
+                    Monster.GetComponent<MonsterController>().MonsterAttackSignal();
+                }
+            }
+            else if (!Player.GetComponent<PlayerController>().PlayerTurn && !Monster.GetComponent<MonsterController>().MonsterTurn &&
+                    !Player.GetComponent<PlayerController>().PlayerWait && !Monster.GetComponent<MonsterController>().MonsterWait)
+            {
+                Debug.Log("Monster and Player Trun AGT");
+                Player.GetComponent<PlayerController>().PlayerCurAgt += Player.GetComponent<PlayerController>().PlayerAgility;
+                Monster.GetComponent<MonsterController>().MonsterCurAgt += Monster.GetComponent<MonsterController>().MonsterAility;
+            }
+
         }
     
     }

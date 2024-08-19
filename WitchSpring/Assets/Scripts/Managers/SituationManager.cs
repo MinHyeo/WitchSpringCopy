@@ -29,6 +29,8 @@ public class SituationManager
                 if (GameManager.Instance.Monster != null) {
                     GameManager.Instance.Monster.GetComponent<MonsterController>().Disconnect();
                 }
+
+                GameManager.Instance.EndBattle();
                 break;
 
             case Define.Situations.Contact:
@@ -47,6 +49,8 @@ public class SituationManager
                 GameManager.Player.GetComponent<PlayerController>().PlayerTurn = true;
 
                 GameManager.Instance.Monster.transform.LookAt(GameManager.Player.transform.position);
+
+                GameManager.Instance.StartBattle();
                 break;
 
             case Define.Situations.StartAttack:
