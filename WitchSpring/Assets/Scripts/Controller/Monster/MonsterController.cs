@@ -74,12 +74,21 @@ public class MonsterController : MonoBehaviour
     public void MonsterHit(float damage) {
         Debug.Log($"Monster Hitted {(int)damage}");
 
-        curHP -= (int)damage;
+        if (curHP <= 0) {
+            damage = -1.0f;
+        }
+        else
+        {
+            curHP -= (int)damage;
+            if (curHP < 0) {
+                curHP = 0.0f;
+            }
+        }
 
         HPUI.GetMonsterHP();
         HPUI.ShowDamage((int)damage);
 
-        if (curHP < 0 && !IsDead)
+        if (curHP == 0 && !IsDead)
         {
             curHP = 0.0f;
             Debug.Log("Monster Dead");

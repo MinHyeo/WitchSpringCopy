@@ -23,7 +23,7 @@ public class MonsterHPUI : MonoBehaviour
 
     private void Awake()
     {
-        for (int i = 0; i < 10; i++) 
+        for (int i = 0; i < 11; i++) 
         {
             Sprite number = GameManager.Resource.Load<Sprite>($"Sprite/Damage/{i}");
             damageNum.Add(i, number);
@@ -67,14 +67,19 @@ public class MonsterHPUI : MonoBehaviour
     }
     public void ShowDamage(int damage) 
     {
+        bool IsAlreadyDead = false;
         List<Sprite> Dsprite = new List<Sprite>();
         while (damage > 0) {
             Dsprite.Add(damageNum[(int)(damage % 10)]);
             //Debug.Log($"{Count + 1}의 자리 수: {damage % 10}");
             damage /= 10;
         }
+        if (damage < 0) {
+            Dsprite.Add(damageNum[10]);
+            IsAlreadyDead = true;
+        }
         DamageBoxUI DamageBox = GameManager.Resource.Instantiate("UI/DamageBox",gameObject.transform).GetComponent<DamageBoxUI>();
-        DamageBox.SetDamage(Dsprite);
+        DamageBox.SetDamage(Dsprite, IsAlreadyDead);
     }
 
     IEnumerator CheckTurn() {
