@@ -18,6 +18,7 @@ public class MonsterBattle : MonoBehaviour
             StartCoroutine("SituationWait");
 
             player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Idle);
+            player.GetComponent<PlayerController>().PlayerReady = true;
             player.transform.LookAt(transform.position);
         }
     }

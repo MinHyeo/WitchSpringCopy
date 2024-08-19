@@ -24,6 +24,7 @@ public class SituationManager
                 //플레이어 기준 z축 방향으로 2.0f로 이동하기 위해 Local좌표로 계산
                 Vector3 playerDest = GameManager.Player.transform.TransformPoint(new Vector3(0.0f, 0.1f, 2.0f));
                 //계산 결과 전달
+                GameManager.Player.GetComponent<PlayerController>().PlayerReady = false;
                 GameManager.Player.GetComponent<PlayerController>().SetPlayerState(Define.PlayerStates.Walk, playerDest);
                 GameManager.Player.GetComponent<PlayerController>().PlayerBatteEffect.SetActive(false);
 

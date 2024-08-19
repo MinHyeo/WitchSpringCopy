@@ -28,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private bool attackFlag= false;
     [SerializeField] private bool IsTurn= true;
     [SerializeField] private bool IsWait= false;
+    [SerializeField] private bool IsReady= false;
     [SerializeField] private Define.PlayerStates p_state = Define.PlayerStates.Idle;
     [SerializeField] private Dictionary<string, int> buffList = new Dictionary<string, int>();
 
@@ -51,6 +52,7 @@ public class PlayerController : MonoBehaviour
     public int AttackNumber { set { attackNumber = value; } }
     public bool PlayerTurn { get { return IsTurn; } set { IsTurn = value; } }
     public bool PlayerWait { get { return IsWait; } set { IsWait = value; } }
+    public bool PlayerReady { get { return IsReady; } set { IsReady = value; } }
 
     public GameObject PlayerBatteEffect { get { return BattleEffect; } }
 
@@ -181,7 +183,8 @@ public class PlayerController : MonoBehaviour
         }
 
         if (p_state == Define.PlayerStates.Dead || p_state == Define.PlayerStates.Battle
-            || GameManager.Situation.currentSituations == Define.Situations.Contact || GameManager.Camera.GetComponent<CameraController>().CameraMoving)
+            || GameManager.Situation.currentSituations == Define.Situations.Contact || GameManager.Camera.GetComponent<CameraController>().CameraMoving||
+            IsReady)
         {
             return;
         }
