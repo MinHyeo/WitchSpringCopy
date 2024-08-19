@@ -13,16 +13,13 @@ public class CollisionManager : MonoBehaviour
         if (other.CompareTag("Player"))
         {
             gameObject.GetComponentInChildren<MeshRenderer>().enabled = false;
-            
 
             Transform parentTransform = transform.parent;
             GameManager.Data.GetCollidedObjectName(parentTransform.gameObject.name);
             
-            
+            OnFight.Invoke(parentTransform.gameObject); // °ð »èÁ¦
 
-            OnFight.Invoke(parentTransform.gameObject);
-
-
+            // Battle Manager
             GameManager.Battle.PlayerInMonsterDetect(parentTransform.gameObject);
         }
     }

@@ -7,7 +7,9 @@ public class Define
     public enum UIEvent
     {
         Click,
+        BeginDrag,
         Drag,
+        EndDrag,
     }
     public enum PlayerState
     {
@@ -15,6 +17,7 @@ public class Define
         Moving,
         FightEnter,
         Figjt_ATK,
+        Figjt_MATK,
         Hit,
         Comeback,
         Escape,

@@ -8,9 +8,12 @@ using TMPro;
 
 public class UI_Default : UI_Popup
 {
+    GameObject menuButton;
+    GameObject AGTslider;
 
     enum Buttons
     {
+        Menu,
     }
     enum Texts
     {
@@ -29,6 +32,7 @@ public class UI_Default : UI_Popup
     {
         Slider_HP,
         Slider_MP,
+        Slider_AGT
     }
 
 
@@ -44,14 +48,15 @@ public class UI_Default : UI_Popup
 
         Bind<Slider>(typeof(Sliders));
         Bind<TextMeshProUGUI>(typeof(Texts));
-        //Bind<Button>(typeof(Buttons));
-        //Bind<Text>(typeof(Texts));
-        //Bind<Image>(typeof(Images));
+        Bind<Button>(typeof(Buttons));
 
-        //GetButton((int)Buttons.PointButton).gameObject.AddUIEvent(OnButtonClicked);
+        GameObject Menu = GetButton((int)Buttons.Menu).gameObject;
+        menuButton = Menu;
 
-        //GameObject go = GetImage((int)Images.ItemIcon).gameObject;
-        //AddUIEvent(go, (PointerEventData data) => { go.gameObject.transform.position = data.position; }, Define.UIEvent.Drag);
+        GameObject Slider_AGT = Get<Slider>((int)Sliders.Slider_HP).gameObject;
+        AGTslider = Slider_AGT;
+
+
         InitializeSliders();
         UpdateText();
     }
@@ -62,6 +67,9 @@ public class UI_Default : UI_Popup
 
         Get<Slider>((int)Sliders.Slider_HP).maxValue = playerController.MaxHP;
         Get<Slider>((int)Sliders.Slider_MP).maxValue = playerController.MaxMP;
+
+        Get<Slider>((int)Sliders.Slider_AGT).maxValue = 100.0f;
+        Get<Slider>((int)Sliders.Slider_AGT).value = 0.0f;
 
         Get<Slider>((int)Sliders.Slider_HP).value = playerController.HP;
         Get<Slider>((int)Sliders.Slider_MP).value = playerController.MP;
@@ -85,13 +93,17 @@ public class UI_Default : UI_Popup
         MPRatio.text = $"{MP}/{maxMP}";
     }
 
-    // 슬라이더 값을 변경하는 메서드
-    /*public void UpdateSliderValue(Sliders sliderType, float value)
+    public void FightMode()
     {
-        // 슬라이더 값을 0과 1 사이로 클램프
-        value = Mathf.Clamp(value, 0.0f, 1.0f);
-        Get<Slider>((int)sliderType).value = value;
-    }*/
+        menuButton.GetComponent<Button>().interactable = false;
+        AGTslider.SetActive(true);
+    }
+
+    public void UpdateActionGauge(float value)
+    {
+        Debug.Log(value);
+        Get<Slider>((int)Sliders.Slider_AGT).value = value;
+    }
 
 
 }

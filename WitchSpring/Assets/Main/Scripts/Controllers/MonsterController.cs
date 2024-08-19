@@ -147,7 +147,10 @@ public class MonsterController : MonoBehaviour
 
         _originalPos = transform.position;
         _state = Define.MonsterState.Attack;
+        
         Camera.main.GetComponent<CameraController>()._mode = Define.CameraMode.MonsterFocused;
+
+
     }
     public void OnDie()
     {
@@ -159,6 +162,7 @@ public class MonsterController : MonoBehaviour
         Animator anim = GetComponent<Animator>();
         anim.SetBool("Attack", false);
         _state = Define.MonsterState.Comeback;
+        GameManager.Battle.TurnOver();
     }
 
     public void OnHit(int Damage)
@@ -219,6 +223,8 @@ public class MonsterController : MonoBehaviour
         PlayerController playerController = GameObject.Find("Player").GetComponent<PlayerController>();
         playerController.OnHit(_str);
         Camera.main.GetComponent<CameraController>().SetShakingCamera();
+
+       
 
     }
 

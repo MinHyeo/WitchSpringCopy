@@ -51,7 +51,6 @@ public class UI_Behaviors_MANAS : UI_Popup
 
         //GameObject go = GetImage((int)Images.ItemIcon).gameObject;
         //AddUIEvent(go, (PointerEventData data) => { go.gameObject.transform.position = data.position; }, Define.UIEvent.Drag);
-        //옵저버 패턴으로 이벤트를 받고 그걸 다시 전체(플레이어, 몬스터, UI 등)에 뿌려줄건데 전투 진행의 주체가 누가 되어야하나
     }
     public void OnCloseClicked(PointerEventData data)
     {

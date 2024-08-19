@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     public static ResourceManager resource { get { return instance._resources; } }
     public static InputManager input { get { return instance._input; } }
     public static UIManager UI { get { return instance._ui; } }
+    public static PlayerController player { get { return instance._player; } }
 
 
     private void Start()
@@ -49,8 +50,6 @@ public class GameManager : MonoBehaviour
             _battle = go.GetComponent<BattleManager>();
             s_instance = go.GetComponent<GameManager>();
             s_instance._data.Init();
-
-            s_instance._ui.ShowPopupUI<UI_Default>();
         }
     }
 }

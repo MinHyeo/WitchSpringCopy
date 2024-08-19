@@ -64,9 +64,9 @@ public class UI_FightEnter : UI_Popup
 
         GameManager.UI.ShowPopupUI<UI_Default>("UI_Default");
         GameManager.UI.ShowPopupUI<UI_MonsterHP>("UI_MonsterHP");
-        GameManager.UI.ShowPopupUI<UI_Behaviors>("UI_Behaviors");
+        //GameManager.UI.ShowPopupUI<UI_Behaviors>("UI_Behaviors");
         
-
+        GameManager.Battle.StartBattle();
         CameraController cameraController = Camera.main.GetComponent<CameraController>();
         cameraController._mode = Define.CameraMode.PlayerFocused;
         

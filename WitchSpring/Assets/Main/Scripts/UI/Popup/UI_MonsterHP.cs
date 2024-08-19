@@ -17,6 +17,7 @@ public class UI_MonsterHP : UI_Popup
     enum Sliders
     {
         Slider_HP,
+        Slider_AGT,
     }
 
 
@@ -43,6 +44,9 @@ public class UI_MonsterHP : UI_Popup
     {
         Get<Slider>((int)Sliders.Slider_HP).maxValue = monster.MaxHP;
         Get<Slider>((int)Sliders.Slider_HP).value = monster.MaxHP;
+
+        Get<Slider>((int)Sliders.Slider_AGT).maxValue = 100.0f;
+        Get<Slider>((int)Sliders.Slider_AGT).value = 0.0f;
     }
 
     public void UpdateText()
@@ -51,7 +55,7 @@ public class UI_MonsterHP : UI_Popup
 
         string maxHP = monster.MaxHP.ToString();
         string HP = monster.HP.ToString();
-        Get<Slider>((int)Sliders.Slider_HP).value = monster.HP;;
+        Get<Slider>((int)Sliders.Slider_HP).value = monster.HP;
 
         HPRatio.text = HP;
     }
@@ -78,8 +82,8 @@ public class UI_MonsterHP : UI_Popup
 
     }
 
-    public void InstantiateImage()
+    public void UpdateActionGauge(float value)
     {
-
+        Get<Slider>((int)Sliders.Slider_AGT).value = value;
     }
 }

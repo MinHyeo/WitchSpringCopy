@@ -53,6 +53,8 @@ public class PlayerController : MonoBehaviour
     {
         GameManager.input.MouseAction -= OnMouseClicked;
         GameManager.input.MouseAction += OnMouseClicked;
+        GameManager.Battle.PlayerEnter -= OnFightStated;
+        GameManager.Battle.PlayerEnter += OnFightStated;
 
         Init();
     }
@@ -132,6 +134,15 @@ public class PlayerController : MonoBehaviour
             anim.SetFloat("speed", _speed);
         }
     }
+
+    void UpdateMATK()
+    {
+        transform.LookAt(_monsterPos);
+
+        Animator anim = GetComponent<Animator>();
+        anim.SetBool("MATK", true);
+    }
+
     void UpdateComeback()
     {
         
@@ -143,10 +154,9 @@ public class PlayerController : MonoBehaviour
         {
             transform.LookAt(_monsterPos);
             MonsterController monsterController = _monster.GetComponent<MonsterController>();
-            monsterController.OnAttack();
+            //monsterController.OnAttack();
 
 
-            //GameManager.UI.ShowPopupUI<UI_Behaviors>();
             _state = Define.PlayerState.Idle;
         }
         else
@@ -165,9 +175,8 @@ public class PlayerController : MonoBehaviour
     {
         _speed = 6.0f;
 
-        // Calculate the direction while keeping Y component zero
         Vector3 dir = (transform.position - _monsterPos).normalized;
-        dir.y = 0f;  // Ensure no vertical movement
+        dir.y = 0f; 
 
         float distanceToMonster = Vector3.Distance(transform.position, _monsterPos);
 
@@ -180,8 +189,7 @@ public class PlayerController : MonoBehaviour
             float moveDist = _speed * Time.deltaTime;
             transform.position += dir * moveDist;
 
-            // Lock rotation to the XZ plane by setting dir's Y component to zero
-            if (dir != Vector3.zero) // Check to prevent NaN in Quaternion.LookRotation
+            if (dir != Vector3.zero) 
             {
                 transform.rotation = Quaternion.Slerp(transform.rotation, Quaternion.LookRotation(dir), 20 * Time.deltaTime);
             }
@@ -210,6 +218,10 @@ public class PlayerController : MonoBehaviour
 
             case Define.PlayerState.Figjt_ATK:
                 UpdataATK();
+                break;
+
+            case Define.PlayerState.Figjt_MATK:
+                UpdateMATK();
                 break;
 
             case Define.PlayerState.Hit:
@@ -253,13 +265,20 @@ public class PlayerController : MonoBehaviour
         _state = Define.PlayerState.Figjt_ATK;
     }
 
+    public void OnMATK(string slot)
+    {
+        _state = Define.PlayerState.Figjt_MATK;
+    }
+
     public void OnComeback()
     {
         Animator anim = GetComponent<Animator>();
         anim.SetInteger("ATK", 0);
+        anim.SetBool("MATK", false);
 
         _state = Define.PlayerState.Comeback;
         testParticle.GetComponent<Particle_ManaSword>().SetIdle_ManaSword();
+        GameManager.Battle.TurnOver();
     }
 
     public void OnEscape()
@@ -352,5 +371,18 @@ public class PlayerController : MonoBehaviour
             case "TraceOfMana":
                 break;
         }
+    }
+
+    public void MAttaking(string slot)
+    {
+        GameManager.resource.Instantiate("Explosion5", _monster.transform);
+
+        MonsterController monsterController = _monster.GetComponent<MonsterController>();
+        int trueDamage = _int;
+
+        monsterController.OnHit(trueDamage);
+        Camera.main.GetComponent<CameraController>().SetShakingCamera();
+
+        
     }
 }
