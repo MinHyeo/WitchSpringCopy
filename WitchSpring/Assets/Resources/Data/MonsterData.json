@@ -23,6 +23,18 @@
             "Defense" : "0",
             "MagicResist" : "0" ,
             "Soul" : "30"
+        },
+        {
+            "MonsterID" : "Knight",
+            "Name": "기사",
+            "Explain": "탈영병임, 잡아야 함",
+            "HP": "200",
+            "Strength" : "30",
+            "Magic" : "0",
+            "Agility" : "5",
+            "Defense" : "20",
+            "MagicResist" : "0" ,
+            "Soul" : "30"
         }
     ]    
 }
