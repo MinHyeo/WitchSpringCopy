@@ -68,10 +68,13 @@ public class PlayerController : MonoBehaviour
         p_speed = 5.0f;
         curHp = 90.0f;
         maxHp = 100.0f;
+
         curMp = 150.0f;
         maxMp = 200.0f;
+
         curSp = 10.0f;
         maxSp = 100.0f;
+
         magic = 10.0f;
         strength = 10.0f;
         agility = 10.0f;
@@ -301,9 +304,9 @@ public class PlayerController : MonoBehaviour
     {
         curMp += recMount;
 
-        if (curMp > MaxHP)
+        if (curMp > MaxMP)
         {
-            curMp = MaxHP;
+            curMp = MaxMP;
         }
     }
     public void UseMP(float decMP)

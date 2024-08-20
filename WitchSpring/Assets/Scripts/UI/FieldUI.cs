@@ -43,7 +43,6 @@ public class FieldUI : MonoBehaviour
 
     private void Awake()
     {
-        pData = GameManager.Player.GetComponent<PlayerController>();
 
         UIAni = GetComponent<Animator>();
 
@@ -65,6 +64,8 @@ public class FieldUI : MonoBehaviour
         buffList.text = "";
 
         emotion.gameObject.SetActive(false);
+
+        pData = GameManager.Player.GetComponent<PlayerController>();
     }
 
     // Update is called once per frame
@@ -130,7 +131,7 @@ public class FieldUI : MonoBehaviour
     //Crystal Test Code
     public void UseCrystalButton() {
         if (curSp <= 0) {
-            GameManager.UI.SendUIMassage("영혼석 다 씀 ㅅㄱ", Define.MessageType.System);
+            GameManager.UI.SendUIMassage("영혼석에 저장된 생명력이 없습니다.", Define.MessageType.System);
             return;
         }
         //Use Soul
@@ -141,8 +142,6 @@ public class FieldUI : MonoBehaviour
 
         //Reset Soul
         pData.CurrentSP = 0.0f;
-        //Data Update
-        UpdateCharactorInfo();
     }
     public void InventoryButton()
     {
