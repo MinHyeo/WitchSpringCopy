@@ -112,7 +112,8 @@ public class littleDampFrog : MonoBehaviour
         Vector3 dir = monsterPos - transform.position;
         if (dir.magnitude < 0.0001f)
         {
-            state = monsterState.Idle_Battle;
+            state = monsterState.Idle;
+            anim.Play("Idle");
             transform.LookAt(playerPos);
             EndTurn();
         }
@@ -132,13 +133,6 @@ public class littleDampFrog : MonoBehaviour
         float damage = damageRatio*strength;
         Managers.Battle.playerController.TakeDamage(damage);
     }
-
-
-
-
-
-
-
 
 
     public void TakeDamage(float damage)

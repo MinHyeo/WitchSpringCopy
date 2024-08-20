@@ -15,7 +15,7 @@ public class PlayerController : MonoBehaviour
     Player player;
 
     public ParticleSystem swordParticle;
-
+    public ParticleSystem magicEffect;
     int attackNumber = 0;
 
 
@@ -280,6 +280,12 @@ public class PlayerController : MonoBehaviour
         state = PlayerState.Others;
         anim.Play("magic");
         Managers.Battle.PlayerAtioning();
+    }
+    public void EffectMagic()
+    {
+        Debug.Log("ÆÄÆ¼Å¬");
+        magicEffect.gameObject.transform.position = monsterPos;
+        magicEffect.Play();
     }
     public void EndMagic()
     {
