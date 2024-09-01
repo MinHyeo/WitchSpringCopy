@@ -7,12 +7,12 @@ namespace Character.Player
 {
     public class PlayerStat 
     {
-        public float Health;
-        public float Mana;
-        public float Magic;
-        public float Power;
-        public float Agility;
-        public float Defense;
+        public float Health = 80;
+        public float Mana = 170;
+        public float Magic = 28;
+        public float Power = 25;
+        public float Agility = 12;
+        public float Defense = 2;
     }
 
     [RequireComponent(typeof(NavMeshAgent))]
@@ -40,16 +40,24 @@ namespace Character.Player
             _walkState = gameObject.AddComponent<State.PlayerWalkState>();
 
             _playerStateContext.Transition(_idleState);
+
+            Init();
+        }
+        private void Init()
+        {
+            agent.speed = speed;
         }
         private void Update()
         {
             if (Input.GetMouseButtonDown(1))
             {
+
                 Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
                 RaycastHit hit;
 
-                if(Physics.Raycast(ray, out hit))
+                if(Physics.Raycast(ray, out hit, Mathf.Infinity, LayerMask.GetMask("Ground")))
                 {
+                    Debug.Log("ÀÌµ¿" + hit.point);
                     agent.SetDestination(hit.point);
                     _playerStateContext.Transition(_walkState);
                 }
@@ -69,6 +77,7 @@ namespace Character.Player
                 {
                     if (!agent.hasPath || agent.velocity.sqrMagnitude == 0f) 
                     {
+                        Debug.Log("µµÂø");
                         return true;
                     }
                 }
