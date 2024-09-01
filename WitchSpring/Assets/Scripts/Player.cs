@@ -18,6 +18,7 @@ public class Player : MonoBehaviour
     public int manaBallCount = 0;
     public int manaTraceCount = 0;
 
+    public int DollCount = 0;
     void Start()
     {
         hp = maxHp;

@@ -14,6 +14,7 @@ public class littleDampFrog : MonoBehaviour
     public float speed;
     public float defense;
     public float spellDefense;
+    public bool isLive=true;
 
     float move_speed = 10.0f;
     Vector3 destPos;
@@ -48,6 +49,8 @@ public class littleDampFrog : MonoBehaviour
  
     void Update()
     {
+        if (!isLive)
+            return;
         if (Input.GetKeyDown(KeyCode.Alpha0))
         {
             Attack();
@@ -74,6 +77,7 @@ public class littleDampFrog : MonoBehaviour
 
     public void Attack()
     {
+        Managers.Sound.Play("dragon_3", Define.Sound.Effect);
         GameObject target = Managers.Battle.player.gameObject;
         monsterPos = gameObject.transform.position;
         playerPos = target.transform.position;
@@ -142,6 +146,8 @@ public class littleDampFrog : MonoBehaviour
         UI_Damage du = GetComponentInChildren<UI_Damage>();
         du.ShowDamage((int)finalDamage);
         anim.Play("Hit", -1, 0f);
+        if (hp <= 0)
+            Die();
     }
     public void TakeDamage_Magic(float damage)
     {
@@ -150,6 +156,8 @@ public class littleDampFrog : MonoBehaviour
         UI_Damage du = GetComponentInChildren<UI_Damage>();
         du.ShowDamage((int)finalDamage);
         anim.Play("Hit", -1, 0f);
+        if (hp <= 0)
+            Die();
     }
 
     public void StartBattle()
@@ -166,7 +174,15 @@ public class littleDampFrog : MonoBehaviour
     public void EndBattle()
     {
         BattleTrigger go = GetComponentInChildren<BattleTrigger>();
-        go.Trigger_On();
+        if (isLive)
+        {
+            go.Trigger_On();
+        }
+        else
+        {
+            go.Trigger_Off();
+        }
+        
     }
 
     public void SetStat(MonsterStat monsterStat)
@@ -181,5 +197,14 @@ public class littleDampFrog : MonoBehaviour
         monsterInfo = monsterStat.monsterInfo;
 
         hp = maxHp;
+    }
+
+    public void Die()
+    {
+        Managers.Battle.EndBattle();
+        anim.Play("Die");
+        isLive = false;
+        BattleTrigger go = GetComponentInChildren<BattleTrigger>();
+        go.Trigger_Off();
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityEngine.UI;
+using static Magic;
 
 public class Magic : MonoBehaviour, IPointerClickHandler
 {
@@ -15,7 +16,7 @@ public class Magic : MonoBehaviour, IPointerClickHandler
         image = GetComponent<RawImage>();
         ui_magic = GetComponentInParent<UI_Magic>();
     }
-    enum MainMagicCircle
+    public enum MainMagicCircle
     {
         Flame,
         Lightning,
@@ -23,14 +24,14 @@ public class Magic : MonoBehaviour, IPointerClickHandler
         Others,
     }
 
-    enum SubMagicCircle
+    public enum SubMagicCircle
     {
         Focus,
         Boost
     }
 
-    MainMagicCircle mainMagicCircle = MainMagicCircle.Flame;
-    SubMagicCircle subMagicCircle = SubMagicCircle.Focus;
+    public MainMagicCircle mainMagicCircle;
+    public SubMagicCircle subMagicCircle;
 
     void Start()
     {
@@ -41,7 +42,12 @@ public class Magic : MonoBehaviour, IPointerClickHandler
     {
         if (transform.parent != null && transform.parent.name == "Slot_Use")
         {
-            available = true;
+            if (!available)
+            {
+                available = true;
+                Managers.Sound.Play("magic_3", Define.Sound.Effect);
+                ui_magic.CheckMagic();
+            }
         }
     }
 
@@ -56,6 +62,26 @@ public class Magic : MonoBehaviour, IPointerClickHandler
 
     public void UseMagic()
     {
+        // mainMagicCircle의 값에 따라 Magic(int n)에 다른 값을 넘겨줍니다.
+        int magicNumber = -1;
+
+        switch (mainMagicCircle)
+        {
+            case MainMagicCircle.Flame:
+                magicNumber = 0;
+                break;
+            case MainMagicCircle.Lightning:
+                magicNumber = 1;
+                break;
+            case MainMagicCircle.Frost:
+                magicNumber = 2;
+                break;
+            case MainMagicCircle.Others:
+                magicNumber = 2;
+                break;
+        }
+
         ui_magic.Button_Magic();
+        Managers.Battle.playerController.Magic(magicNumber);
     }
 }

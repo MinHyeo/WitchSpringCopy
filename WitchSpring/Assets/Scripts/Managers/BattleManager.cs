@@ -32,6 +32,8 @@ public class BattleManager
         isBattle = true;
         this.monster = monster;
         cameraController.SwitchTarget(monster.gameObject);
+        Managers.Sound.Play("pop_2", Define.Sound.Effect);
+
     }
 
     public littleDampFrog CurMonster()
@@ -54,6 +56,7 @@ public class BattleManager
         playerController.Escape();
         playerController.EndBattle();
         monster.EndBattle();
+        battleSystem.EndBattle();
         if (hpUI != null)
         {
             Managers.UI.CloseSceneUI(hpUI);
@@ -62,18 +65,33 @@ public class BattleManager
 
     public void PlayerTrunOn()
     {
-        Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
+        if (playerController.isDoll_ON)
+        {
+            playerController.PlayerTurnOn();
+        }
+        else
+        {
+            Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
+            Managers.Sound.Play("put_1", Define.Sound.Effect);
+        }
+        
     }
     public void PlayerAtioning()
     {
         battleSystem.state = BattleSystem.BattleState.PlayerActioning;
         battleSystem.isAtioning = true;
     }
+    public void PlayerDollUseing()
+    {
+        battleSystem.state = BattleSystem.BattleState.PlayerDollUsing;
+    }
+
     public void MonsterTrunOn()
     {
         monster.Attack();
         battleSystem.state = BattleSystem.BattleState.MonsterActioning;
         battleSystem.isAtioning = true;
+        Managers.Sound.Play("enemyTurn", Define.Sound.Effect);
     }
     public void EndTurn()
     {

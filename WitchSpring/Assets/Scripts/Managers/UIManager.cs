@@ -72,7 +72,7 @@ public class UIManager
         T popup =  Util.GetOrAddComponent<T>(go);
         _popupStack.Push(popup);
         go.transform.SetParent(Root.transform);
-
+        Managers.Sound.Play("signPop", Define.Sound.Effect);
         return popup;
     }
 
@@ -87,6 +87,7 @@ public class UIManager
             return;
         }
         ClosePopupUI();
+        Managers.Sound.Play("click_1", Define.Sound.Effect);
     }
 
     public void CloseSceneUI(UI_Scene popup)

@@ -33,6 +33,11 @@ public class UI_BattleBehavior : MonoBehaviour
         Managers.UI.ClosePopupUI(popup);
         Managers.UI.ShowPopupUI<UI_Popup>("UI_Magic");
     }
+    public void Button_Doll()
+    {
+        Managers.UI.ClosePopupUI(popup);
+        Managers.UI.ShowPopupUI<UI_Popup>("UI_Doll");
+    }
 
     public void Button_Avoid()
     {

@@ -28,6 +28,7 @@ public class BattleSystem : MonoBehaviour
         MonsterTurn,
         PlayerActioning,
         MonsterActioning,
+        PlayerDollUsing,
     }
     public BattleState state = BattleState.Idle;
 
@@ -57,6 +58,9 @@ public class BattleSystem : MonoBehaviour
                 break;
             case BattleState.MonsterActioning:
                 UpdateMonsterActioning();
+                break;
+            case BattleState.PlayerDollUsing:
+                UpdatePlayerDollUsing();
                 break;
         }
     }
@@ -163,6 +167,26 @@ public class BattleSystem : MonoBehaviour
         
     }
 
+    void UpdatePlayerDollUsing()
+    {
+        playerAtion -= playerSpeed * Time.deltaTime; //플레이어 감소
+
+        if (monsterAtion < oldMonsterAtion + maxIncrease_monster)
+        {
+            if (monsterAtion < maxAtion)
+                monsterAtion += monsterSpeed * Time.deltaTime; //몬스터 증가
+        }
+
+        if (playerAtion <= 0)
+        {
+            playerAtion = 0;
+            Managers.Battle.PlayerTrunOn();
+            oldMonsterAtion = monsterAtion;
+            state = BattleState.PlayerTurn;
+        }
+    }
+
+
     public float GetPlayerAction()
     {
         return playerAtion;
@@ -175,5 +199,8 @@ public class BattleSystem : MonoBehaviour
     {
         return maxAtion;
     }
-
+    public void EndBattle()
+    {
+        state = BattleState.Idle;
+    }
 }

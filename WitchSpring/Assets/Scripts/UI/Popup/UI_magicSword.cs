@@ -18,6 +18,7 @@ public class UI_magicSword : MonoBehaviour
 
     public void Button_ManaSword()
     {
+        Managers.Sound.Play("magicSwordBuff", Define.Sound.Effect);
         popup.ClosePopupUI();
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
         Managers.Battle.playerController.OnManaSword();
@@ -27,6 +28,7 @@ public class UI_magicSword : MonoBehaviour
         popup.ClosePopupUI();
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
         Managers.Battle.playerController.OnAbsorbSword();
+        Managers.Sound.Play("magicSwordBuff", Define.Sound.Effect);
     }
 
     public void Button_ManaBall()
@@ -34,12 +36,14 @@ public class UI_magicSword : MonoBehaviour
         popup.ClosePopupUI();
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
         Managers.Battle.playerController.OnManaBall();
+        Managers.Sound.Play("magicSwordBuff", Define.Sound.Effect);
     }
     public void Button_ManaTrace()
     {
         popup.ClosePopupUI();
         Managers.UI.ShowPopupUI<UI_Popup>("UI_BattleBehavior");
         Managers.Battle.playerController.OnManaTrace();
+        Managers.Sound.Play("magicSwordBuff", Define.Sound.Effect);
     }
 
 }

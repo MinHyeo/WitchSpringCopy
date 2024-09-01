@@ -7,12 +7,12 @@ public class BattleTrigger : MonoBehaviour
 {
     private CapsuleCollider col;
     private UI_Popup popup;
-    public GameObject monster;
+    public littleDampFrog monster;
     [SerializeField] GameObject trigger;
     void Start()
     {
         col = GetComponent<CapsuleCollider>();
-        monster = transform.parent.gameObject;
+        monster = GetComponentInParent<littleDampFrog>();
     }
 
     void Update()
@@ -24,14 +24,12 @@ public class BattleTrigger : MonoBehaviour
     {
         if (other.CompareTag("Player"))
         {
-            if (Managers.Battle.GetIsBattle() == false)
+            if (Managers.Battle.GetIsBattle() == false&&monster.isLive)
             {
                 Debug.Log("배틀 트리거");
                 popup = Managers.UI.ShowPopupUI<UI_Popup>("UI_MonsterEncounter");
-                Managers.Battle.EncounterMonster(monster.GetComponent<littleDampFrog>());
+                Managers.Battle.EncounterMonster(monster);
                 Managers.Player.playerController.MonsterEncounter(monster.transform.position);
-
-
             }
         }
     }
